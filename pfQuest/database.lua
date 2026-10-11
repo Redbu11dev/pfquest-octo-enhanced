@@ -1442,6 +1442,99 @@ function pfDatabase:SearchVendor(item, meta)
   return maps
 end
 
+-- SearchItemStartSources
+-- Collects every spawn point of every creature/object that can drop (or sell)
+-- a quest-starting item, grouped by zone. Unlike SearchItemID this deliberately
+-- ignores pfQuest_config.mindropchance, because a quest-starting item's only
+-- source may sit below the slider and the quest would otherwise get no marker.
+-- Returns byZone[zone] = { sources={...}, coords={...} } where sources are
+-- hover-reveal records and coords feed getcluster for the centroid "!" pin.
+function pfDatabase:SearchItemStartSources(itemID)
+  local byZone = {}
+  if not items[itemID] then return byZone end
+
+  local itemName = pfDB.items.loc[itemID]
+
+  local function TrackZone(zone, chance, sellcount)
+    local z = byZone[zone]
+    if sellcount and not z.sellcount then z.sellcount = sellcount end
+    if chance and (not z.droprate or chance > z.droprate) then z.droprate = chance end
+  end
+
+  local function AddUnit(unit, chance, sellcount)
+    if not units[unit] or not units[unit]["coords"] then return end
+    for _, data in pairs(units[unit]["coords"]) do
+      local x, y, zone, respawn = unpack(data)
+      if zone > 0 then
+        byZone[zone] = byZone[zone] or { sources = {}, coords = {} }
+        TrackZone(zone, chance, sellcount)
+        table.insert(byZone[zone].sources, {
+          x = x, y = y, zone = zone,
+          spawn = pfDB.units.loc[unit], spawnid = unit,
+          level = units[unit]["lvl"] or UNKNOWN,
+          respawn = respawn > 0 and SecondsToTime(respawn) or nil,
+          spawntype = pfQuest_Loc["Unit"],
+          droprate = chance, sellcount = sellcount, item = itemName,
+        })
+        table.insert(byZone[zone].coords, { x, y })
+      end
+    end
+  end
+
+  local function AddObject(object, chance)
+    if not objects[object] or not objects[object]["coords"] then return end
+    for _, data in pairs(objects[object]["coords"]) do
+      local x, y, zone, respawn = unpack(data)
+      if zone > 0 then
+        byZone[zone] = byZone[zone] or { sources = {}, coords = {} }
+        TrackZone(zone, chance, nil)
+        table.insert(byZone[zone].sources, {
+          x = x, y = y, zone = zone,
+          spawn = pfDB.objects.loc[object], spawnid = object,
+          respawn = respawn > 0 and SecondsToTime(respawn) or nil,
+          spawntype = pfQuest_Loc["Object"],
+          droprate = chance, item = itemName,
+        })
+        table.insert(byZone[zone].coords, { x, y })
+      end
+    end
+  end
+
+  -- creature drops
+  if items[itemID]["U"] then
+    for unit, chance in pairs(items[itemID]["U"]) do
+      AddUnit(unit, chance)
+    end
+  end
+  -- object loot (chests, veins, ...)
+  if items[itemID]["O"] then
+    for object, chance in pairs(items[itemID]["O"]) do
+      AddObject(object, chance)
+    end
+  end
+  -- reference loot tables
+  if items[itemID]["R"] then
+    for ref, chance in pairs(items[itemID]["R"]) do
+      if refloot[ref] then
+        if refloot[ref]["U"] then
+          for unit in pairs(refloot[ref]["U"]) do AddUnit(unit, chance) end
+        end
+        if refloot[ref]["O"] then
+          for object in pairs(refloot[ref]["O"]) do AddObject(object, chance) end
+        end
+      end
+    end
+  end
+  -- vendors (sellcount stands in for droprate on the tooltip)
+  if items[itemID]["V"] then
+    for unit, count in pairs(items[itemID]["V"]) do
+      AddUnit(unit, nil, count)
+    end
+  end
+
+  return byZone
+end
+
 -- SearchQuestID
 -- Scans for all quests with a specified ID
 -- Adds map nodes for each objective and involved units
@@ -1488,14 +1581,33 @@ function pfDatabase:SearchQuestID(id, meta, maps)
       end
 
       -- items (drops that begin a quest)
-      -- resolve the starter item's drop/loot/vendor sources so the map shows
-      -- where to farm it; SearchItemID walks units, objects, refloot, vendors.
+      -- One "!" pin per zone at the drop-density centroid, carrying the source
+      -- spawn list for hover-reveal. Bypasses mindropchance via
+      -- SearchItemStartSources so rare starters still get a marker.
       if quests[id]["start"]["I"] then
         for _, item in pairs(quests[id]["start"]["I"]) do
-          meta = meta or {}
-          meta["QTYPE"] = "ITEM_START"
-          meta["texture"] = pfQuestConfig.path .. "\\img\\available_c"
-          maps = pfDatabase:SearchItemID(item, meta, maps, { ["U"] = true, ["O"] = true, ["R"] = true, ["V"] = true })
+          local byZone = pfDatabase:SearchItemStartSources(item)
+          for zone, zdata in pairs(byZone) do
+            local cx, cy = getcluster(zdata.coords, "itemstart" .. id .. ":" .. item .. ":" .. zone)
+            meta = meta or {}
+            meta["QTYPE"] = "ITEM_START"
+            meta["texture"] = pfQuestConfig.path .. "\\img\\available_c"
+            meta["zone"] = zone
+            meta["x"] = cx
+            meta["y"] = cy
+            meta["item"] = pfDB.items.loc[item]
+            meta["itemid"] = item
+            meta["itemStartSources"] = zdata.sources
+            meta["droprate"] = zdata.droprate
+            meta["sellcount"] = zdata.sellcount
+            meta["spawn"] = meta["quest"] -- tooltip header reads the quest title
+            maps[zone] = (maps[zone] or 0) + 1
+            pfMap:AddNode(meta)
+            meta["itemStartSources"] = nil -- don't leak into the next zone's pin
+            meta["droprate"] = nil
+            meta["sellcount"] = nil
+            meta["spawn"] = nil
+          end
         end
       end
     end
@@ -1956,13 +2068,32 @@ function pfDatabase:SearchQuests(meta, maps)
         end
 
         -- items (drops that begin a quest)
-        -- resolve the starter item's drop/loot/vendor sources so the live map
-        -- shows where to farm it; SearchItemID walks units/objects/refloot/vendors.
+        -- One "!" pin per zone at the drop-density centroid, carrying the source
+        -- spawn list for hover-reveal. Bypasses mindropchance via
+        -- SearchItemStartSources so rare starters still get a marker.
         if quests[id]["start"]["I"] then
           meta["QTYPE"] = "ITEM_START"
           for _, item in pairs(quests[id]["start"]["I"]) do
             local tn0 = GetTime()
-            maps = pfDatabase:SearchItemID(item, meta, maps, { ["U"] = true, ["O"] = true, ["R"] = true, ["V"] = true })
+            local byZone = pfDatabase:SearchItemStartSources(item)
+            for zone, zdata in pairs(byZone) do
+              local cx, cy = getcluster(zdata.coords, "itemstart" .. id .. ":" .. item .. ":" .. zone)
+              meta["zone"] = zone
+              meta["x"] = cx
+              meta["y"] = cy
+              meta["item"] = pfDB.items.loc[item]
+              meta["itemid"] = item
+              meta["itemStartSources"] = zdata.sources
+              meta["droprate"] = zdata.droprate
+              meta["sellcount"] = zdata.sellcount
+              meta["spawn"] = meta["quest"] -- tooltip header reads the quest title
+              maps[zone] = (maps[zone] or 0) + 1
+              pfMap:AddNode(meta)
+              meta["itemStartSources"] = nil
+              meta["droprate"] = nil
+              meta["sellcount"] = nil
+              meta["spawn"] = nil
+            end
             t_nodes = t_nodes + (GetTime() - tn0)
           end
         end

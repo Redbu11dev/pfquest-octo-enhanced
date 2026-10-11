@@ -240,6 +240,18 @@ pfMap.mpins = {}
 pfMap.drawlayer = Minimap
 pfMap.unifiedcache = unifiedcache
 
+-- Item-start hover-reveal state.
+-- RevealNodes stores the temporary spawn pins created when the player hovers
+-- an ITEM_START "!" marker. Distinct addon key keeps these out of the
+-- SearchQuests lastQuestGiversSet delta cache.
+--   active   : reveal key currently shown, or nil
+--   hovering : true while the cursor rests on the "!" marker
+pfMap.itemStartReveal = {
+  active = nil,
+  hovering = false,
+}
+
+
 -- Reverse indexes for O(1) DeleteNode lookups.
 -- titleIndex[addon][title][map][coords] = true  — set by AddNode
 -- tooltipIndex[title][spawn] = true             — set by AddNode
@@ -424,7 +436,10 @@ function pfMap:ShowTooltip(meta, tooltip)
     end
 
     if not catch then
-      tooltip:AddLine("|cff555555[|cffffcc00!|cff555555]|r " .. meta["quest"], 1, 1, 0.7)
+      -- item-start pins identify themselves by the starter item, not the quest
+      if meta["QTYPE"] ~= "ITEM_START" then
+        tooltip:AddLine("|cff555555[|cffffcc00!|cff555555]|r " .. meta["quest"], 1, 1, 0.7)
+      end
     end
 
     if not catch_obj then
@@ -869,6 +884,85 @@ function pfMap:NodeClick()
   end
 end
 
+-- Item-start hover-reveal.
+-- The "!" pin for an item-start quest carries meta.itemStartSources, a list of
+-- { x, y, zone, spawn, spawnid, level, respawn, droprate } spawn records built
+-- by SearchItemStartSources. Hovering the "!" marker spawns those as temporary
+-- nodes under the "PFQUEST_ITEMSTART" addon key; they vanish as soon as the
+-- cursor leaves the marker, unless Ctrl is held — then they stay up until Ctrl
+-- is released so the player can inspect each node at leisure.
+--
+-- A short grace period absorbs the OnLeave that fires when a freshly spawned
+-- node lands directly under the cursor (the marker momentarily loses hover to
+-- its own child). Without it the pins would strobe on/off every frame.
+local ITEM_START_ADDON = "PFQUEST_ITEMSTART"
+local ITEM_START_GRACE = 0.15 -- seconds to absorb spawn-under-cursor OnLeave
+
+function pfMap:ItemStartRevealShow(tab)
+  if not tab or not tab.itemStartSources then return end
+
+  local key = (tab.quest or tab.title or "?") .. "|" .. tostring(tab.zone)
+  local r = pfMap.itemStartReveal
+  r.active = key
+  r.hovering = true
+  r.graceUntil = GetTime() + ITEM_START_GRACE
+
+  for _, src in pairs(tab.itemStartSources) do
+    local meta = {
+      addon = ITEM_START_ADDON,
+      title = tab.quest or tab.title,
+      quest = tab.quest,
+      questid = tab.questid,
+      qlvl = tab.qlvl,
+      qmin = tab.qmin,
+      zone = src.zone,
+      x = src.x,
+      y = src.y,
+      spawn = src.spawn,
+      spawnid = src.spawnid,
+      level = src.level,
+      respawn = src.respawn,
+      spawntype = src.spawntype,
+      droprate = src.droprate,
+      sellcount = src.sellcount,
+      -- no texture: renders as a plain spawn dot, like a loot-search result
+      item = src.item,
+      QTYPE = "ITEM_START",
+      itemStartChild = true, -- guard: revealed pins must not themselves reveal
+    }
+    pfMap:AddNode(meta)
+  end
+end
+
+-- Cursor moved onto the "!" marker or a revealed node: keep the reveal alive.
+function pfMap:ItemStartRevealHover()
+  pfMap.itemStartReveal.hovering = true
+end
+
+-- Cursor left the marker or a revealed node: drop the hover flag and arm a
+-- fresh grace window; Tick hides the pins once it lapses, unless Ctrl is held
+-- or another pin was entered in the meantime.
+function pfMap:ItemStartRevealUnhover()
+  local r = pfMap.itemStartReveal
+  r.hovering = false
+  r.graceUntil = GetTime() + ITEM_START_GRACE
+end
+
+function pfMap:ItemStartRevealTick()
+  local r = pfMap.itemStartReveal
+  if not r.active then return end
+
+  -- while Ctrl is held the pins stay up no matter where the cursor is
+  if IsControlKeyDown() then return end
+
+  -- hide as soon as the cursor is off the marker; the grace window absorbs the
+  -- transient OnLeave when a spawned node appears under the cursor
+  if not r.hovering and GetTime() > (r.graceUntil or 0) then
+    pfMap:DeleteNode(ITEM_START_ADDON)
+    r.active = nil
+  end
+end
+
 function pfMap:NodeEnter()
   -- wotlk: need to disable blop tooltips first
   if compat.client >= 30300 then
@@ -892,6 +986,23 @@ function pfMap:NodeEnter()
     pfMap:ShowTooltip(meta, tooltip)
   end
 
+  -- item-start reveal: hovering a "!" item-start marker spawns its drop points
+  for title, meta in pairs(this.node) do
+    if meta.QTYPE == "ITEM_START" and meta.itemStartSources and not meta.itemStartChild then
+      pfMap:ItemStartRevealShow(meta)
+      break
+    end
+  end
+
+  -- resting the cursor on a revealed node (inspecting it) keeps the pins up;
+  -- it just must not spawn a fresh reveal of its own
+  for title, meta in pairs(this.node) do
+    if meta.itemStartChild then
+      pfMap:ItemStartRevealHover()
+      break
+    end
+  end
+
   -- add tooltip help if setting is enabled
   if pfQuest_config["tooltiphelp"] == "1" then
     local text = pfQuest_Loc["Use <Shift>-Click To Remove Nodes"]
@@ -908,6 +1019,15 @@ function pfMap:NodeEnter()
 
     -- update tooltip and sizes
     tooltip:AddLine(text, 0.6, 0.6, 0.6)
+
+    -- item-start pins: hint that Ctrl keeps the revealed drop points open
+    for title, meta in pairs(this.node) do
+      if meta.QTYPE == "ITEM_START" and meta.itemStartSources then
+        tooltip:AddLine(pfQuest_Loc["Hold <Ctrl> To Keep Nodes Visible"] or "Hold <Ctrl> To Keep Nodes Visible", 0.6, 0.6, 0.6)
+        break
+      end
+    end
+
     tooltip:Show()
   end
 
@@ -923,6 +1043,15 @@ function pfMap:NodeLeave()
   local tooltip = this:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
   tooltip:Hide()
   pfMap.highlight = nil
+
+  -- cursor left this pin; the "!" marker or a revealed child both count as
+  -- "engaged", so clear the hover flag when leaving either
+  for title, meta in pairs(this.node) do
+    if meta.itemStartChild or (meta.QTYPE == "ITEM_START" and meta.itemStartSources) then
+      pfMap:ItemStartRevealUnhover()
+      break
+    end
+  end
 end
 
 function pfMap:BuildNode(name, parent)
@@ -1459,6 +1588,9 @@ end)
 
 local hlstate, shiftstate, transition, hidecluster, fps, resetmap
 pfMap:SetScript("OnUpdate", function()
+  -- expire item-start reveal pins once the mouse has been off the marker long enough
+  pfMap:ItemStartRevealTick()
+
   -- handle highlights and animations
   if pfMap.queue_update or transition or pfMap.highlight ~= hlstate or shiftstate ~= hidecluster then
     hlstate, shiftstate, transition = pfMap.highlight, hidecluster, nil
