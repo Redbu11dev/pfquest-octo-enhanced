@@ -1044,6 +1044,56 @@ do -- items
   pfDB["items"]["data-turtle"][41799]["U"] = { [62252] = 4 }
   pfDB["items"]["data-turtle"][41802]["U"] = { [62252] = 4 }
 
+  -- Item-start drop links, hand-verified against octowow.st/db (2026-10).
+  -- Each starts a quest; the extractor left the item record source-less.
+  -- Rates are the listed drop %. Skipped per review: quest rewards
+  -- (Expensive Gold Ring, Sealed Letter), profession-gated tomes
+  -- (Advanced Gemology/Goldsmithing, Mastery of *), items absent from
+  -- octowow.st (Lord Blackwald II's Whistle, Mass of Writhing Tentacles,
+  -- Heart of Mephistroth), weird-container items (A Strange Parchment,
+  -- The Scythe of Elune, Mysterious Red Envelope), raid/uncoordinated drops
+  -- (A Mysterious Missive, Risen Oilblaze 80116 no coords, Crowd Pummeler
+  -- 6229 no coords).
+
+  -- Letter from Korlag Doomsong: Zuluhed the Whacked (62037), 100%, Dragonmaw Retreat
+  -- (Alliance 41657 and Horde 41883 variants share the drop)
+  if not pfDB["items"]["data-turtle"][41711] then pfDB["items"]["data-turtle"][41711] = {} end
+  if not pfDB["items"]["data-turtle"][41981] then pfDB["items"]["data-turtle"][41981] = {} end
+  pfDB["items"]["data-turtle"][41711]["U"] = { [62037] = 100 }
+  pfDB["items"]["data-turtle"][41981]["U"] = { [62037] = 100 }
+
+  -- Groldan's Stash (41854): object Groldan's Stash (2020239), 60.7,50.7 Grim Reaches, 100%
+  if not pfDB["items"]["data-turtle"][41954] then pfDB["items"]["data-turtle"][41954] = {} end
+  pfDB["items"]["data-turtle"][41954]["O"] = { [2020239] = 100 }
+
+  -- Windtorn Crest Stone (41938, Shaman): Razorgust (62195), Stonetalon, 100%
+  if not pfDB["items"]["data-turtle"][42206] then pfDB["items"]["data-turtle"][42206] = {} end
+  pfDB["items"]["data-turtle"][42206]["U"] = { [62195] = 100 }
+
+  -- Half-Burnt Scroll (42079, Priest): Zandaxxius (63067), Winterspring, 100%
+  if not pfDB["items"]["data-turtle"][42385] then pfDB["items"]["data-turtle"][42385] = {} end
+  pfDB["items"]["data-turtle"][42385]["U"] = { [63067] = 100 }
+
+  -- Dirty Old Ring (60130): Murloc (285), Elwynn Forest, 20%
+  if not pfDB["items"]["data-turtle"][51855] then pfDB["items"]["data-turtle"][51855] = {} end
+  pfDB["items"]["data-turtle"][51855]["U"] = { [285] = 20 }
+
+  -- Shabby Letter (80399): Hexed Troll (3207) 20%, Voodoo Troll (3206) 15%, Durotar
+  if not pfDB["items"]["data-turtle"][59990] then pfDB["items"]["data-turtle"][59990] = {} end
+  pfDB["items"]["data-turtle"][59990]["U"] = { [3207] = 20, [3206] = 15 }
+
+  -- Razormane Orders (40388): Death's Head Cultist (60708), Durotar, 100%
+  if not pfDB["items"]["data-turtle"][60520] then pfDB["items"]["data-turtle"][60520] = {} end
+  pfDB["items"]["data-turtle"][60520]["U"] = { [60708] = 100 }
+
+  -- Letter from Maltimor (40529): Farad Wrightsow (60854), Duskwood, 100%
+  if not pfDB["items"]["data-turtle"][60767] then pfDB["items"]["data-turtle"][60767] = {} end
+  pfDB["items"]["data-turtle"][60767]["U"] = { [60854] = 100 }
+
+  -- Claw of Erennius (41038): Erennius (60747), 100% (coords present in questie-octo data)
+  if not pfDB["items"]["data-turtle"][61652] then pfDB["items"]["data-turtle"][61652] = {} end
+  pfDB["items"]["data-turtle"][61652]["U"] = { [60747] = 100 }
+
   -- Once Upon a Sheep: Lost Farm Sheep (Interaction)
   pfDB["items"]["data-turtle"][51220] = { ["U"] = { [50610] = 100 } }
 
