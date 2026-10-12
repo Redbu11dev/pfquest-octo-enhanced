@@ -1035,6 +1035,15 @@ do -- area trigger
 end
 
 do -- items
+  -- Damaged Relic Mechanism (quest-start items 41799 Alliance / 41802 Horde):
+  -- the extractor left both records as empty {} with no drop source, so the
+  -- Grim Reaches quests 41732/41734 drew no map marker. Shadowforge Appraiser
+  -- (62252) is the only drop source; 4% per octowow.st/db. Merge into existing records.
+  if not pfDB["items"]["data-turtle"][41799] then pfDB["items"]["data-turtle"][41799] = {} end
+  if not pfDB["items"]["data-turtle"][41802] then pfDB["items"]["data-turtle"][41802] = {} end
+  pfDB["items"]["data-turtle"][41799]["U"] = { [62252] = 4 }
+  pfDB["items"]["data-turtle"][41802]["U"] = { [62252] = 4 }
+
   -- Once Upon a Sheep: Lost Farm Sheep (Interaction)
   pfDB["items"]["data-turtle"][51220] = { ["U"] = { [50610] = 100 } }
 
