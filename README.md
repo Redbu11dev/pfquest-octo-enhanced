@@ -9,4 +9,5 @@ Rnhanced version of pfquest for octowow
 
 Same as original pfquest, but does show markers for quests that are dropped from items and objects, and has up-to-date quest data for octowow
 
-<img width="358" height="235" alt="image" src="https://github.com/user-attachments/assets/588aaa04-45c9-4834-9fa8-833b4cec46d6" />
+<img width="940" height="366" alt="image" src="https://github.com/user-attachments/assets/81f7c97b-2029-4dde-8fba-0fe8e1d0718f" />
+
