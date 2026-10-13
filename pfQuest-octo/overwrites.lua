@@ -1093,6 +1093,317 @@ do -- items
   -- Claw of Erennius (41038): Erennius (60747), 100% (coords present in questie-octo data)
   if not pfDB["items"]["data-turtle"][61652] then pfDB["items"]["data-turtle"][61652] = {} end
   pfDB["items"]["data-turtle"][61652]["U"] = { [60747] = 100 }
+  -- Item-start drop links scraped from octowow.st/db item pages (2026-10).
+  -- Covers every quest-starting item that has a real drop source; items
+  -- already hand-verified above are intentionally not repeated here.
+  -- Riverpaw Runt, Gruff Swiftbite, Hogger, Riverpaw Outrunner
+  if not pfDB["items"]["data-turtle"][1307] then pfDB["items"]["data-turtle"][1307] = {} end
+  pfDB["items"]["data-turtle"][1307]["U"] = { [97] = 2, [100] = 100, [448] = 2, [478] = 2 }
+  -- Murloc Coastrunner, Murloc Tidehunter, Murloc Warrior, Old Murk-Eye, Murloc Minor Oracle, Murloc Hunter, Murloc Netter, Murloc Raider, Murloc Oracle, Slark, Brack
+  if not pfDB["items"]["data-turtle"][1357] then pfDB["items"]["data-turtle"][1357] = {} end
+  pfDB["items"]["data-turtle"][1357]["U"] = { [126] = 0.75, [127] = 0.75, [171] = 0.75, [391] = 0.75, [456] = 0.75, [458] = 0.75, [513] = 0.75, [515] = 0.75, [517] = 0.75, [519] = 0.75, [520] = 0.75 }
+  -- Shadowhide Darkweaver, Shadowhide Slayer, Shadowhide Brute, Shadowhide Gnoll, Rabid Shadowhide Gnoll, Shadowhide Warrior, Shadowhide Assassin, Lieutenant Fangore, Rohh the Silent
+  if not pfDB["items"]["data-turtle"][1962] then pfDB["items"]["data-turtle"][1962] = {} end
+  pfDB["items"]["data-turtle"][1962]["U"] = { [429] = 3, [431] = 3, [432] = 3, [433] = 3, [434] = 3, [568] = 3, [579] = 3, [703] = 3, [947] = 3 }
+  -- Defias Bandit, Defias Rogue Wizard, Defias Ambusher, Erlan Drudgemoor, Surena Caledon, Defias Dockmaster, Defias Bodyguard, Defias Dockworker
+  if not pfDB["items"]["data-turtle"][1972] then pfDB["items"]["data-turtle"][1972] = {} end
+  pfDB["items"]["data-turtle"][1972]["U"] = { [116] = 2, [474] = 2, [583] = 2, [880] = 2, [881] = 2, [6846] = 2, [6866] = 2, [6927] = 2 }
+  -- Flesh Eater, Skeletal Warrior, Skeletal Horror, Skeletal Mage, Nightbane Dark Runner, Nightbane Vile Fang, Bone Chewer, Splinter Fist Warrior, Defias Night Runner, Grave Robber, Zzarc' Vul, Stalvan Mistmantle, Insane Ghoul, Mor'Ladim, Skeletal Fiend, Nightbane Shadow Weaver, Brain Eater, Plague Spreader, Skeletal Warder, Skeletal Healer, Splinter Fist Ogre, Splinter Fist Fire Weaver, Splinter Fist Taskmaster, Nightbane Worgen, Defias Night Blade, Defias Enchanter, Nightbane Tainted One, Rotted One, Skeletal Raider, Splinter Fist Firemonger, Fetid Corpse, Blood of Shalla'Aran, Splinter Fist Enslaver, Gutspill, Dragonmaw Enchanter
+  if not pfDB["items"]["data-turtle"][2794] then pfDB["items"]["data-turtle"][2794] = {} end
+  pfDB["items"]["data-turtle"][2794]["U"] = { [3] = 1, [48] = 1, [202] = 1, [203] = 1, [205] = 1, [206] = 1, [210] = 1, [212] = 1, [215] = 1, [218] = 1, [300] = 1, [315] = 1, [511] = 1, [522] = 1, [531] = 1, [533] = 1, [570] = 1, [604] = 1, [785] = 1, [787] = 1, [889] = 1, [891] = 1, [892] = 1, [898] = 1, [909] = 1, [910] = 1, [920] = 1, [948] = 1, [1110] = 1, [1251] = 1, [1270] = 1, [70891] = 1, [1487] = 1, [6170] = 1, [62453] = 1 }
+  -- Rattlecage Soldier, Darkeye Bonecaster, Cracked Skull Soldier
+  if not pfDB["items"]["data-turtle"][2839] then pfDB["items"]["data-turtle"][2839] = {} end
+  pfDB["items"]["data-turtle"][2839]["U"] = { [1520] = 2.5, [1522] = 2.5, [1523] = 2.5 }
+  -- Edwin VanCleef
+  if not pfDB["items"]["data-turtle"][2874] then pfDB["items"]["data-turtle"][2874] = {} end
+  pfDB["items"]["data-turtle"][2874]["U"] = { [639] = 100 }
+  -- Rot Hide Brute, Rot Hide Plague Weaver, Tirisclaw Roamer, Graypaw Roamer, Rot Hide Savage, Raging Rot Hide, Rot Hide Bruiser
+  if not pfDB["items"]["data-turtle"][3317] then pfDB["items"]["data-turtle"][3317] = {} end
+  pfDB["items"]["data-turtle"][3317]["U"] = { [1939] = 2, [1940] = 2, [91986] = 2, [91988] = 2, [1942] = 2, [1943] = 2, [1944] = 2 }
+  -- Shadowy Assassin
+  if not pfDB["items"]["data-turtle"][3668] then pfDB["items"]["data-turtle"][3668] = {} end
+  pfDB["items"]["data-turtle"][3668]["U"] = { [2434] = 100 }
+  -- Mok'rash
+  if not pfDB["items"]["data-turtle"][3985] then pfDB["items"]["data-turtle"][3985] = {} end
+  pfDB["items"]["data-turtle"][3985]["U"] = { [1493] = 86.5031 }
+  -- Zaricotl
+  if not pfDB["items"]["data-turtle"][4613] then pfDB["items"]["data-turtle"][4613] = {} end
+  pfDB["items"]["data-turtle"][4613]["U"] = { [2931] = 100 }
+  -- Bloodscalp Warrior, Bloodscalp Scout, Bloodscalp Hunter, Bloodscalp Berserker, Bloodscalp Witch Doctor, Skullsplitter Warrior, Bloodscalp Headhunter, Venture Co. Strip Miner, Venture Co. Tinkerer, Bloodscalp Axe Thrower, Skullsplitter Axe Thrower, Bloodscalp Shaman, Bloodscalp Beastmaster, Bloodscalp Mystic, Bloodscalp Scavenger, Lost One Mudlurker, Lost One Fisherman, Lost One Hunter, Lost One Muckdweller, Lost One Riftseeker, Swampwalker, Swampwalker Elder, Tangled Horror, Kurzen's Agent, Skullsplitter Mystic, Sergeant Malthus, Stonard Scout, Stonard Explorer, Saltscale Warrior, Saltscale Oracle, Saltscale Tide Lord, Saltscale Hunter, Venture Co. Lumberjack, Kurzen Jungle Fighter, Kurzen Commando, Kurzen Elite, Kurzen Medicine Man, Kurzen Headshrinker, Kurzen Witch Doctor, Kurzen Wrangler, Kurzen Subchief, Kurzen Shadow Hunter, Venture Co. Miner, Venture Co. Geologist, Venture Co. Mechanic, Mosh'Ogg Brute, Mosh'Ogg Witch Doctor, Bloodsail Raider, Bloodsail Mage, Syndicate Footpad, Syndicate Thief, Syndicate Spy, Syndicate Sentry, Syndicate Saboteur, Syndicate Assassin, Syndicate Enforcer, Cave Yeti, Ferocious Yeti, Mountain Yeti, Giant Yeti, Crushridge Ogre, Crushridge Brute, Crushridge Mauler, Crushridge Mage, Crushridge Enforcer, Mug'thol, Dalaran Shield Guard, Dalaran Theurgist, Quest 55030 Custom Objective Trigger, Quest 55048 Custom Objective Trigger, Quest 55211 Custom Objective Trigger, Quest 80800 Custom Objective Trigger, Crushridge Warmonger, Captain Ironhill, Baron Vardus, Argus Shadow Mage, Syndicate Wizard, Dalaran Summoner, Magus Bromley, Ricter, Dermot, Crushridge Plunderer, Grel'borg the Miser, Muckrake, Glommus, Jailor Borhuin, Shadowy Assassin, Witherbark Troll, Witherbark Shadowcaster, Witherbark Axe Thrower, Witherbark Witch Doctor, Witherbark Headhunter, Witherbark Shadow Hunter, Witherbark Berserker, Boulderfist Ogre, Boulderfist Enforcer, Boulderfist Brute, Boulderfist Magus, Boulderfist Mauler, Boulderfist Shaman, Boulderfist Lord, Drywhisker Kobold, Drywhisker Surveyor, Drywhisker Digger, Dabyrie Militia, Dabyrie Laborer, Stromgarde Troll Hunter, Stromgarde Defender, Stromgarde Vindicator, Syndicate Highwayman, Syndicate Pathstalker, Syndicate Prowler, Syndicate Mercenary, Syndicate Conjuror, Syndicate Magus, Daggerspine Raider, Daggerspine Sorceress, Lord Falconcrest, Inuvias Brightlance, Otto, Singer, Kovork, Geomancer Flintdagger, Lieutenant Valorcall, Hammerfall Peon, Hammerfall Grunt, Dalaran Worker, Dustbelcher Ogre, Dustbelcher Brute, Dustbelcher Wyrmhunter, Forsaken Bodyguard, Apothecary Jorell, Stromgarde Cavalryman, Shadowforge Tunneler, Shadowforge Darkweaver, Shadowforge Chanter, Captain Barlgruf, Shadowforge Warrior, Sleeby, Znort, Or'Kalar, Caretaker Alaric, Kor'gresh Coldrage, Stonevault Seer, Stonevault Bonesnapper, Stonevault Shaman, Dustbelcher Warrior, Dustbelcher Mystic, Magregan Deepshadow, Nancy Vishas, Dark Iron Bombardier, Venture Co. Shredder, Scarlet Preserver, Scarlet Scout, Scarlet Magician, Scarlet Sentry, Scarlet Augur, Scarlet Disciple, Scarlet Soldier, Scarlet Gallant, Scarlet Beastmaster, Scarlet Evoker, Scarlet Guardsman, Scarlet Diviner, Scarlet Protector, Scarlet Scryer, Scarlet Sorcerer, Scarlet Myrmidon, Scarlet Adept, Scarlet Conjuror, Scarlet Defender, Scarlet Chaplain, Scarlet Wizard, Scarlet Centurion, Scarlet Champion, Scarlet Abbot, Scarlet Torturer, Unfettered Spirit, Mirefin Puddlejumper, Mirefin Murloc, Mirefin Warrior, Mirefin Muckdweller, Mirefin Coastrunner, Mirefin Oracle, Withervine Creeper, Withervine Bark Ripper, Murkgill Forager, Murkgill Hunter, Murkgill Warrior, Fardel Dabyrie, Kenata Dabyrie, Frostmaw, Scarlet Monk, Kolkar Centaur, Kolkar Scout, Kolkar Mauler, Kolkar Windchaser, Kolkar Battle Lord, Kolkar Destroyer, Magram Scout, Magram Outrunner, Magram Wrangler, Magram Windchaser, Magram Stormer, Magram Pack Runner, Magram Marauder, Magram Mauler, Gelkis Outrunner, Gelkis Scout, Gelkis Stamper, Gelkis Windchaser, Gelkis Earthcaller, Maraudine Scout, Maraudine Wrangler, Maraudine Mauler, Maraudine Windchaser, Maraudine Stormer, Maraudine Marauder, Burning Blade Augur, Burning Blade Reaver, Burning Blade Adept, Burning Blade Felsworn, Burning Blade Shadowmage, Burning Blade Summoner, Hatefury Rogue, Hatefury Trickster, Hatefury Felsworn, Hatefury Betrayer, Hatefury Shadowstalker, Hatefury Hellcaller, Doomwarder, Nether Maiden, Doomwarder Captain, Nether Sister, Nether Sorceress, Slitherblade Naga, Slitherblade Sorceress, Slitherblade Warrior, Slitherblade Myrmidon, Slitherblade Razortail, Slitherblade Tidehunter, Slitherblade Oracle, Slitherblade Sea Witch, Foreman Cozzle, Theramore Infiltrator, Shadowforge Surveyor, Shadowforge Ruffian, Shadowforge Digger, Shadowforge Relic Hunter, Stonevault Cave Lurker, Stonevault Rockchewer, Stonevault Oracle, Stonevault Cave Hunter, Theramore Deserter, Theramore Sentry, Noboru the Cudgel, Khan Dez'hepah, Ongeku, Tyranis Malem, Lord Azrethoc, Jugkar Grim'rod, Achellios the Banished, Warug's Bodyguard, Anguished Dead, Haunting Phantasm, Scarlet Trainee, Stonevault Basher, Shadowforge Geologist, Stonevault Ambusher, Withered Warrior, Withered Reaver, Withered Quilguard, Death's Head Battleguard, Withered Spearhide, Death's Head Geomancer, Death's Head Worshipper, Death's Head Servitor, Death's Head Necromancer, Skeletal Frostweaver, Skeletal Summoner, Splinterbone Warrior, Splinterbone Captain, Splinterbone Centurion, Boneflayer Ghoul, Thorn Eater Ghoul, Frozen Soul, Freezing Spirit, Dun Garok Soldier, Death's Head Cultist, Razorfen Battleguard, Razorfen Thornweaver, Outcast Necromancer, Undead Ravager, Drysnap Crawler, Drysnap Pincer, Maraudine Priest, Ghostly Raider, Gluggle, Marglum Blood-eye, Shadowforge Skinner, Shadowforge Trapper, Shadowforge Wyrm Hunter, Shadowforge Excavator, Borrin Gloombeard, Stonevault Brute, Stonevault Pillager, Deserter Exile, Deserter Turncoat, Blackhorn Mystic, Blackhorn Warrior
+  if not pfDB["items"]["data-turtle"][4614] then pfDB["items"]["data-turtle"][4614] = {} end
+  pfDB["items"]["data-turtle"][4614]["U"] = { [587] = 0.0352, [588] = 0.0283, [595] = 0.014, [597] = 0.0389, [660] = 0.0218, [667] = 0.0387, [671] = 0.0296, [674] = 0.0174, [677] = 0.0237, [694] = 0.0245, [696] = 0.0196, [697] = 0.0272, [699] = 0.0459, [701] = 0.0257, [702] = 0.0212, [755] = 0.0803, [757] = 0.02, [759] = 0.0148, [760] = 0.0133, [762] = 0.0264, [764] = 0.02, [765] = 0.0351, [766] = 0.0446, [775] = 0.08, [780] = 0.0284, [814] = 0.2, [861] = 0.2, [862] = 0.2424, [871] = 0.02, [873] = 0.06, [875] = 0.08, [879] = 0.0534, [921] = 0.08, [937] = 0.0365, [938] = 0.015, [939] = 0.0108, [940] = 0.0174, [941] = 0.0412, [942] = 0.0174, [943] = 0.027, [978] = 0.0181, [979] = 0.02, [1094] = 0.06, [1096] = 0.0249, [1097] = 0.0362, [1142] = 0.0162, [1144] = 0.0214, [1561] = 0.0346, [1562] = 0.0381, [2240] = 0.0133, [2241] = 0.0622, [2242] = 0.0232, [2243] = 0.06, [2245] = 0.0367, [2246] = 0.08, [2247] = 0.0254, [2248] = 0.0268, [2249] = 0.0188, [2250] = 0.0067, [2251] = 0.0216, [2252] = 0.026, [2253] = 0.0384, [2254] = 0.0179, [2255] = 0.0724, [2256] = 0.0467, [2257] = 0.2146, [2271] = 0.0396, [2272] = 0.0136, [91294] = 0.0136, [91296] = 0.0136, [91301] = 0.0136, [91320] = 0.0136, [2287] = 0.019, [2304] = 0.1961, [2306] = 0.12, [2318] = 0.0614, [2319] = 0.06, [2358] = 0.0459, [91350] = 0.0459, [2411] = 0.08, [2413] = 0.04, [2416] = 0.2, [2417] = 0.02, [2421] = 0.1, [2422] = 0.04, [2431] = 0.1, [2434] = 0.155, [2552] = 0.2, [2553] = 0.06, [2554] = 0.0202, [2555] = 0.0128, [2556] = 0.0347, [2557] = 0.04, [2558] = 0.1172, [2562] = 0.0198, [2564] = 0.0303, [2566] = 0.0081, [2567] = 0.027, [2569] = 0.05, [2570] = 0.0461, [2571] = 0.0184, [2572] = 0.0259, [2573] = 0.0301, [2574] = 0.0474, [2581] = 0.1048, [2582] = 0.0096, [2583] = 0.1255, [2584] = 0.0223, [2585] = 0.04, [2586] = 0.0162, [2587] = 0.0248, [2588] = 0.0245, [2589] = 0.0399, [2590] = 0.0524, [2591] = 0.04, [2595] = 0.04, [2596] = 0.04, [2597] = 0.08, [92133] = 0.08, [2599] = 0.04, [2600] = 0.5236, [2603] = 0.3, [2609] = 0.0474, [2612] = 0.2, [2618] = 0.0068, [2619] = 0.0185, [2628] = 0.08, [2701] = 0.0347, [2715] = 0.08, [2716] = 0.03, [2721] = 0.02, [2733] = 0.2, [2738] = 0.22, [2739] = 0.03, [2740] = 0.0191, [2742] = 0.0247, [91766] = 0.0247, [2743] = 0.0392, [2764] = 0.06, [2765] = 0.1852, [2773] = 0.2, [2782] = 0.2, [2793] = 0.06, [2892] = 0.04, [2893] = 0.0175, [2894] = 0.0281, [2906] = 0.0227, [2907] = 0.02, [2932] = 0.2, [3984] = 0.06, [4062] = 0.0466, [4260] = 0.0258, [4280] = 0.02, [4281] = 0.0276, [4282] = 0.08, [4283] = 0.02, [4284] = 0.06, [4285] = 0.021, [4286] = 0.0307, [4287] = 0.0389, [4288] = 0.0474, [4289] = 0.0257, [4290] = 0.0411, [4291] = 0.0442, [4292] = 0.049, [4293] = 0.0345, [4294] = 0.0239, [4295] = 0.0391, [4296] = 0.0744, [4297] = 0.06, [4298] = 0.0388, [4299] = 0.0307, [4300] = 0.051, [4301] = 0.0242, [4302] = 0.0233, [4303] = 0.0634, [4306] = 0.047, [4308] = 0.0385, [4358] = 0.073, [4359] = 0.041, [4360] = 0.054, [4361] = 0.026, [4362] = 0.016, [4363] = 0.028, [4382] = 0.055, [4386] = 0.095, [4457] = 0.0513, [4458] = 0.04, [4461] = 0.2, [4479] = 0.1466, [4480] = 0.06, [4504] = 0.06, [4540] = 0.0286, [4632] = 0.0667, [4633] = 0.037, [4634] = 0.0334, [4635] = 0.0189, [4636] = 0.041, [4637] = 0.0286, [4638] = 0.0752, [4639] = 0.075, [4640] = 0.072, [4641] = 0.0103, [4642] = 0.0159, [4643] = 0.0864, [4644] = 0.0658, [4645] = 0.1, [4646] = 0.0494, [4647] = 0.2, [4648] = 0.0166, [4649] = 0.0504, [4651] = 0.08, [4654] = 0.0658, [4655] = 0.06, [4656] = 0.04, [4657] = 0.04, [4658] = 0.2, [4659] = 0.2, [4663] = 0.0612, [4664] = 0.0346, [4665] = 0.0169, [4666] = 0.008, [4667] = 0.0407, [4668] = 0.04, [4670] = 0.032, [4671] = 0.0467, [4672] = 0.0212, [4673] = 0.03, [4674] = 0.0213, [4675] = 0.0201, [4677] = 0.0313, [4679] = 0.2, [4680] = 0.0248, [4682] = 0.06, [4684] = 0.2, [4711] = 0.0534, [4712] = 0.06, [4713] = 0.06, [4714] = 0.0451, [4715] = 0.1088, [4716] = 0.0971, [4718] = 0.0289, [4719] = 0.0422, [4723] = 0.0722, [4834] = 0.019, [4844] = 0.0247, [4845] = 0.011, [4846] = 0.0345, [4847] = 0.0263, [4850] = 0.0548, [4851] = 0.0154, [4852] = 0.0489, [4856] = 0.0619, [5057] = 0.027, [5184] = 0.03, [5477] = 0.08, [5600] = 0.08, [5622] = 0.06, [5643] = 0.2, [5760] = 0.1616, [5771] = 0.198, [5933] = 0.4219, [6068] = 0.2, [6426] = 0.0305, [6427] = 0.0217, [6575] = 0.0341, [6733] = 0.064, [7030] = 0.0336, [7175] = 0.0624, [7327] = 0.06, [7328] = 0.051, [7329] = 0.0403, [62678] = 0.0403, [7332] = 0.0446, [7335] = 0.0234, [62676] = 0.0234, [62677] = 0.0234, [7337] = 0.0322, [7341] = 0.0199, [7342] = 0.0497, [7344] = 0.0146, [7345] = 0.1121, [7346] = 0.0347, [7347] = 0.0358, [7348] = 0.0308, [7352] = 0.02, [7353] = 0.0194, [7360] = 0.2, [7872] = 0.0634, [7873] = 0.0405, [7874] = 0.0459, [11559] = 0.0563, [11561] = 0.0219, [11562] = 0.0069, [11563] = 0.0109, [11685] = 0.0454, [11686] = 0.0176, [14487] = 5.618, [60714] = 0.054, [60903] = 0.0392, [60904] = 0.0392, [60905] = 0.0392, [60907] = 0.0392, [60908] = 0.0392, [60918] = 0.0175, [60919] = 0.0175, [60939] = 0.0264, [60940] = 0.0264, [60942] = 0.0346, [60943] = 0.0346 }
+  -- Ghost Howl
+  if not pfDB["items"]["data-turtle"][4854] then pfDB["items"]["data-turtle"][4854] = {} end
+  pfDB["items"]["data-turtle"][4854]["U"] = { [3056] = 100 }
+  -- Gazz'uz
+  if not pfDB["items"]["data-turtle"][4903] then pfDB["items"]["data-turtle"][4903] = {} end
+  pfDB["items"]["data-turtle"][4903]["U"] = { [3204] = 100 }
+  -- Lakota'mani
+  if not pfDB["items"]["data-turtle"][5099] then pfDB["items"]["data-turtle"][5099] = {} end
+  pfDB["items"]["data-turtle"][5099]["U"] = { [3474] = 100 }
+  -- Owatanka
+  if not pfDB["items"]["data-turtle"][5102] then pfDB["items"]["data-turtle"][5102] = {} end
+  pfDB["items"]["data-turtle"][5102]["U"] = { [3473] = 100 }
+  -- Washte Pawne
+  if not pfDB["items"]["data-turtle"][5103] then pfDB["items"]["data-turtle"][5103] = {} end
+  pfDB["items"]["data-turtle"][5103]["U"] = { [3472] = 100 }
+  -- Silithid Harvester
+  if not pfDB["items"]["data-turtle"][5138] then pfDB["items"]["data-turtle"][5138] = {} end
+  pfDB["items"]["data-turtle"][5138]["U"] = { [3253] = 100 }
+  -- Blackmoss the Fetid
+  if not pfDB["items"]["data-turtle"][5179] then pfDB["items"]["data-turtle"][5179] = {} end
+  pfDB["items"]["data-turtle"][5179]["U"] = { [3535] = 100 }
+  -- Twilight Disciple, Twilight Thug
+  if not pfDB["items"]["data-turtle"][5352] then pfDB["items"]["data-turtle"][5352] = {} end
+  pfDB["items"]["data-turtle"][5352]["U"] = { [2338] = 5, [2339] = 5 }
+  -- Silithid Searcher, Silithid Invader, Silithid Ravager, Silithid Hive Drone
+  if not pfDB["items"]["data-turtle"][5877] then pfDB["items"]["data-turtle"][5877] = {} end
+  pfDB["items"]["data-turtle"][5877]["U"] = { [4130] = 50, [4131] = 50, [4132] = 50, [4133] = 50 }
+  -- Shadowforge Surveyor, Shadowforge Ruffian, Shadowforge Digger, Stonevault Rockchewer, Stonevault Oracle, Stonevault Cave Hunter, Thromrar Darkflame
+  if not pfDB["items"]["data-turtle"][7666] then pfDB["items"]["data-turtle"][7666] = {} end
+  pfDB["items"]["data-turtle"][7666]["U"] = { [4844] = 6, [4845] = 6, [4846] = 6, [4851] = 7, [4852] = 12, [4856] = 6, [62725] = 12 }
+  -- Glasshide Basilisk, Glasshide Gazer, Glasshide Petrifier, Scorpid Hunter, Scorpid Tail Lasher, Scorpid Dunestalker, Starving Blisterpaw, Blisterpaw Hyena, Rabid Blisterpaw, Roc, Fire Roc, Searing Roc, Surf Glider, Hazzali Wasp, Hazzali Stinger, Hazzali Swarmer, Hazzali Worker, Hazzali Tunneler, Hazzali Sandreaver, Centipaar Wasp, Centipaar Stinger, Centipaar Swarmer, Centipaar Worker, Centipaar Tunneler, Centipaar Sandreaver, Land Rager, Tarqsiku, Coast Strider, Dune Smasher, Raging Dune Smasher, Dunemaul Ogre, Dunemaul Enforcer, Dunemaul Ogre Mage, Dunemaul Brute, Dunemaul Warlock, Thistleshrub Dew Collector, Thistleshrub Rootshaper, Gnarled Thistleshrub, Wastewander Rogue, Wastewander Thief, Wastewander Shadow Mage, Wastewander Bandit, Wastewander Assassin, Sandfury Hideskinner, Sandfury Axe Thrower, Sandfury Firecaller, Sandfury Shadowcaster, Sandfury Blood Drinker, Sandfury Witch Doctor, Sandfury Shadowhunter, Sandfury Soul Eater, Scarab, Theka the Martyr, Sandfury Executioner, Zul'Farrak Dead Hero, Zul'Farrak Zombie, Sergeant Bly, Raven, Oro Eyegouge, Murta Grimgut, Hydromancer Velratha, Nekrum Gutchewer, Ruuzlu, Scorpid Duneburrower, Caliph Scorpidsting, Southsea Pirate, Southsea Freebooter, Southsea Dock Worker, Southsea Swashbuckler, Andre Firebeard, Treasure Hunting Pirate, Treasure Hunting Buccaneer, Sul'lithuz Sandcrawler, Sul'lithuz Abomination, Jin'Zallah the Sandbringer, Kregg Keelhaul, Haarka the Ravenous, Gusting Vortex, Ground Pounder, Living Storm, Sandarr Dunereaver, Dustwraith, Zerillis, Gor'marok the Ravager, Sandfury Ritualist
+  if not pfDB["items"]["data-turtle"][8623] then pfDB["items"]["data-turtle"][8623] = {} end
+  pfDB["items"]["data-turtle"][8623]["U"] = { [5419] = 0.6, [5420] = 0.3, [5421] = 0.4, [5422] = 0.6, [5423] = 0.4, [5424] = 0.4, [5425] = 0.5, [5426] = 0.3, [5427] = 0.3, [5428] = 0.6, [5429] = 0.4, [5430] = 0.5, [5431] = 0.3, [5441] = 0.7, [5450] = 0.5, [5451] = 0.7, [5452] = 0.7, [5453] = 0.4, [5454] = 1.2, [5455] = 0.5, [5456] = 0.6, [5457] = 0.6, [5458] = 0.3, [5459] = 0.8, [5460] = 0.9, [5465] = 0.3, [60544] = 0.3, [5466] = 0.2, [5469] = 0.2, [5470] = 2, [5471] = 0.3, [5472] = 0.3, [5473] = 0.4, [5474] = 0.3, [5475] = 0.4, [5481] = 0.3, [5485] = 0.4, [5490] = 0.3, [5615] = 0.5, [5616] = 0.5, [5617] = 0.5, [5618] = 0.5, [5623] = 0.5, [5645] = 0.5, [5646] = 0.4, [5647] = 0.5, [5648] = 0.8, [5649] = 0.8, [5650] = 0.8, [7246] = 0.9, [7247] = 0.7, [7269] = 1.2, [7272] = 0.6, [7274] = 0.8, [7276] = 2, [7286] = 2, [7604] = 0.5, [7605] = 0.8, [7606] = 1.1, [7608] = 0.7, [7795] = 0.7, [7796] = 2, [7797] = 0.9, [7803] = 2, [7847] = 0.4, [7855] = 0.5, [7856] = 0.5, [7857] = 0.6, [7858] = 0.6, [7883] = 0.4, [7899] = 2, [7902] = 2, [8095] = 1, [8120] = 1.1, [8200] = 1.2, [8203] = 0.2, [8205] = 1.2, [8667] = 1, [9396] = 2, [9397] = 3, [10080] = 1, [10081] = 0.3, [10082] = 2, [12046] = 0.5, [62500] = 0.9 }
+  -- Saltwater Snapjaw, Vilebranch Axe Thrower, Vilebranch Witch Doctor, Vilebranch Headhunter, Vilebranch Shadowcaster, Vilebranch Berserker, Vilebranch Hideskinner, Vilebranch Shadow Hunter, Vilebranch Blood Drinker, Vilebranch Soul Eater, Vilebranch Aman'zasi Guard, Witherbark Scalper, Witherbark Zealot, Witherbark Hideskinner, Witherbark Venomblood, Witherbark Sadist, Witherbark Caller, Green Sludge, Jade Ooze, Trained Razorbeak, Razorbeak Gryphon, Razorbeak Skylord, Vilebranch Wolf Pup, Vilebranch Raiding Wolf, Witherbark Broodguard, Highvale Outrunner, Highvale Scout, Highvale Marksman, Highvale Ranger, High Elf Ranger, Ashylah Starcaller, Revantusk Watcher, Shadra, Mangy Silvermane, Brown Fox, Silvermane Wolf, Silvermane Howler, Silvermane Stalker, Vicious Owlbeast, Primitive Owlbeast, Savage Owlbeast, Vilebranch Warrior, Vilebranch Scalper, Vilebranch Soothsayer, Jade Sludge, Emerald Ooze, Marauding Owlbeast, Vilebranch Ambusher, Gammerita, Vile Priestess Hexx, Qiaga the Keeper, Razortalon, Jalinde Summerdrake, Mith'rethis the Enchanter, Zul'arek Hatefowler, Morta'gya the Keeper, Hitah'ya the Keeper, Witherbark Pathfinder
+  if not pfDB["items"]["data-turtle"][8704] then pfDB["items"]["data-turtle"][8704] = {} end
+  pfDB["items"]["data-turtle"][8704]["U"] = { [2505] = 1, [2639] = 1, [2640] = 1, [2641] = 1, [2642] = 1, [2643] = 1, [2644] = 1, [2645] = 1, [2646] = 1, [2647] = 1, [2648] = 1, [2649] = 1, [2650] = 1, [2651] = 1, [2652] = 1, [2653] = 1, [2654] = 1, [2655] = 1, [2656] = 1, [2657] = 1, [2658] = 1, [2659] = 1, [2680] = 1, [2681] = 1, [2686] = 1, [2691] = 1, [2692] = 1, [2693] = 1, [2694] = 1, [80230] = 1, [80242] = 1, [80800] = 1, [2707] = 2, [2923] = 1, [80255] = 1, [2924] = 1, [2925] = 1, [2926] = 1, [2927] = 1, [2928] = 1, [2929] = 1, [4465] = 1, [4466] = 1, [4467] = 1, [4468] = 1, [4469] = 1, [7808] = 2, [7809] = 2, [7977] = 1, [7995] = 1, [7996] = 1, [8210] = 1, [8214] = 2.5, [8217] = 1, [8219] = 2.5, [8636] = 1, [10802] = 1, [91787] = 1 }
+  -- Gordunni Ogre, Gordunni Brute, Gordunni Mauler, Gordunni Shaman, Gordunni Ogre Mage, Gordunni Battlemaster, Furious Ogre, Gordunni Mage-Lord, Gordunni Warlock, Gordunni Warlord, Tu'whak, Zukk'ash Stinger, Zukk'ash Wasp, Zukk'ash Worker, Zukk'ash Tunneler, Woodpaw Mongrel, Woodpaw Trapper, Woodpaw Brute, Woodpaw Mystic, Woodpaw Reaver, Woodpaw Alpha, Groddoc Ape, Groddoc Thunderer, Ironfur Bear, Grizzled Ironfur Bear, Ironfur Patriarch, Sprite Dragon, Sprite Darter, Longtooth Runner, Longtooth Howler, Rabid Longtooth, Feral Scar Yeti, Hulking Feral Scar, Enraged Feral Scar, Rage Scar Yeti, Elder Rage Scar, Ferocious Rage Scar, Frayfeather Hippogryph, Frayfeather Stagwing, Frayfeather Skystormer, Frayfeather Patriarch, Vale Screecher, Rogue Vale Screecher, Coast Crawl Snapclaw, Coast Crawl Deepseer, Hatecrest Warrior, Hatecrest Wave Rider, Hatecrest Serpent Guard, Hatecrest Myrmidon, Hatecrest Screamer, Hatecrest Sorceress, Hatecrest Siren, Lady Szallah, Bloodroar the Stalker, Antilus the Soarer, Arash-ethis, Qirot, Old Grizzlegut, Snarler, Land Walker, Cliff Giant, Shore Strider, Deep Strider, Wave Strider, Northspring Harpy, Northspring Roguefeather, Northspring Slayer, Northspring Windcaller, Sea Elemental, Sea Spray, Cursed Sycamore, Wandering Forest Walker, Grimtotem Raider, Grimtotem Naturalist, Grimtotem Shaman, Lurking Feral Scar, Edana Hatetalon, Lord Shalzaru, Zapped Shore Strider, Zapped Land Walker, Zapped Wave Strider, Zapped Deep Strider, Zapped Cliff Giant, Stinglasher, Venomlash Chimaera, Dunebound Chimaera, Marat Grimtotem, Enraged Water Elemental
+  if not pfDB["items"]["data-turtle"][8705] then pfDB["items"]["data-turtle"][8705] = {} end
+  pfDB["items"]["data-turtle"][8705]["U"] = { [5229] = 1, [5232] = 1, [5234] = 1, [5236] = 1, [5237] = 1, [5238] = 1, [60430] = 1, [5239] = 1, [5240] = 1, [5241] = 1, [60431] = 1, [5244] = 1, [5245] = 1, [5246] = 1, [5247] = 1, [5249] = 1, [5251] = 1, [5253] = 1, [5254] = 1, [5255] = 1, [5258] = 1, [5260] = 1, [5262] = 1, [5268] = 1, [5272] = 1, [5274] = 1, [5276] = 2.5, [5278] = 1, [5286] = 1, [5287] = 1, [5288] = 1, [5292] = 1, [5293] = 1, [5295] = 1, [5296] = 1, [5297] = 1, [5299] = 1, [5300] = 1, [5304] = 1, [5305] = 1, [5306] = 1, [5307] = 1, [5308] = 1, [5327] = 2.5, [5328] = 2.5, [5331] = 1, [5332] = 1, [5333] = 1, [5334] = 1, [5335] = 1, [5336] = 1, [5337] = 1, [5343] = 1, [5346] = 2.5, [5347] = 2.5, [5349] = 2.5, [5350] = 2.5, [5352] = 2.5, [5356] = 2.5, [5357] = 2.5, [5358] = 1, [5359] = 2.5, [5360] = 1, [5361] = 1, [5362] = 1, [5363] = 1, [5364] = 1, [5366] = 1, [5461] = 1, [5462] = 1, [5881] = 1, [7584] = 1, [7725] = 1, [7726] = 1, [7727] = 1, [7848] = 2, [8075] = 2, [8136] = 1, [14603] = 2, [14604] = 2, [14638] = 2, [14639] = 2, [14640] = 2, [14661] = 1, [61596] = 1, [61597] = 1, [61598] = 1, [91967] = 1 }
+  -- Dark Iron Agent
+  if not pfDB["items"]["data-turtle"][9326] then pfDB["items"]["data-turtle"][9326] = {} end
+  pfDB["items"]["data-turtle"][9326]["U"] = { [6212] = 35 }
+  -- Margol the Rager
+  if not pfDB["items"]["data-turtle"][10000] then pfDB["items"]["data-turtle"][10000] = {} end
+  pfDB["items"]["data-turtle"][10000]["U"] = { [5833] = 100 }
+  -- Mutanus the Devourer
+  if not pfDB["items"]["data-turtle"][10441] then pfDB["items"]["data-turtle"][10441] = {} end
+  pfDB["items"]["data-turtle"][10441]["U"] = { [3654] = 100 }
+  -- Shade of Eranikus
+  if not pfDB["items"]["data-turtle"][10454] then pfDB["items"]["data-turtle"][10454] = {} end
+  pfDB["items"]["data-turtle"][10454]["U"] = { [5709] = 100 }
+  -- Aean Swiftriver
+  if not pfDB["items"]["data-turtle"][10621] then pfDB["items"]["data-turtle"][10621] = {} end
+  pfDB["items"]["data-turtle"][10621]["U"] = { [5797] = 100 }
+  -- Devilsaur, Ironhide Devilsaur, Tyrant Devilsaur, Stegodon, Plated Stegodon, Spiked Stegodon, Thunderstomp Stegodon, Ravasaur, Ravasaur Runner, Ravasaur Hunter, Venomhide Ravasaur, Bloodpetal Lasher, Bloodpetal Flayer, Bloodpetal Thresher, Bloodpetal Trapper, Un'Goro Stomper, Un'Goro Gorilla, Un'Goro Thunderer, Tar Beast, Tar Lurker, Tar Lord, Tar Creeper, Gorishi Wasp, Gorishi Worker, Gorishi Reaver, Gorishi Stinger, Gorishi Tunneler, Muculent Ooze, Primal Ooze, Glutinous Ooze, Stone Guardian, Ravasaur Matriarch, Clutchmother Zavas, Gruff, King Mosh, Uhk'loc, Young Diemetradon, Diemetradon, Elder Diemetradon, Fledgling Pterrordax, Pterrordax, Frenzied Pterrordax, Cloned Ooze, Gargantuan Ooze, Lar'korwi Mate, Lar'korwi, Gorishi Hive Guard, Gorishi Hive Queen
+  if not pfDB["items"]["data-turtle"][11116] then pfDB["items"]["data-turtle"][11116] = {} end
+  pfDB["items"]["data-turtle"][11116]["U"] = { [6498] = 1.5965, [6499] = 1.7378, [6500] = 1.2841, [6501] = 2.3121, [6502] = 1.1869, [6503] = 0.5848, [6504] = 3.04, [6505] = 4.0442, [6506] = 4.475, [6507] = 2.7924, [6508] = 2.8728, [6509] = 1.6894, [6510] = 1.7449, [6511] = 1.6002, [6512] = 1.0198, [6513] = 1.1161, [6514] = 1.1668, [6516] = 0.9665, [6517] = 1.3231, [6518] = 1.3225, [6519] = 1.285, [6527] = 1.1345, [6551] = 2.0743, [6552] = 2.1277, [6553] = 1.6409, [6554] = 1.1597, [6555] = 0.9337, [6556] = 1.5904, [6557] = 0.7584, [6559] = 0.4216, [6560] = 0.4807, [6581] = 2.649, [6582] = 2.08, [6583] = 0.56, [6584] = 2.28, [6585] = 1.72, [9162] = 1.904, [9163] = 1.1497, [9164] = 0.8481, [9165] = 1.7785, [9166] = 0.8915, [9167] = 0.8876, [9477] = 0.6243, [9621] = 1.36, [9683] = 1.8148, [9684] = 0.2913, [10040] = 0.2833, [10041] = 0.48 }
+  -- Anvilrage Guardsman, Anvilrage Footman, Anvilrage Soldier, Anvilrage Medic, Anvilrage Officer, Shadowforge Peasant, Doomforge Craftsman, Anvilrage Marshal, Doomforge Dragoon, Doomforge Arcanasmith, Shadowforge Citizen, Anvilrage Captain, Shadowforge Senator, Warbringer Construct, Ragereaver Golem, Wrath Hammer Construct, Molten War Golem, Fireguard, Blazing Fireguard, Fireguard Destroyer, Twilight's Hammer Torturer, Twilight Emissary, Twilight Bodyguard, Twilight's Hammer Ambassador, Arena Spectator, Quarry Slave, Weapon Technician, Bloodhound, Bloodhound Mastiff, Panzor the Invincible, The Behemoth, Dredge Worm, Deep Stinger, Dark Screecher, Burrowing Thundersnout, Princess Moira Bronzebeard, High Priestess of Thaurissan, Borer Beetle, Cave Creeper, Golem Lord Argelmach, Bael'Gar, Lord Incendius, High Interrogator Gerstahn, Emperor Dagran Thaurissan, Pyromancer Loregrain, Lord Roccor, Overmaster Pyron, Gorosh the Dervish, Grizzle, Eviscerator, Ok'thor the Breaker, Anub'shiah, Hedrum the Creeper, General Angerforge, Warder Stilgiss, Verek, Fineous Darkvire, Ambassador Flamelash, Houndmaster Grebmar, Twilight's Hammer Executioner, Dark Keeper Pelver, Dark Guard, Watchman Doomgrip, Plugger Spazzring, Phalanx, Hurley Blackbreath, Blackbreath Crony, Ribbly Screwspigot, Grim Patron, Guzzling Patron, Hammered Patron, Ograbisi, Shill Dinger, Crest Killer, Jaz, Magmus, Ribbly's Crony
+  if not pfDB["items"]["data-turtle"][11446] then pfDB["items"]["data-turtle"][11446] = {} end
+  pfDB["items"]["data-turtle"][11446]["U"] = { [8891] = 25, [8892] = 25, [8893] = 25, [8894] = 25, [8895] = 25, [8896] = 25, [8897] = 25, [8898] = 25, [8899] = 25, [8900] = 25, [8902] = 25, [8903] = 25, [8904] = 25, [8905] = 25, [8906] = 25, [8907] = 25, [8908] = 25, [8909] = 25, [8910] = 25, [8911] = 25, [8912] = 25, [8913] = 25, [8914] = 25, [8915] = 25, [8916] = 25, [8917] = 25, [8920] = 25, [8921] = 25, [8922] = 25, [8923] = 25, [8924] = 25, [8925] = 25, [8926] = 25, [8927] = 25, [8928] = 25, [8929] = 25, [10076] = 25, [8932] = 25, [8933] = 25, [8983] = 25, [9016] = 25, [9017] = 25, [9018] = 25, [9019] = 25, [9024] = 25, [9025] = 25, [9026] = 25, [9027] = 25, [9028] = 25, [9029] = 25, [9030] = 25, [9031] = 25, [9032] = 25, [9033] = 25, [9041] = 25, [9042] = 25, [9056] = 25, [9156] = 25, [9319] = 25, [9398] = 25, [9443] = 25, [9445] = 25, [9476] = 25, [9499] = 25, [9502] = 25, [9537] = 25, [9541] = 25, [9543] = 25, [9545] = 25, [9547] = 25, [9554] = 25, [9677] = 25, [9678] = 25, [9680] = 25, [9681] = 25, [9938] = 25, [10043] = 25 }
+  -- Xavaric
+  if not pfDB["items"]["data-turtle"][11668] then pfDB["items"]["data-turtle"][11668] = {} end
+  pfDB["items"]["data-turtle"][11668]["U"] = { [10648] = 100 }
+  -- Dark Iron Steamsmith, Dark Iron Slaver, Dark Iron Taskmaster, Dark Iron Sentry, Dark Iron Lookout, Dark Iron Kidnapper
+  if not pfDB["items"]["data-turtle"][11818] then pfDB["items"]["data-turtle"][11818] = {} end
+  pfDB["items"]["data-turtle"][11818]["U"] = { [5840] = 4, [5844] = 4, [5846] = 4, [8504] = 4, [8566] = 4, [15692] = 4 }
+  -- Crazed Owlbeast, Moontouched Owlbeast, Berserk Owlbeast
+  if not pfDB["items"]["data-turtle"][12558] then pfDB["items"]["data-turtle"][12558] = {} end
+  pfDB["items"]["data-turtle"][12558]["U"] = { [7452] = 50, [7453] = 50, [7454] = 50 }
+  -- Galak Messenger
+  if not pfDB["items"]["data-turtle"][12564] then pfDB["items"]["data-turtle"][12564] = {} end
+  pfDB["items"]["data-turtle"][12564]["U"] = { [10617] = 100 }
+  -- Winterfall Ursa, Winterfall Shaman, Winterfall Den Watcher, Winterfall Totemic, Winterfall Pathfinder, Winterfall Runner
+  if not pfDB["items"]["data-turtle"][12771] then pfDB["items"]["data-turtle"][12771] = {} end
+  pfDB["items"]["data-turtle"][12771]["U"] = { [7438] = 10, [7439] = 10, [7440] = 10, [7441] = 10, [7442] = 10, [10916] = 10 }
+  -- Overlord Wyrmthalak
+  if not pfDB["items"]["data-turtle"][12780] then pfDB["items"]["data-turtle"][12780] = {} end
+  pfDB["items"]["data-turtle"][12780]["U"] = { [9568] = 100 }
+  -- High Chief Winterfall
+  if not pfDB["items"]["data-turtle"][12842] then pfDB["items"]["data-turtle"][12842] = {} end
+  pfDB["items"]["data-turtle"][12842]["U"] = { [10738] = 100 }
+  -- Jaedenar Enforcer, Jaedenar Darkweaver, Jaedenar Warlock, Jaedenar Legionnaire, Ulathek
+  if not pfDB["items"]["data-turtle"][13140] then pfDB["items"]["data-turtle"][13140] = {} end
+  pfDB["items"]["data-turtle"][13140]["U"] = { [7114] = 3.4631, [7118] = 3.6381, [7120] = 3.4858, [9862] = 2.6372, [14523] = 3.0488 }
+  -- Grand Crusader Dathrohan, Balnazzar
+  if not pfDB["items"]["data-turtle"][13250] then pfDB["items"]["data-turtle"][13250] = {} end
+  pfDB["items"]["data-turtle"][13250]["U"] = { [10812] = 100, [10813] = 100 }
+  -- Plagued Hatchling
+  if not pfDB["items"]["data-turtle"][13920] then pfDB["items"]["data-turtle"][13920] = {} end
+  pfDB["items"]["data-turtle"][13920]["U"] = { [10678] = 6 }
+  -- Ursangous
+  if not pfDB["items"]["data-turtle"][16303] then pfDB["items"]["data-turtle"][16303] = {} end
+  pfDB["items"]["data-turtle"][16303]["U"] = { [12678] = 100 }
+  -- Shadumbra
+  if not pfDB["items"]["data-turtle"][16304] then pfDB["items"]["data-turtle"][16304] = {} end
+  pfDB["items"]["data-turtle"][16304]["U"] = { [12677] = 100 }
+  -- Sharptalon
+  if not pfDB["items"]["data-turtle"][16305] then pfDB["items"]["data-turtle"][16305] = {} end
+  pfDB["items"]["data-turtle"][16305]["U"] = { [12676] = 100 }
+  -- Tideress
+  if not pfDB["items"]["data-turtle"][16408] then pfDB["items"]["data-turtle"][16408] = {} end
+  pfDB["items"]["data-turtle"][16408]["U"] = { [12759] = 100 }
+  -- Baron Aquanis
+  if not pfDB["items"]["data-turtle"][16782] then pfDB["items"]["data-turtle"][16782] = {} end
+  pfDB["items"]["data-turtle"][16782]["U"] = { [12876] = 100 }
+  -- Blackfathom Tide Priestess
+  if not pfDB["items"]["data-turtle"][16790] then pfDB["items"]["data-turtle"][16790] = {} end
+  pfDB["items"]["data-turtle"][16790]["U"] = { [4802] = 33 }
+  -- Charlga Razorflank
+  if not pfDB["items"]["data-turtle"][17008] then pfDB["items"]["data-turtle"][17008] = {} end
+  pfDB["items"]["data-turtle"][17008]["U"] = { [4421] = 100 }
+  -- Magister Kalendris, Illyanna Ravenoak, Tendris Warpwood, Zevrim Thornhoof, Alzzin the Wildshaper, Immol'thar, King Gordok, Hydrospawn, Guard Fengus, Guard Slip'kik, Cho'Rush the Observer, Captain Kromcrush, Lethtendris, Pimgib, Pusillin, Zevrim Thornhoof, Hydrospawn, Pusillin, Alzzin the Wildshaper
+  if not pfDB["items"]["data-turtle"][18356] then pfDB["items"]["data-turtle"][18356] = {} end
+  pfDB["items"]["data-turtle"][18356]["U"] = { [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18356]["O"] = { [179548] = 0.7 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18357] then pfDB["items"]["data-turtle"][18357] = {} end
+  pfDB["items"]["data-turtle"][18357]["U"] = { [11458] = 0.02, [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18357]["O"] = { [179548] = 0.9 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18358] then pfDB["items"]["data-turtle"][18358] = {} end
+  pfDB["items"]["data-turtle"][18358]["U"] = { [11450] = 0.02, [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18358]["O"] = { [179548] = 4.3 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18359] then pfDB["items"]["data-turtle"][18359] = {} end
+  pfDB["items"]["data-turtle"][18359]["U"] = { [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18359]["O"] = { [179548] = 0.6 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18360] then pfDB["items"]["data-turtle"][18360] = {} end
+  pfDB["items"]["data-turtle"][18360]["U"] = { [11450] = 0.02, [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18360]["O"] = { [179548] = 1.5 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18361] then pfDB["items"]["data-turtle"][18361] = {} end
+  pfDB["items"]["data-turtle"][18361]["U"] = { [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18361]["O"] = { [179548] = 4.3 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18362] then pfDB["items"]["data-turtle"][18362] = {} end
+  pfDB["items"]["data-turtle"][18362]["U"] = { [11483] = 0.02, [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18362]["O"] = { [179548] = 2 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18363] then pfDB["items"]["data-turtle"][18363] = {} end
+  pfDB["items"]["data-turtle"][18363]["U"] = { [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18363]["O"] = { [179548] = 1.8 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18364] then pfDB["items"]["data-turtle"][18364] = {} end
+  pfDB["items"]["data-turtle"][18364]["U"] = { [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18364]["O"] = { [179548] = 1.4 } -- A Dusty Tome (Dire Maul)
+  if not pfDB["items"]["data-turtle"][18401] then pfDB["items"]["data-turtle"][18401] = {} end
+  pfDB["items"]["data-turtle"][18401]["U"] = { [11487] = 0.2, [11488] = 0.2, [11489] = 0.2, [11490] = 10, [11492] = 10, [11496] = 0.2, [11501] = 0.2, [13280] = 10, [14321] = 0.2, [14323] = 0.2, [14324] = 0.2, [14325] = 0.2, [14327] = 0.2, [14349] = 0.2, [14354] = 10 }
+  pfDB["items"]["data-turtle"][18401]["O"] = { [179548] = 0.2 } -- A Dusty Tome (Dire Maul)
+  -- Head of Onyxia (Horde 7490): Onyxia (10184), 100%
+  if not pfDB["items"]["data-turtle"][18422] then pfDB["items"]["data-turtle"][18422] = {} end
+  pfDB["items"]["data-turtle"][18422]["U"] = { [10184] = 100 }
+  -- Onyxia
+  if not pfDB["items"]["data-turtle"][18423] then pfDB["items"]["data-turtle"][18423] = {} end
+  pfDB["items"]["data-turtle"][18423]["U"] = { [10184] = 100 }
+  -- Rage Scar Yeti, Elder Rage Scar, Ferocious Rage Scar, Lurking Feral Scar
+  if not pfDB["items"]["data-turtle"][18969] then pfDB["items"]["data-turtle"][18969] = {} end
+  pfDB["items"]["data-turtle"][18969]["U"] = { [5296] = 3, [5297] = 3, [5299] = 3, [7848] = 3 }
+  -- Rage Scar Yeti, Elder Rage Scar, Ferocious Rage Scar, Lurking Feral Scar
+  if not pfDB["items"]["data-turtle"][18972] then pfDB["items"]["data-turtle"][18972] = {} end
+  pfDB["items"]["data-turtle"][18972]["U"] = { [5296] = 3, [5297] = 3, [5299] = 3, [7848] = 3 }
+  -- Scarshield Quartermaster
+  if not pfDB["items"]["data-turtle"][18987] then pfDB["items"]["data-turtle"][18987] = {} end
+  pfDB["items"]["data-turtle"][18987]["U"] = { [9046] = 100 }
+  -- Nefarian
+  if not pfDB["items"]["data-turtle"][19002] then pfDB["items"]["data-turtle"][19002] = {} end
+  pfDB["items"]["data-turtle"][19002]["U"] = { [11583] = 100 }
+  -- Nefarian
+  if not pfDB["items"]["data-turtle"][19003] then pfDB["items"]["data-turtle"][19003] = {} end
+  pfDB["items"]["data-turtle"][19003]["U"] = { [11583] = 100 }
+  -- Prince Thunderaan
+  if not pfDB["items"]["data-turtle"][19018] then pfDB["items"]["data-turtle"][19018] = {} end
+  pfDB["items"]["data-turtle"][19018]["U"] = { [14435] = 100 }
+  -- Hakkar
+  if not pfDB["items"]["data-turtle"][19802] then pfDB["items"]["data-turtle"][19802] = {} end
+  pfDB["items"]["data-turtle"][19802]["U"] = { [14834] = 100 }
+  -- Burning Blade Augur, Burning Blade Reaver, Burning Blade Adept, Burning Blade Felsworn, Burning Blade Shadowmage, Burning Blade Summoner, Burning Blade Invoker, Burning Blade Seer
+  if not pfDB["items"]["data-turtle"][20310] then pfDB["items"]["data-turtle"][20310] = {} end
+  pfDB["items"]["data-turtle"][20310]["U"] = { [4663] = 2, [4664] = 2, [4665] = 2, [4666] = 2, [4667] = 2, [4668] = 2, [4705] = 2, [13019] = 2 }
+  -- Hive'Ashi Stinger, Hive'Ashi Worker, Hive'Ashi Defender, Hive'Ashi Sandstalker, Hive'Ashi Swarmer, Hive'Zora Waywatcher, Hive'Zora Tunneler, Hive'Zora Wasp, Hive'Zora Reaver, Hive'Zora Hive Sister, Hive'Regal Ambusher, Hive'Regal Burrower, Hive'Regal Spitfire, Hive'Regal Slavemaker, Hive'Regal Hive Lord, Hive'Ashi Drone, Hive'Ashi Ambusher
+  if not pfDB["items"]["data-turtle"][20461] then pfDB["items"]["data-turtle"][20461] = {} end
+  pfDB["items"]["data-turtle"][20461]["U"] = { [11698] = 1.98, [11721] = 2.12, [11722] = 2.08, [11723] = 2.2, [11724] = 2.32, [11725] = 2.98, [11726] = 3.04, [11727] = 1.28, [11728] = 2.6, [11729] = 2.4, [11730] = 3.22, [11731] = 2.32, [11732] = 2.92, [11733] = 3, [11734] = 3.469, [13136] = 7.92, [13301] = 8.36 }
+  -- Ysondre, Ysondre, Lethon, Lethon, Emeriss, Emeriss, Taerar, Taerar
+  if not pfDB["items"]["data-turtle"][20644] then pfDB["items"]["data-turtle"][20644] = {} end
+  pfDB["items"]["data-turtle"][20644]["U"] = { [14887] = 100, [63112] = 100, [14888] = 100, [63109] = 100, [14889] = 100, [63110] = 100, [14890] = 100, [63111] = 100 }
+  -- Deadwood Den Watcher, Deadwood Avenger, Deadwood Shaman
+  if not pfDB["items"]["data-turtle"][20741] then pfDB["items"]["data-turtle"][20741] = {} end
+  pfDB["items"]["data-turtle"][20741]["U"] = { [7156] = 3.1967, [7157] = 3.2615, [7158] = 3.1514 }
+  -- Winterfall Ursa, Winterfall Shaman, Winterfall Den Watcher, Winterfall Totemic, Winterfall Pathfinder, High Chief Winterfall, Winterfall Runner
+  if not pfDB["items"]["data-turtle"][20742] then pfDB["items"]["data-turtle"][20742] = {} end
+  pfDB["items"]["data-turtle"][20742]["U"] = { [7438] = 2.7286, [7439] = 2.9301, [7440] = 3.0963, [7441] = 4.0237, [7442] = 3.1781, [10738] = 2.2074, [10916] = 3.2287 }
+  -- Ossirian the Unscarred
+  if not pfDB["items"]["data-turtle"][21220] then pfDB["items"]["data-turtle"][21220] = {} end
+  pfDB["items"]["data-turtle"][21220]["U"] = { [15339] = 100 }
+  -- C'Thun
+  if not pfDB["items"]["data-turtle"][21221] then pfDB["items"]["data-turtle"][21221] = {} end
+  pfDB["items"]["data-turtle"][21221]["U"] = { [15727] = 100 }
+  -- Vekniss Soldier, Vekniss Warrior, Vekniss Guardian, Vekniss Stinger, Vekniss Wasp, Vekniss Hive Crawler, Qiraji Mindslayer, Qiraji Brainwasher, Qiraji Lasher, Qiraji Slayer, Qiraji Champion, Obsidian Eradicator, Anubisath Sentinel, Anubisath Defender, Anubisath Warder, Obsidian Nullifier
+  if not pfDB["items"]["data-turtle"][21230] then pfDB["items"]["data-turtle"][21230] = {} end
+  pfDB["items"]["data-turtle"][21230]["U"] = { [15229] = 7.6682, [15230] = 9.1954, [15233] = 7.5017, [15235] = 5.5556, [15236] = 6.2812, [15240] = 3.6849, [15246] = 2.8771, [15247] = 3.2184, [15249] = 5.7831, [15250] = 3.2233, [15252] = 3.2688, [15262] = 3.1295, [15264] = 4.0379, [15277] = 3.0928, [15311] = 1.9531, [15312] = 1.4754 }
+  -- Hive'Zora Abomination
+  if not pfDB["items"]["data-turtle"][21749] then pfDB["items"]["data-turtle"][21749] = {} end
+  pfDB["items"]["data-turtle"][21749]["U"] = { [15449] = 2 }
+  -- Kel'Thuzad
+  if not pfDB["items"]["data-turtle"][22520] then pfDB["items"]["data-turtle"][22520] = {} end
+  pfDB["items"]["data-turtle"][22520]["U"] = { [15990] = 100 }
+  -- Rayne
+  if not pfDB["items"]["data-turtle"][22624] then pfDB["items"]["data-turtle"][22624] = {} end
+  pfDB["items"]["data-turtle"][22624]["U"] = { [16135] = 2.7 }
+  -- Ghoul Berserker, Spectral Soldier, Skeletal Shocktrooper, Flameshocker
+  if not pfDB["items"]["data-turtle"][22970] then pfDB["items"]["data-turtle"][22970] = {} end
+  pfDB["items"]["data-turtle"][22970]["U"] = { [16141] = 1, [16298] = 1, [16299] = 1, [16383] = 1 }
+  -- Ghoul Berserker, Spectral Soldier, Skeletal Shocktrooper, Flameshocker
+  if not pfDB["items"]["data-turtle"][22972] then pfDB["items"]["data-turtle"][22972] = {} end
+  pfDB["items"]["data-turtle"][22972]["U"] = { [16141] = 1, [16298] = 1, [16299] = 1, [16383] = 1 }
+  -- Ghoul Berserker, Spectral Soldier, Skeletal Shocktrooper, Flameshocker
+  if not pfDB["items"]["data-turtle"][22973] then pfDB["items"]["data-turtle"][22973] = {} end
+  pfDB["items"]["data-turtle"][22973]["U"] = { [16141] = 1, [16298] = 1, [16299] = 1, [16383] = 1 }
+  -- Ghoul Berserker, Spectral Soldier, Skeletal Shocktrooper, Flameshocker
+  if not pfDB["items"]["data-turtle"][22974] then pfDB["items"]["data-turtle"][22974] = {} end
+  pfDB["items"]["data-turtle"][22974]["U"] = { [16141] = 1, [16298] = 1, [16299] = 1, [16383] = 1 }
+  -- Ghoul Berserker, Spectral Soldier, Skeletal Shocktrooper, Flameshocker
+  if not pfDB["items"]["data-turtle"][22975] then pfDB["items"]["data-turtle"][22975] = {} end
+  pfDB["items"]["data-turtle"][22975]["U"] = { [16141] = 1, [16298] = 1, [16299] = 1, [16383] = 1 }
+  -- Ghoul Berserker, Spectral Soldier, Skeletal Shocktrooper, Flameshocker
+  if not pfDB["items"]["data-turtle"][22977] then pfDB["items"]["data-turtle"][22977] = {} end
+  pfDB["items"]["data-turtle"][22977]["U"] = { [16141] = 1, [16298] = 1, [16299] = 1, [16383] = 1 }
+  -- Veloren Brightstar
+  if not pfDB["items"]["data-turtle"][41122] then pfDB["items"]["data-turtle"][41122] = {} end
+  pfDB["items"]["data-turtle"][41122]["U"] = { [61787] = 100 }
+  -- Ley-Watcher Incantagos
+  if not pfDB["items"]["data-turtle"][41403] then pfDB["items"]["data-turtle"][41403] = {} end
+  pfDB["items"]["data-turtle"][41403]["U"] = { [61946] = 100 }
+  -- Zuluhed the Whacked
+  if not pfDB["items"]["data-turtle"][41895] then pfDB["items"]["data-turtle"][41895] = {} end
+  pfDB["items"]["data-turtle"][41895]["U"] = { [62037] = 1.5 }
+  -- Remains of the Innocent
+  if not pfDB["items"]["data-turtle"][41938] then pfDB["items"]["data-turtle"][41938] = {} end
+  pfDB["items"]["data-turtle"][41938]["U"] = { [62670] = 100 }
+  -- Ighal'for
+  if not pfDB["items"]["data-turtle"][41939] then pfDB["items"]["data-turtle"][41939] = {} end
+  pfDB["items"]["data-turtle"][41939]["U"] = { [62671] = 100 }
+  -- Miraxx Foulheart
+  if not pfDB["items"]["data-turtle"][42222] then pfDB["items"]["data-turtle"][42222] = {} end
+  pfDB["items"]["data-turtle"][42222]["U"] = { [62813] = 100 }
+  -- Shadowbane Alpha, Shadowbane Darkcaster, Shadowbane Ambusher, Shadowbane Ragefang, Phantom Servant, Phantom Cook, Shadowbane Glutton
+  if not pfDB["items"]["data-turtle"][51326] then pfDB["items"]["data-turtle"][51326] = {} end
+  pfDB["items"]["data-turtle"][51326]["U"] = { [61191] = 0.3, [61192] = 0.3, [61193] = 0.3, [61194] = 0.3, [61205] = 0.3, [61210] = 1, [61211] = 0.3 }
+  -- Cow
+  if not pfDB["items"]["data-turtle"][60149] then pfDB["items"]["data-turtle"][60149] = {} end
+  pfDB["items"]["data-turtle"][60149]["U"] = { [2442] = 0.5 }
+  -- Warlord Kolkanis
+  if not pfDB["items"]["data-turtle"][60521] then pfDB["items"]["data-turtle"][60521] = {} end
+  pfDB["items"]["data-turtle"][60521]["U"] = { [5808] = 100 }
+  -- Shadowforge Excavator
+  if not pfDB["items"]["data-turtle"][60894] then pfDB["items"]["data-turtle"][60894] = {} end
+  pfDB["items"]["data-turtle"][60894]["U"] = { [60907] = 60 }
+  -- Shadowforge Skinner
+  if not pfDB["items"]["data-turtle"][60895] then pfDB["items"]["data-turtle"][60895] = {} end
+  pfDB["items"]["data-turtle"][60895]["U"] = { [60903] = 0.5 }
+  -- Bleakheart Shadowstalker
+  if not pfDB["items"]["data-turtle"][61153] then pfDB["items"]["data-turtle"][61153] = {} end
+  pfDB["items"]["data-turtle"][61153]["U"] = { [3770] = 30 }
+  -- Lord Blackwald II
+  if not pfDB["items"]["data-turtle"][61184] then pfDB["items"]["data-turtle"][61184] = {} end
+  pfDB["items"]["data-turtle"][61184]["U"] = { [61222] = 2 }
+  -- Solnius
+  if not pfDB["items"]["data-turtle"][61215] then pfDB["items"]["data-turtle"][61215] = {} end
+  pfDB["items"]["data-turtle"][61215]["U"] = { [60748] = 100 }
+  -- Solnius
+  if not pfDB["items"]["data-turtle"][61444] then pfDB["items"]["data-turtle"][61444] = {} end
+  pfDB["items"]["data-turtle"][61444]["U"] = { [60748] = 35 }
+  -- Risen Oilblaze
+  if not pfDB["items"]["data-turtle"][80114] then pfDB["items"]["data-turtle"][80114] = {} end
+  pfDB["items"]["data-turtle"][80114]["U"] = { [80116] = 60 }
+  -- Crowd Pummeler 9-60
+  if not pfDB["items"]["data-turtle"][81275] then pfDB["items"]["data-turtle"][81275] = {} end
+  pfDB["items"]["data-turtle"][81275]["U"] = { [6229] = 0.8 }
+
 
   -- Once Upon a Sheep: Lost Farm Sheep (Interaction)
   pfDB["items"]["data-turtle"][51220] = { ["U"] = { [50610] = 100 } }
@@ -1570,6 +1881,7 @@ do -- quests
 
   -- Add "Head of Geshgan" to the loot table of "Geshgan"
   -- This can be removed by the next database export
+  if not pfDB["items"]["data-turtle"][41783] then pfDB["items"]["data-turtle"][41783] = {} end
   pfDB["items"]["data-turtle"][41783]["U"] = { [62217] = 1.0 }
 end
 
