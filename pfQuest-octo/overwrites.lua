@@ -1875,6 +1875,15 @@ do -- quests
   -- 960 from the merged runtime quest database without altering 961.
   pfDB["quests"]["data-turtle"][960] = "_"
 
+  -- Vimes's Report (1288, 1289): obsolete unfinished Vanilla beta chain. The
+  -- Dustwallow "Shady Rest Inn / Deserters" investigation was cut before launch
+  -- and the quest was flagged obsolete; Captain Garran Vimes (4944) has no live
+  -- quest offer and the starting report item (6075) has no drop/loot source on
+  -- the server. 1289 is a start-less/end-less stub gated behind unobtainable
+  -- 1288. Remove both so pfQuest stops drawing a phantom "!" at Vimes.
+  pfDB["quests"]["data-turtle"][1288] = "_"
+  pfDB["quests"]["data-turtle"][1289] = "_"
+
   -- Add "Dark Iron Gunpowder Keg" to objectives of "Vile Dwarven Pigs"
   -- The extractor scripts did not catch those, as the objetive is filled via a Gossip on use.
   pfDB["quests"]["data-turtle"][41682]["obj"]["O"] = { 2020173 }
