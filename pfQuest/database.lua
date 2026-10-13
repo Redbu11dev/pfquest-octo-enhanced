@@ -1602,6 +1602,11 @@ function pfDatabase:SearchQuestID(id, meta, maps)
             meta["sellcount"] = zdata.sellcount
             meta["spawn"] = meta["quest"] -- tooltip header reads the quest title
             meta["spawntype"] = pfQuest_Loc["Item"] -- the marker is an item, not a mob/object
+            -- AddNode keys the node by meta["title"]; the direct AddNode call
+            -- here bypasses SearchMobID/SearchObjectID which normally set it.
+            -- Without it the node lands under a stale title and accept/abandon
+            -- (which DeleteNode by quest title) can't find or remove it.
+            meta["title"] = meta["quest"]
             maps[zone] = (maps[zone] or 0) + 1
             pfMap:AddNode(meta)
             meta["itemStartSources"] = nil -- don't leak into the next zone's pin
@@ -1609,6 +1614,7 @@ function pfDatabase:SearchQuestID(id, meta, maps)
             meta["sellcount"] = nil
             meta["spawn"] = nil
             meta["spawntype"] = nil
+            meta["title"] = nil
           end
         end
       end
@@ -2090,6 +2096,11 @@ function pfDatabase:SearchQuests(meta, maps)
               meta["sellcount"] = zdata.sellcount
               meta["spawn"] = meta["quest"] -- tooltip header reads the quest title
               meta["spawntype"] = pfQuest_Loc["Item"] -- the marker is an item, not a mob/object
+              -- AddNode keys the node by meta["title"]; this direct AddNode call
+              -- bypasses SearchMobID/SearchObjectID which normally set it. Without
+              -- it the node lands under a stale title and accept/abandon (which
+              -- DeleteNode by quest title) can't find or remove it.
+              meta["title"] = meta["quest"]
               maps[zone] = (maps[zone] or 0) + 1
               pfMap:AddNode(meta)
               meta["itemStartSources"] = nil
@@ -2097,6 +2108,7 @@ function pfDatabase:SearchQuests(meta, maps)
               meta["sellcount"] = nil
               meta["spawn"] = nil
               meta["spawntype"] = nil
+              meta["title"] = nil
             end
             t_nodes = t_nodes + (GetTime() - tn0)
           end
