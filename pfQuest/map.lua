@@ -979,8 +979,9 @@ function pfMap:NodeEnter()
     0.8
   )
 
-  -- item-start markers represent an item, not a mob: only show the Type line,
-  -- the mob Level/Respawn lines would carry meaningless stale values
+  -- item-start markers represent an item, not a mob: the mob Level/Respawn
+  -- lines would carry meaningless stale values, but the quest level (qlvl) is
+  -- real and worth showing
   local isItemStart = nil
   for title, meta in pairs(this.node) do
     if meta.QTYPE == "ITEM_START" and not meta.itemStartChild then
@@ -988,7 +989,18 @@ function pfMap:NodeEnter()
       break
     end
   end
-  if not isItemStart then
+
+  if isItemStart then
+    -- color Level/Required with the quest difficulty palette, like the other
+    -- quest tooltips (Required turns red when it exceeds the player's level)
+    local qlvlText = this.qlvl and (pfMap:HexDifficultyColor(this.qlvl) .. this.qlvl .. "|r") or UNKNOWN
+    local qminText = this.qmin and (pfMap:HexDifficultyColor(this.qmin, true) .. this.qmin .. "|r") or UNKNOWN
+    tooltip:AddDoubleLine(pfQuest_Loc["Level"] .. ":", qlvlText, 0.8, 0.8, 0.8, 1, 1, 1)
+    -- required level differs from quest level on accept-any-level quests (e.g.
+    -- min=5/lvl=60), so show both to avoid the "why is a 60 quest on my lvl 10"
+    -- confusion
+    tooltip:AddDoubleLine(pfQuest_Loc["Required"] .. ":", qminText, 0.8, 0.8, 0.8, 1, 1, 1)
+  else
     tooltip:AddDoubleLine(pfQuest_Loc["Level"] .. ":", (this.level or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
   end
   tooltip:AddDoubleLine(pfQuest_Loc["Type"] .. ":", (this.spawntype or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
@@ -1150,6 +1162,7 @@ function pfMap:UpdateNode(frame, node, color, obj, distance)
       frame.priority = tab.priority
       frame.quest = tab.quest
       frame.qlvl = tab.qlvl
+      frame.qmin = tab.qmin
       frame.itemreq = tab.itemreq
       frame.arrow = tab.arrow
       frame.icon = tab.icon
