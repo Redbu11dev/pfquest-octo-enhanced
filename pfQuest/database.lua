@@ -1601,12 +1601,14 @@ function pfDatabase:SearchQuestID(id, meta, maps)
             meta["droprate"] = zdata.droprate
             meta["sellcount"] = zdata.sellcount
             meta["spawn"] = meta["quest"] -- tooltip header reads the quest title
+            meta["spawntype"] = pfQuest_Loc["Item"] -- the marker is an item, not a mob/object
             maps[zone] = (maps[zone] or 0) + 1
             pfMap:AddNode(meta)
             meta["itemStartSources"] = nil -- don't leak into the next zone's pin
             meta["droprate"] = nil
             meta["sellcount"] = nil
             meta["spawn"] = nil
+            meta["spawntype"] = nil
           end
         end
       end
@@ -2087,12 +2089,14 @@ function pfDatabase:SearchQuests(meta, maps)
               meta["droprate"] = zdata.droprate
               meta["sellcount"] = zdata.sellcount
               meta["spawn"] = meta["quest"] -- tooltip header reads the quest title
+              meta["spawntype"] = pfQuest_Loc["Item"] -- the marker is an item, not a mob/object
               maps[zone] = (maps[zone] or 0) + 1
               pfMap:AddNode(meta)
               meta["itemStartSources"] = nil
               meta["droprate"] = nil
               meta["sellcount"] = nil
               meta["spawn"] = nil
+              meta["spawntype"] = nil
             end
             t_nodes = t_nodes + (GetTime() - tn0)
           end

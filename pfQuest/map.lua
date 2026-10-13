@@ -978,9 +978,23 @@ function pfMap:NodeEnter()
     1,
     0.8
   )
-  tooltip:AddDoubleLine(pfQuest_Loc["Level"] .. ":", (this.level or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
+
+  -- item-start markers represent an item, not a mob: only show the Type line,
+  -- the mob Level/Respawn lines would carry meaningless stale values
+  local isItemStart = nil
+  for title, meta in pairs(this.node) do
+    if meta.QTYPE == "ITEM_START" and not meta.itemStartChild then
+      isItemStart = true
+      break
+    end
+  end
+  if not isItemStart then
+    tooltip:AddDoubleLine(pfQuest_Loc["Level"] .. ":", (this.level or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
+  end
   tooltip:AddDoubleLine(pfQuest_Loc["Type"] .. ":", (this.spawntype or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
-  tooltip:AddDoubleLine(pfQuest_Loc["Respawn"] .. ":", (this.respawn or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
+  if not isItemStart then
+    tooltip:AddDoubleLine(pfQuest_Loc["Respawn"] .. ":", (this.respawn or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
+  end
 
   for title, meta in pairs(this.node) do
     pfMap:ShowTooltip(meta, tooltip)
