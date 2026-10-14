@@ -99,7 +99,8 @@ pfQuest_defconfig = {
   { text = L["Display Current Quest Givers"], default = "1", type = "checkbox", config = "currentquestgivers" },
   { text = L["Display Low Level Quest Givers"], default = "0", type = "checkbox", config = "showlowlevel" },
   { text = L["Display Level+3 Quest Givers"], default = "0", type = "checkbox", config = "showhighlevel" },
-  { text = L["Display Event & Daily Quests"], default = "0", type = "checkbox", config = "showfestival" },
+  { text = L["Display Repeatable Quests"], default = "1", type = "checkbox", config = "showrepeatable" },
+  { text = L["Display Event/Seasonal Quests"], default = "0", type = "checkbox", config = "showevent" },
 
   { text = L["Map & Minimap"], default = nil, type = "header" },
   { text = L["Enable Minimap Nodes"], default = "1", type = "checkbox", config = "minimapnodes" },

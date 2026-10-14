@@ -578,6 +578,7 @@ local VERTEX_BLACK = { 0, 0, 0 }
 local VERTEX_RED = { 1, 0.6, 0.6 }
 local VERTEX_WHITE = { 1, 1, 1 }
 local VERTEX_BLUE = { 0.2, 0.8, 1 }
+local VERTEX_PURPLE = { 0.7, 0.4, 1 }
 
 -- factionMap for GetRaceMaskByID (avoid recreation per call)
 local factionMap = { ["A"] = 77, ["H"] = 178, ["AH"] = 255, ["HA"] = 255 }
@@ -1868,8 +1869,9 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
     return
   end
 
-  -- hide completed quests
-  if pfQuest_history[id] then
+  -- hide completed quests (repeatable quests stay visible: they can be done again,
+  -- so completion should not remove their marker)
+  if pfQuest_history[id] and not quests[id]["repeatable"] then
     return
   end
 
@@ -1905,18 +1907,36 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
     return
   end
 
-  -- hide lowlevel quests
-  if quests[id]["lvl"] and quests[id]["lvl"] < plevel - 4 and pfQuest_config["showlowlevel"] == "0" then
+  local isSpecial = (quests[id]["event"] or quests[id]["repeatable"]) and true or false
+
+  -- hide lowlevel quests (repeatable/event quests ignore this display filter)
+  if not isSpecial and quests[id]["lvl"] and quests[id]["lvl"] < plevel - 4 and pfQuest_config["showlowlevel"] == "0" then
     return
   end
 
-  -- hide highlevel quests (or show those that are 3 levels above)
-  if quests[id]["min"] and quests[id]["min"] > plevel + (pfQuest_config["showhighlevel"] == "1" and 3 or 0) then
+  if isSpecial then
+    -- repeatable/event quests: only hide when the player cannot yet accept the
+    -- quest at all (its required level is above the player's). They do not use
+    -- the +3 slack and are not tinted/hidden by the level-display filters.
+    if quests[id]["min"] and quests[id]["min"] > plevel then
+      return
+    end
+  else
+    -- hide highlevel quests (or show those that are 3 levels above)
+    if quests[id]["min"] and quests[id]["min"] > plevel + (pfQuest_config["showhighlevel"] == "1" and 3 or 0) then
+      return
+    end
+  end
+
+  -- hide event (seasonal) quests when the dedicated option is off
+  if quests[id]["event"] and pfQuest_config["showevent"] == "0" then
     return
   end
 
-  -- hide event quests
-  if quests[id]["event"] and pfQuest_config["showfestival"] == "0" then
+  -- hide repeatable quests when the dedicated option is off.
+  -- Event/seasonal quests are governed SOLELY by the event option (checked
+  -- above), never by the repeatable option — even when they are also repeatable.
+  if quests[id]["repeatable"] and not quests[id]["event"] and pfQuest_config["showrepeatable"] == "0" then
     return
   end
 
@@ -2028,24 +2048,37 @@ function pfDatabase:SearchQuests(meta, maps)
       meta["vertex"] = VERTEX_BLACK
       meta["layer"] = 3
 
+      -- repeatable/event quests are not level-tinted (no red/grey); they get
+      -- their own blue/purple treatment below
+      local isSpecialQuest = (quests[id]["event"] or quests[id]["repeatable"]) and true or false
+
       -- tint high level quests red
-      if quests[id]["min"] and quests[id]["min"] > plevel then
+      if not isSpecialQuest and quests[id]["min"] and quests[id]["min"] > plevel then
         meta["texture"] = pfQuestConfig.path .. "\\img\\available"
         meta["vertex"] = VERTEX_RED
         meta["layer"] = 2
       end
 
       -- tint low level quests grey
-      if quests[id]["lvl"] and quests[id]["lvl"] + 10 < plevel then
+      if not isSpecialQuest and quests[id]["lvl"] and quests[id]["lvl"] + 10 < plevel then
         meta["texture"] = pfQuestConfig.path .. "\\img\\available"
         meta["vertex"] = VERTEX_WHITE
         meta["layer"] = 2
       end
 
-      -- tint event quests as blue
-      if quests[id]["event"] then
+      -- tint repeatable quests as blue (includes dailies; the live server DB
+      -- does not distinguish them from infinite-repeatables)
+      if quests[id]["repeatable"] then
         meta["texture"] = pfQuestConfig.path .. "\\img\\available"
         meta["vertex"] = VERTEX_BLUE
+        meta["layer"] = 2
+      end
+
+      -- tint event (seasonal) quests as purple; event wins over repeatable when
+      -- a quest is both, per the scrape classification rule
+      if quests[id]["event"] then
+        meta["texture"] = pfQuestConfig.path .. "\\img\\available"
+        meta["vertex"] = VERTEX_PURPLE
         meta["layer"] = 2
       end
 

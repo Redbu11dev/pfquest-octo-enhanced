@@ -990,6 +990,27 @@ function pfMap:NodeEnter()
     end
   end
 
+  -- repeatable / event(seasonal) badges above Level, colored to match. A node can
+  -- offer several quests with different flags, so show a badge for EACH distinct
+  -- flag present among all quests at this node (event and/or repeatable).
+  if pfDB and pfDB["quests"] and pfDB["quests"]["data"] then
+    local hasEvent, hasRepeatable = nil, nil
+    for title, meta in pairs(this.node) do
+      local qid = meta.questid
+      local qdata = qid and pfDB["quests"]["data"][qid]
+      if type(qdata) == "table" then
+        if qdata["event"] then hasEvent = true end
+        if qdata["repeatable"] then hasRepeatable = true end
+      end
+    end
+    if hasEvent then
+      tooltip:AddLine("|cffb366ffEvent/Seasonal|r")
+    end
+    if hasRepeatable then
+      tooltip:AddLine("|cff33ccffRepeatable|r")
+    end
+  end
+
   if isItemStart then
     -- color Level/Required with the quest difficulty palette, like the other
     -- quest tooltips (Required turns red when it exceeds the player's level)
@@ -1007,7 +1028,6 @@ function pfMap:NodeEnter()
   if not isItemStart then
     tooltip:AddDoubleLine(pfQuest_Loc["Respawn"] .. ":", (this.respawn or UNKNOWN), 0.8, 0.8, 0.8, 1, 1, 1)
   end
-
   for title, meta in pairs(this.node) do
     pfMap:ShowTooltip(meta, tooltip)
   end
@@ -1127,6 +1147,7 @@ function pfMap:UpdateNode(frame, node, color, obj, distance)
 
   -- reset layer
   frame.layer = 0
+  frame.winscore = 0
 
   for title, tab in pairs(node) do
     pfMap.highlightdb[frame][title] = true
@@ -1138,7 +1159,24 @@ function pfMap:UpdateNode(frame, node, color, obj, distance)
       tab.layer = tab.layer + (10 - min(tab.priority, 10))
     end
 
-    if tab.spawn and (tab.layer > frame.layer or not frame.spawn) then
+    -- deterministic special-quest tiebreak WITHOUT touching tab.layer (a separate
+    -- win score, so route logic's `this.layer == 1/2` and SetFrameLevel keep their
+    -- integer values). Normal quests keep the highest texture layer and win; among
+    -- the layer-1 specials (event/repeatable/high/low share one texture), order by
+    -- flag: event > repeatable > high > low > plain. Win score = layer*10 + flag.
+    local winscore = tab.layer * 10
+    if tab.layer == 1 and tab.questid and pfDB and pfDB["quests"] and pfDB["quests"]["data"] then
+      local qdata = pfDB["quests"]["data"][tab.questid]
+      if type(qdata) == "table" then
+        if qdata["event"] then
+          winscore = winscore + 4
+        elseif qdata["repeatable"] then
+          winscore = winscore + 3
+        end
+      end
+    end
+
+    if tab.spawn and (winscore > (frame.winscore or 0) or not frame.spawn) then
       frame.updateTexture = (frame.texture ~= tab.texture)
       frame.updateVertex = (frame.vertex ~= tab.vertex)
       frame.updateColor = (frame.color ~= tab.color)
@@ -1147,6 +1185,8 @@ function pfMap:UpdateNode(frame, node, color, obj, distance)
       -- set title and texture to the entry with highest layer
       -- and add core information
       frame.layer = tab.layer
+      frame.winscore = winscore
+      frame.winpriority = tab.winpriority
       frame.spawn = tab.spawn
       frame.spawnid = tab.spawnid
       frame.spawntype = tab.spawntype

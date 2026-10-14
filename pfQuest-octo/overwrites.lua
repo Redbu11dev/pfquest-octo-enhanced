@@ -1442,6 +1442,14 @@ do -- items
 end
 
 do -- units/npcs
+  -- Voryn Skystrider (93100, Alah'Thalas flight master): the Alah'Thalas flight
+  -- master was moved to 27.7, 74.6 (zone 2040). Update his Alah'Thalas coord;
+  -- keep the Thalassian Highlands spawn (zone 5225) untouched.
+  pfDB["units"]["data-turtle"][93100]["coords"] = {
+    [1] = { 27.7, 74.6, 2040, 120 },
+    [2] = { 50.9, 37.5, 5225, 120 },
+  }
+
   -- AQ Commendation NPCs
   pfDB["units"]["data-turtle"][15761] = { }
   pfDB["units"]["data-turtle"][15762] = { }
@@ -1892,6 +1900,91 @@ do -- quests
   -- This can be removed by the next database export
   if not pfDB["items"]["data-turtle"][41783] then pfDB["items"]["data-turtle"][41783] = {} end
   pfDB["items"]["data-turtle"][41783]["U"] = { [62217] = 1.0 }
+
+  -- octowow.st validation pass (2026-10): field corrections vs the live server DB.
+  -- Priest quests missing their class mask (priest = 16).
+  for _, qid in ipairs({ 5626, 8316, 42055, 42056, 42057, 42058 }) do
+    if pfDB["quests"]["data-turtle"][qid] then
+      pfDB["quests"]["data-turtle"][qid]["class"] = 16
+    end
+  end
+
+  -- To Survive in the Jungle (42041): octowow.st lists required level 35,
+  -- the pfDB record said 45. Live server DB is authoritative.
+  if pfDB["quests"]["data-turtle"][42041] then
+    pfDB["quests"]["data-turtle"][42041]["min"] = 35
+  end
+
+  -- octowow.st validation pass (2026-10): restore missing prerequisite links.
+  -- Each of these quests has a "Requires" prereq on the live server DB that the
+  -- offline pfDB record lacks, causing follow-up quests to show as available
+  -- before their chain is actually complete. Appended (not overwritten) so any
+  -- existing prereq (e.g. 41981 already had 41979) is preserved.
+  local prereq_fix = {
+    [597] = 595,    -- The Bloodsail Buccaneers
+    [625] = 624,    -- Cortello's Riddle
+    [626] = 625,    -- Cortello's Riddle
+    [902] = 901,    -- Samophlange
+    [1194] = 1190,  -- Rizzle's Schematics
+    [2701] = 2702,  -- Heroes of Old
+    [3525] = 3523,  -- Extinguishing the Idol
+    [3913] = 3912,  -- A Grave Situation
+    [3914] = 3913,  -- Linken's Sword
+    [5050] = 5048,  -- Good Luck Charm
+    [5084] = 5083,  -- Falling to Corruption
+    [5085] = 5084,  -- Mystery Goo
+    [5164] = 5162,  -- Catalogue of the Wayward
+    [5463] = 5462,  -- Menethil's Gift
+    [7508] = 7507,  -- The Forging of Quel'Serrar
+    [41980] = 41979,-- Uncovering the Rumors
+    [41981] = 41980,-- Information for Cairne
+  }
+  for qid, pre in pairs(prereq_fix) do
+    local q = pfDB["quests"]["data-turtle"][qid]
+    if q then
+      q["pre"] = q["pre"] or {}
+      local found = false
+      for _, p in ipairs(q["pre"]) do
+        if p == pre then found = true break end
+      end
+      if not found then
+        table.insert(q["pre"], pre)
+      end
+    end
+  end
+
+  -- Oink, Oink! (700001): repeatable level-1 quest present on octowow.st but
+  -- absent from every offline DB. Starts/ends at "Pig" (npc 900200) in Elwynn.
+  if not pfDB["quests"]["data-turtle"][700001] then
+    pfDB["quests"]["data-turtle"][700001] = {
+      ["lvl"] = 1,
+      ["min"] = 1,
+      ["race"] = 255,
+      ["start"] = { ["U"] = { 900200 } },
+      ["end"] = { ["U"] = { 900200 } },
+    }
+  end
+  -- its display name must exist in the quest locale table or it renders blank
+  if pfDB["quests"]["enUS-turtle"] and not pfDB["quests"]["enUS-turtle"][700001] then
+    pfDB["quests"]["enUS-turtle"][700001] = { ["T"] = "Oink, Oink!" }
+  end
+end
+
+do -- units
+  -- "Pig" (900200): the start/end NPC for Oink, Oink! (700001). Not present in
+  -- any offline units DB; coords scraped from octowow.st npc page.
+  if not pfDB["units"]["data-turtle"][900200] then
+    pfDB["units"]["data-turtle"][900200] = {
+      ["coords"] = {
+        [1] = { 23.7, 58.4, 12, 300 },
+        [2] = { 34.2, 52.1, 85, 300 },
+      },
+      ["lvl"] = "1",
+    }
+  end
+  if pfDB["units"]["enUS-turtle"] and not pfDB["units"]["enUS-turtle"][900200] then
+    pfDB["units"]["enUS-turtle"][900200] = "Pig"
+  end
 end
 
 
@@ -1921,3 +2014,146 @@ do -- Cloth reputation donations: event 159 is a permanent content-release gate,
   end
 end
 
+do -- octowow.st scrape (2026-10): repeatable + event(seasonal) quest flags.
+  -- repeatable = "Repeatable" on the live DB (includes dailies). event =
+  -- membership in a verifiable holiday sort-category (Lunar Festival, AQ War
+  -- Effort, Midsummer, Darkmoon Faire, AQ Signets, Scourge Invasion, Hallow's
+  -- End / Winter Veil). Drives the blue/purple marker tint and the two
+  -- Display Repeatable / Display Event-Seasonal options.
+  local octowow_repeatable = {
+    16, 254, 308, 349, 410, 431, 579, 593, 619, 813, 822, 889,
+    908, 926, 961, 996, 998, 1127, 1191, 1192, 1193, 1288, 1423, 1462,
+    1463, 1464, 1514, 1714, 1878, 2522, 2523, 2582, 2584, 2586, 2602, 2604,
+    2747, 2748, 2749, 2750, 2878, 2953, 3363, 3366, 3382, 3421, 3483, 3502,
+    3503, 3567, 3644, 3645, 3646, 3647, 3803, 3804, 3861, 4041, 4103, 4104,
+    4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115, 4116,
+    4117, 4118, 4119, 4221, 4222, 4295, 4343, 4381, 4382, 4383, 4384, 4385,
+    4386, 4401, 4403, 4443, 4444, 4445, 4446, 4447, 4448, 4461, 4462, 4464,
+    4465, 4466, 4467, 4561, 4603, 4604, 4661, 4801, 4802, 4803, 4804, 4805,
+    4806, 4807, 4970, 5042, 5043, 5044, 5045, 5046, 5059, 5122, 5150, 5201,
+    5218, 5221, 5224, 5227, 5402, 5403, 5404, 5406, 5407, 5408, 5421, 5519,
+    5582, 5981, 6545, 6546, 6547, 6581, 6642, 6643, 6644, 6645, 6646, 7341,
+    7342, 7385, 7429, 7478, 7479, 7480, 7483, 7484, 7485, 7604, 7651, 7666,
+    7725, 7726, 7735, 7738, 7796, 7801, 7806, 7812, 7819, 7825, 7832, 7837,
+    7881, 7882, 7884, 7889, 7890, 7891, 7892, 7894, 7896, 7897, 7899, 7901,
+    7907, 7930, 7931, 7932, 7933, 7934, 7935, 7936, 7939, 7940, 7941, 7942,
+    7943, 7981, 8193, 8194, 8195, 8196, 8221, 8223, 8224, 8225, 8228, 8229,
+    8238, 8239, 8243, 8246, 8249, 8302, 8319, 8324, 8333, 8342, 8353, 8354,
+    8355, 8356, 8357, 8358, 8359, 8360, 8362, 8363, 8364, 8388, 8466, 8467,
+    8469, 8493, 8495, 8496, 8497, 8498, 8500, 8501, 8502, 8504, 8506, 8507,
+    8508, 8510, 8512, 8514, 8516, 8518, 8521, 8523, 8525, 8527, 8529, 8533,
+    8534, 8535, 8536, 8537, 8538, 8539, 8540, 8541, 8544, 8546, 8548, 8550,
+    8559, 8560, 8561, 8562, 8572, 8573, 8574, 8579, 8581, 8583, 8589, 8592,
+    8593, 8594, 8595, 8596, 8601, 8602, 8603, 8608, 8612, 8616, 8621, 8622,
+    8623, 8624, 8625, 8626, 8627, 8628, 8629, 8630, 8631, 8632, 8633, 8634,
+    8637, 8638, 8639, 8640, 8641, 8655, 8656, 8657, 8658, 8659, 8660, 8661,
+    8662, 8663, 8664, 8665, 8666, 8667, 8668, 8669, 8687, 8731, 8732, 8737,
+    8738, 8739, 8740, 8764, 8765, 8766, 8770, 8771, 8772, 8773, 8774, 8775,
+    8776, 8777, 8778, 8779, 8780, 8781, 8782, 8783, 8784, 8785, 8786, 8787,
+    8789, 8790, 8804, 8805, 8806, 8807, 8808, 8809, 8810, 8811, 8812, 8813,
+    8814, 8815, 8816, 8817, 8818, 8819, 8820, 8821, 8822, 8823, 8824, 8825,
+    8826, 8829, 8830, 8831, 8832, 8833, 8834, 8835, 8836, 8837, 8838, 8839,
+    8840, 8841, 8842, 8843, 8844, 8845, 8846, 8847, 8848, 8851, 8852, 8853,
+    8862, 8863, 8864, 8865, 8876, 8877, 8878, 8879, 8880, 8881, 8882, 8893,
+    8981, 8993, 9034, 9036, 9037, 9038, 9039, 9040, 9041, 9042, 9043, 9044,
+    9045, 9046, 9047, 9048, 9049, 9050, 9054, 9055, 9056, 9057, 9058, 9059,
+    9060, 9061, 9068, 9069, 9070, 9071, 9072, 9073, 9074, 9075, 9077, 9078,
+    9079, 9080, 9081, 9082, 9083, 9084, 9086, 9087, 9088, 9089, 9090, 9091,
+    9092, 9093, 9094, 9095, 9096, 9097, 9098, 9099, 9100, 9101, 9102, 9103,
+    9104, 9105, 9106, 9107, 9108, 9109, 9110, 9111, 9112, 9113, 9114, 9115,
+    9116, 9117, 9118, 9259, 9266, 9267, 9268, 9317, 9318, 9320, 9321, 9338,
+    9341, 9386, 40340, 40341, 40617, 40618, 40619, 40630, 40631, 40632, 41031, 41068,
+    41115, 41126, 41328, 41329, 41330, 41331, 41332, 41345, 41346, 41771, 41772, 41773,
+    41935, 41936, 41986, 60030, 60031, 60032, 60033, 60034, 60035, 60036, 80352, 80353,
+    80369, 80374, 80379, 80386, 700001,
+  }
+  for _, qid in ipairs(octowow_repeatable) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then
+      pfDB["quests"]["data-turtle"][qid]["repeatable"] = 1
+    end
+  end
+
+  local octowow_event = {
+    1657, 1658, 6961, 6963, 6984, 7021, 7022, 7023, 7024, 7042, 7045, 7907,
+    7927, 7928, 7929, 8149, 8150, 8311, 8312, 8322, 8353, 8354, 8355, 8356,
+    8357, 8358, 8359, 8360, 8409, 8492, 8493, 8494, 8495, 8499, 8500, 8503,
+    8504, 8505, 8506, 8509, 8510, 8511, 8512, 8513, 8514, 8515, 8516, 8517,
+    8518, 8520, 8521, 8522, 8523, 8524, 8525, 8526, 8527, 8528, 8529, 8532,
+    8533, 8545, 8546, 8550, 8580, 8581, 8583, 8588, 8589, 8601, 8607, 8608,
+    8611, 8612, 8615, 8616, 8762, 8763, 8795, 8796, 8797, 8799, 8811, 8812,
+    8813, 8814, 8815, 8816, 8817, 8818, 8819, 8820, 8821, 8822, 8823, 8824,
+    8825, 8826, 8830, 8831, 8832, 8833, 8834, 8835, 8836, 8837, 8838, 8839,
+    8840, 8841, 8842, 8843, 8844, 8845, 8846, 8847, 8848, 8851, 8852, 8853,
+    8860, 8861, 8897, 8898, 8899, 8900, 8901, 8902, 8903, 8904, 8979, 8981,
+    8993, 9024, 9025, 9094, 9154, 9260, 9261, 9262, 9263, 9264, 9265, 9292,
+    9295, 9299, 9300, 9301, 9302, 9304, 9310, 9317, 9318, 9319, 9320, 9321,
+    9339, 9341, 9365, 9367, 9368, 9386, 9388, 9389, 41274,
+  }
+  for _, qid in ipairs(octowow_event) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then
+      pfDB["quests"]["data-turtle"][qid]["event"] = 1
+    end
+  end
+end
+
+do -- restore event flags stripped by the newer quests-turtle.lua (2026-10).
+  -- The updated turtle DB ships full records for these holiday quests but omits the
+  -- "event" field; patchtable replaces the whole record, wiping the base-DB event
+  -- flag. These are the correct per-event ids from the base DB. (These quests were
+  -- removed from the generic octowow_event event=1 list above so they get the right id.)
+  -- event 10 (event 10)
+  local ev_10 = { 171, 558, 910, 911, 915, 925, 1479, 1558, 1687, 1800, 4822, 5502 }
+  for _, qid in ipairs(ev_10) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 10 end
+  end
+  -- event 18 (event 18)
+  local ev_18 = { 7241 }
+  for _, qid in ipairs(ev_18) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 18 end
+  end
+  -- event 122 (event 122)
+  local ev_122 = { 8743 }
+  for _, qid in ipairs(ev_122) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 122 end
+  end
+  -- Scourge Invasion (event 17)
+  local ev_17 = { 9085, 9153 }
+  for _, qid in ipairs(ev_17) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 17 end
+  end
+  -- Midsummer Fire Festival (event 1)
+  local ev_1 = { 9323, 9324, 9325, 9326, 9330, 9331, 9332 }
+  for _, qid in ipairs(ev_1) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 1 end
+  end
+  -- event 2 (event 2)
+  local ev_2 = { 7061, 7063, 8744, 8746, 8767, 8768, 8769, 8788, 8803 }
+  for _, qid in ipairs(ev_2) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 2 end
+  end
+  -- event 3 (event 3)
+  local ev_3 = { 8193, 8194, 8221, 8224, 8225 }
+  for _, qid in ipairs(ev_3) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 3 end
+  end
+  -- Lunar Festival (event 7)
+  local ev_7 = { 8619, 8635, 8636, 8642, 8643, 8644, 8645, 8646, 8647, 8648, 8649, 8650, 8651, 8652, 8653, 8654, 8670, 8671, 8672, 8673, 8674, 8675, 8676, 8677, 8678, 8679, 8680, 8681, 8682, 8683, 8684, 8685, 8686, 8688, 8713, 8714, 8715, 8716, 8717, 8718, 8719, 8720, 8721, 8722, 8723, 8724, 8725, 8726, 8727, 8862, 8863, 8864, 8865, 8866, 8867, 8868, 8876, 8877, 8878, 8879, 8880, 8881, 8882, 8883 }
+  for _, qid in ipairs(ev_7) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 7 end
+  end
+  -- Darkmoon Faire (event 81)
+  local ev_81 = { 7881, 7882, 7883, 7884, 7885, 7889, 7890, 7891, 7892, 7893, 7894, 7895, 7896, 7897, 7898, 7899, 7900, 7901, 7902, 7903, 7930, 7931, 7932, 7933, 7934, 7935, 7936, 7939, 7940, 7941, 7942, 7943, 7946, 7981, 8222, 8223 }
+  for _, qid in ipairs(ev_81) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 81 end
+  end
+  -- Ahn'Qiraj War Effort (event 86)
+  local ev_86 = { 8556, 8557, 8558, 8689, 8691, 8692, 8693, 8694, 8696, 8697, 8699, 8700, 8701, 8702, 8704, 8705, 8707, 8708, 8709, 8710, 8712, 8800 }
+  for _, qid in ipairs(ev_86) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 86 end
+  end
+  -- event 8 (event 8)
+  local ev_8 = { 9029 }
+  for _, qid in ipairs(ev_8) do
+    if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 8 end
+  end
+end
