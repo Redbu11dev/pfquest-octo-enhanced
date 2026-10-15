@@ -1952,6 +1952,8 @@ do -- quests
       end
     end
   end
+  
+  pfDB["quests"]["data-turtle"][349]["pre"] = { 348 }
 
   -- Oink, Oink! (700001): repeatable level-1 quest present on octowow.st but
   -- absent from every offline DB. Starts/ends at "Pig" (npc 900200) in Elwynn.
@@ -2156,4 +2158,79 @@ do -- restore event flags stripped by the newer quests-turtle.lua (2026-10).
   for _, qid in ipairs(ev_8) do
     if type(pfDB["quests"]["data-turtle"][qid]) == "table" then pfDB["quests"]["data-turtle"][qid]["event"] = 8 end
   end
+end
+
+do -- octowow.st full-scrape validation fixes (2026-10, -44 bucket)
+  -- Corrections derived from diffing the live octowow.st DB against the merged
+  -- pfDB. Field writes only touch records that exist; deletions/additions are
+  -- guarded so a re-extract of the turtle DB cannot resurrect stale values.
+
+  -- New quests present on octowow.st but absent from pfDB. (700001 Oink, Oink!
+  -- is already handled above.) These are the -44 'octowow quests' additions.
+  -- 42201/42202/42203 start+end at Ozzy (2510002, Dun Morogh 30.8,81.65);
+  -- 42501 starts at Mirelle Ashmoor (2510040, The Barrens 64.42,36.15), no end link.
+  if not pfDB["units"]["data-turtle"][2510002] then
+    pfDB["units"]["data-turtle"][2510002] = { ["coords"] = { [1] = { 30.8, 81.7, 1, 120 } }, ["fac"] = "AH" }
+  end
+  if pfDB["units"]["enUS-turtle"] and not pfDB["units"]["enUS-turtle"][2510002] then
+    pfDB["units"]["enUS-turtle"][2510002] = "Ozzy"
+  end
+  if not pfDB["units"]["data-turtle"][2510040] then
+    pfDB["units"]["data-turtle"][2510040] = { ["coords"] = { [1] = { 64.4, 36.2, 17, 120 } }, ["fac"] = "AH" }
+  end
+  if pfDB["units"]["enUS-turtle"] and not pfDB["units"]["enUS-turtle"][2510040] then
+    pfDB["units"]["enUS-turtle"][2510040] = "Mirelle Ashmoor"
+  end
+
+  if not pfDB["quests"]["data-turtle"][42201] then
+    pfDB["quests"]["data-turtle"][42201] = { ["lvl"] = 1, ["min"] = 1, ["race"] = 255, ["start"] = { ["U"] = { 2510002 } }, ["end"] = { ["U"] = { 2510002 } } }
+  end
+  if not pfDB["quests"]["data-turtle"][42202] then
+    pfDB["quests"]["data-turtle"][42202] = { ["lvl"] = 1, ["min"] = 1, ["race"] = 255, ["start"] = { ["U"] = { 2510002 } }, ["end"] = { ["U"] = { 2510002 } } }
+  end
+  if not pfDB["quests"]["data-turtle"][42203] then
+    pfDB["quests"]["data-turtle"][42203] = { ["lvl"] = 1, ["min"] = 1, ["race"] = 255, ["start"] = { ["U"] = { 2510002 } }, ["end"] = { ["U"] = { 2510002 } } }
+  end
+  if not pfDB["quests"]["data-turtle"][42501] then
+    pfDB["quests"]["data-turtle"][42501] = { ["lvl"] = 1, ["min"] = 1, ["race"] = 255, ["start"] = { ["U"] = { 2510040 } } }
+  end
+  if pfDB["quests"]["enUS-turtle"] then
+    pfDB["quests"]["enUS-turtle"][42201] = pfDB["quests"]["enUS-turtle"][42201] or { ["T"] = "Reclaiming Ozzy" }
+    pfDB["quests"]["enUS-turtle"][42202] = pfDB["quests"]["enUS-turtle"][42202] or { ["T"] = "Reclaiming Buccaneer Bubbles" }
+    pfDB["quests"]["enUS-turtle"][42203] = pfDB["quests"]["enUS-turtle"][42203] or { ["T"] = "Reclaiming D'Dossy" }
+    pfDB["quests"]["enUS-turtle"][42501] = pfDB["quests"]["enUS-turtle"][42501] or { ["T"] = "Closure" }
+  end
+
+  -- Field corrections: live octowow.st values vs stale pfDB values.
+  if type(pfDB["quests"]["data-turtle"][40947]) == "table" then pfDB["quests"]["data-turtle"][40947]["lvl"] = 47 end -- Spitecrest Decursions
+  if type(pfDB["quests"]["data-turtle"][41644]) == "table" then pfDB["quests"]["data-turtle"][41644]["min"] = 22 end -- Defying Odds
+  if type(pfDB["quests"]["data-turtle"][41645]) == "table" then pfDB["quests"]["data-turtle"][41645]["min"] = 22 end -- The Slavemakers
+  if type(pfDB["quests"]["data-turtle"][41646]) == "table" then pfDB["quests"]["data-turtle"][41646]["min"] = 22 end -- Covering All Possibilities
+  if type(pfDB["quests"]["data-turtle"][41647]) == "table" then pfDB["quests"]["data-turtle"][41647]["min"] = 22 end -- Unconventional Means
+  if type(pfDB["quests"]["data-turtle"][41648]) == "table" then pfDB["quests"]["data-turtle"][41648]["min"] = 22 end -- Deathcap And Widow's Frill
+  if type(pfDB["quests"]["data-turtle"][41787]) == "table" then pfDB["quests"]["data-turtle"][41787]["min"] = 32 end -- Heart of Darkness
+  if type(pfDB["quests"]["data-turtle"][41873]) == "table" then pfDB["quests"]["data-turtle"][41873]["race"] = 589 end -- Brangar's Journal
+  if type(pfDB["quests"]["data-turtle"][41956]) == "table" then pfDB["quests"]["data-turtle"][41956]["lvl"] = 60 end -- Bounty: Head of Highlord Bolvar Fordragon
+  if type(pfDB["quests"]["data-turtle"][41956]) == "table" then pfDB["quests"]["data-turtle"][41956]["min"] = 60 end -- Bounty: Head of Highlord Bolvar Fordragon
+  if type(pfDB["quests"]["data-turtle"][42045]) == "table" then pfDB["quests"]["data-turtle"][42045]["class"] = 256 end -- Tainted Rune (warlock-only, class mask 256)
+  if type(pfDB["quests"]["data-turtle"][42055]) == "table" then pfDB["quests"]["data-turtle"][42055]["class"] = 16 end -- In Favor of the Three Siblings (priest)
+  if type(pfDB["quests"]["data-turtle"][42056]) == "table" then pfDB["quests"]["data-turtle"][42056]["class"] = 16 end -- Garments of the Three Siblings (priest)
+  if type(pfDB["quests"]["data-turtle"][42057]) == "table" then pfDB["quests"]["data-turtle"][42057]["class"] = 16 end -- Light of An'she (priest)
+  if type(pfDB["quests"]["data-turtle"][42058]) == "table" then pfDB["quests"]["data-turtle"][42058]["class"] = 16 end -- Light of An'she (priest)
+  if type(pfDB["quests"]["data-turtle"][42059]) == "table" then pfDB["quests"]["data-turtle"][42059]["class"] = 16 end -- Spiritwalk (priest)
+  if type(pfDB["quests"]["data-turtle"][42060]) == "table" then pfDB["quests"]["data-turtle"][42060]["class"] = 16 end -- Spiritwalk (priest)
+  if type(pfDB["quests"]["data-turtle"][42079]) == "table" then pfDB["quests"]["data-turtle"][42079]["class"] = 16 end -- Secrets of Moonwhisper (priest)
+  -- 70002/70003 skipped: octowow.st lists lvl=6400 (a site data-entry error).
+
+  -- Start/end NPC corrections vs the live octowow.st DB.
+  -- Nat Pagle, Murloc Expert (40545) starts at Agnar Beasttamer (9660), not 5635.
+  if type(pfDB["quests"]["data-turtle"][40545]) == "table" then pfDB["quests"]["data-turtle"][40545]["start"] = { ["U"] = { 9660 } } end
+  -- Damaged Relic Mechanism (41734) ends at Jarkal Mossmeld (6868).
+  if type(pfDB["quests"]["data-turtle"][41734]) == "table" then pfDB["quests"]["data-turtle"][41734]["end"] = { ["U"] = { 6868 } } end
+
+  -- Item-start drop link the merged DB lacked: Translating The Unknown (40749)
+  -- starter item A Strange Parchment (60989) is looted from the Foreign Chest
+  -- object (2010968), 100%.
+  if not pfDB["items"]["data-turtle"][60989] then pfDB["items"]["data-turtle"][60989] = {} end
+  pfDB["items"]["data-turtle"][60989]["O"] = { [2010968] = 100 }
 end
