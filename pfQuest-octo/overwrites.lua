@@ -1954,6 +1954,9 @@ do -- quests
   end
   
   pfDB["quests"]["data-turtle"][349]["pre"] = { 348 }
+  pfDB["quests"]["data-turtle"][607]["pre"] = { 606 }
+  pfDB["quests"]["data-turtle"][1181]["pre"] = { 1180 }
+  pfDB["quests"]["data-turtle"][4782]["pre"] = { 4781 }
 
   -- Oink, Oink! (700001): repeatable level-1 quest present on octowow.st but
   -- absent from every offline DB. Starts/ends at "Pig" (npc 900200) in Elwynn.
