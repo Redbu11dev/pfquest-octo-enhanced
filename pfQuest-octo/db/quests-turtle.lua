@@ -18524,7 +18524,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 28,
     ["min"] = 20,
     ["pre"] = { 1701 },
-    ["race"] = 589,
+    ["race"] = 68,
     ["start"] = {
       ["U"] = { 5413 },
     },

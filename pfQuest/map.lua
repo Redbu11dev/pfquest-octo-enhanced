@@ -1073,7 +1073,7 @@ function pfMap:NodeEnter()
     elseif not this.texture then
       text = pfQuest_Loc["Click Node To Change Color"]
     elseif this.questid and this.texture and this.layer < 5 then
-      text = pfQuest_Loc["Use <Shift>-Click To Mark Quest As Done"]
+      text = pfQuest_Loc["Use <Shift>-Click To Hide Quest"]
     end
 
     -- update tooltip and sizes
