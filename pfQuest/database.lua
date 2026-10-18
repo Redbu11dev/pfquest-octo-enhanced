@@ -1877,10 +1877,14 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
 
   -- hide missing pre-quests
   if quests[id]["pre"] then
-    -- check all pre-quests for one to be completed
+    -- check all pre-quests for one to be completed. A pre-quest the player
+    -- manually hid (hiddenquests) must NOT count as satisfied: hiding is not
+    -- completion, and a stale history entry left over from the old shift-click
+    -- behavior would otherwise wrongly unlock the follow-up quest.
     local one_complete = nil
     for _, prequest in pairs(quests[id]["pre"]) do
-      if pfQuest_history[prequest] then
+      if pfQuest_history[prequest]
+         and not (pfQuest_config.hiddenquests and pfQuest_config.hiddenquests[prequest]) then
         one_complete = true
       end
     end
@@ -1937,6 +1941,14 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
   -- Event/seasonal quests are governed SOLELY by the event option (checked
   -- above), never by the repeatable option — even when they are also repeatable.
   if quests[id]["repeatable"] and not quests[id]["event"] and pfQuest_config["showrepeatable"] == "0" then
+    return
+  end
+
+  -- hide quests the player manually shift-clicked away. Completion alone does
+  -- not hide repeatable/event quests (they can be done again), so the hide
+  -- intent is stored separately in pfQuest_config.hiddenquests (SavedVar,
+  -- survives /reload) by pfMap:NodeClick.
+  if pfQuest_config.hiddenquests and pfQuest_config.hiddenquests[id] then
     return
   end
 

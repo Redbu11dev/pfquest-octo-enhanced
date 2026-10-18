@@ -354,6 +354,10 @@ pfQuest:SetScript("OnUpdate", function()
         pfQuest_history[entry[2]] = nil
       else
         pfQuest_history[entry[2]] = { time(), UnitLevel("player") }
+        -- DEBUG: trace unexpected history writes (helps diagnose fake-completion bugs)
+        if pfQuest_config.debug then
+          DEFAULT_CHAT_FRAME:AddMessage("|cffff8800[pfQuest-trace]|r history SET id=" .. tostring(entry[2]) .. " title=" .. tostring(entry[1]) .. " via REMOVE")
+        end
       end
 
       -- remove from collapsed tracking so the SavedVar doesn't accumulate
@@ -380,6 +384,15 @@ pfQuest:SetScript("OnUpdate", function()
     else
       if entry[4] == "NEW" then
         pfQuest:Debug("|cff55ff55New Quest: " .. entry[1] .. " (" .. entry[2] .. ")")
+
+        -- the player (re)took a quest they had shift-clicked away: lift the
+        -- manual hide so objective/turn-in pins show. Completion alone leaves
+        -- the hide in place -- for a repeatable, hiding is the persistent
+        -- "don't show me this again" signal until re-accepted.
+        if pfQuest_config.hiddenquests and pfQuest_config.hiddenquests[entry[2]] then
+          pfQuest_config.hiddenquests[entry[2]] = nil
+          pfQuest.updateQuestGivers = true
+        end
       else
         pfQuest:Debug("|cffffff55Update Quest: " .. entry[1] .. " (" .. entry[2] .. ")")
       end

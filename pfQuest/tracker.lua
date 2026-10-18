@@ -411,12 +411,17 @@ function tracker.ButtonClick()
       end
     end
   elseif IsShiftKeyDown() then
-    -- mark as done if node is quest and not in questlog
+    -- hide quest if node is quest and not in questlog. Persist to the saved
+    -- per-character hiddenquests set instead of pfQuest_history: a fake
+    -- "completed" entry would make chain follow-ups appear (pre-quest check)
+    -- and keep the quest hidden even after "/db hidden clean" until a
+    -- "/db query" rebuilds history from the server.
     if this.node.questid and not this.node.qlogid then
-      -- mark as done in history
-      pfQuest_history[this.node.questid] = { time(), UnitLevel("player") }
+      pfQuest_config.hiddenquests = pfQuest_config.hiddenquests or {}
+      pfQuest_config.hiddenquests[this.node.questid] = true
+      pfQuest.updateQuestGivers = true
       UIErrorsFrame:AddMessage(
-        string.format("The Quest |cffffcc00[%s]|r (id:%s) is now marked as done.", this.title, this.node.questid),
+        string.format("The Quest |cffffcc00[%s]|r (id:%s) is now hidden (\"/db hidden\" to show it again).", this.title, this.node.questid),
         1,
         1,
         1

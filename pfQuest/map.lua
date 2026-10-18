@@ -841,8 +841,21 @@ end
 function pfMap:NodeClick()
   if IsShiftKeyDown() then
     if this.questid and this.texture and this.layer < 5 then
-      -- mark questnode as done
-      pfQuest_history[this.questid] = { time(), UnitLevel("player") }
+      -- Hide only -- do NOT write pfQuest_history. A fake "completed" entry
+      -- makes follow-up quests treat the pre-quest as done (chain quests like
+      -- Mysterious Cow Scroll II appear immediately) and keeps the quest
+      -- hidden via the completed-quest filter even after "/db hidden clean",
+      -- until a "/db query" rebuilds history. The per-character hiddenquests
+      -- set is the single persistent hide mechanism: it survives /reload and
+      -- /db query, and QuestFilter honors it uniformly. Real completions are
+      -- tracked by the questlog turn-in handler.
+      -- Persist the player's hide intent for EVERY quest type.
+      if pfQuest_config and pfDB["quests"]["data"][this.questid] then
+        if type(pfDB["quests"]["data"][this.questid]) == "table" then
+          pfQuest_config.hiddenquests = pfQuest_config.hiddenquests or {}
+          pfQuest_config.hiddenquests[this.questid] = true
+        end
+      end
     end
 
     if this.node and this.title and this.node[this.title] then

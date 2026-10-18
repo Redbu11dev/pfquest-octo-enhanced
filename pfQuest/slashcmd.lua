@@ -52,6 +52,9 @@ SlashCmdList["PFDB"] = function(input, editbox)
     DEFAULT_CHAT_FRAME:AddMessage(
       "|cff33ffcc/db|cffffffff query |cffcccccc - " .. pfQuest_Loc["Query the server for completed quests"]
     )
+    DEFAULT_CHAT_FRAME:AddMessage(
+      "|cff33ffcc/db|cffffffff hidden [clean] |cffcccccc - " .. pfQuest_Loc["List or clear shift-click-hidden quests"]
+    )
     return
   end
 
@@ -371,6 +374,36 @@ SlashCmdList["PFDB"] = function(input, editbox)
   -- argument: query
   if arg1 == "query" then
     pfDatabase:QueryServer()
+    return
+  end
+
+  -- argument: hidden [clean]
+  if arg1 == "hidden" then
+    local hidden = pfQuest_config and pfQuest_config.hiddenquests
+    if commandlist[2] == "clean" then
+      if hidden then
+        for id in pairs(hidden) do
+          hidden[id] = nil
+        end
+      end
+      pfQuest.updateQuestGivers = true
+      DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. pfQuest_Loc["Cleared all manually hidden quests."])
+      return
+    end
+
+    local count = 0
+    if hidden then
+      for id in pairs(hidden) do
+        count = count + 1
+        local title = pfDB["quests"]["loc"][id] and pfDB["quests"]["loc"][id].T or UNKNOWN
+        DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r " .. pfQuest_Loc["hidden"] .. ": |cffffffff[" .. id .. "] " .. title)
+      end
+    end
+    if count == 0 then
+      DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. pfQuest_Loc["No manually hidden quests."])
+    else
+      DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. count .. " " .. pfQuest_Loc["hidden. Type \"|cff33ffcc/db hidden clean|r\" to show them again."])
+    end
     return
   end
 
