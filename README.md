@@ -14,7 +14,9 @@ Based on original pfquest, but:
 - there is a new "/db hidden" command to see manually hidden quests list 
 and "/db hidden clean" to clean all manually hidden quests list
 
-<img width="453" height="229" alt="image" src="https://github.com/user-attachments/assets/a6979e7f-c827-4bed-a5c7-2bc077951b77" />
+<img width="407" height="232" alt="image" src="https://github.com/user-attachments/assets/a8e46f72-583e-481e-beab-8ebd88c12aee" />
+<img width="373" height="270" alt="image" src="https://github.com/user-attachments/assets/88cd6d9a-3bb9-4c8c-800b-13b4484ee543" />
+
 
 
 
