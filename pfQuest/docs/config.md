@@ -22,7 +22,7 @@ Default=1
 
 ## ["showlowlevel"]
 
-If `allquestgivers` is selected, this option can be used to hide low-level quests from the map. If set to `1`, then no filters are applied.
+If `allquestgivers` is selected, this option can be used to hide low-level quests from the map. If set to `1`, then no filters are applied. A quest counts as low level only when the client's own difficulty-color function (`GetDifficultyColor`) paints its level gray for the player — i.e. exactly when the quest log shows it gray (no XP). Green/yellow quests are always shown.
 Default=1
 
 ## ["showids"]

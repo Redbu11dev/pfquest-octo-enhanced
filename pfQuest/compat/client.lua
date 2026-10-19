@@ -30,6 +30,31 @@ end
 -- wotlk: changed from GetDifficultyColor to GetQuestDifficultyColor in 3.2
 pfQuestCompat.GetDifficultyColor = GetQuestDifficultyColor or GetDifficultyColor
 
+-- IsQuestGray: true when the client's own difficulty-color function paints this
+-- quest level gray for the player — i.e. exactly when the quest log shows the
+-- level in gray. This is the single authority for "low level": it matches
+-- whatever the server/client actually renders, so map filtering can never
+-- disagree with the quest log. (GetQuestGreenRange() is NOT reliable here:
+-- Turtle's gray boundary is server-side and does not follow the stock table.)
+function pfQuestCompat.IsQuestGray(questlevel)
+  local fn = pfQuestCompat.GetDifficultyColor
+  if type(fn) ~= "function" or not questlevel then return false end
+  local ok, a, b, c = pcall(fn, questlevel)
+  if not ok or not a then return false end
+  local r, g, bl
+  if type(a) == "table" then
+    r, g, bl = a.r, a.g, a.b
+  else
+    r, g, bl = a, b, c
+  end
+  if not (r and g and bl) then return false end
+  -- gray difficulty color is a desaturated mid-tone: all channels near-equal
+  -- (|r-g|, |g-b| tiny) and well below yellow/green's dominant channel
+  local mx = math.max(r, g, bl)
+  local mn = math.min(r, g, bl)
+  return (mx - mn) < 0.08 and mx < 0.85
+end
+
 -- wotlk: changed from QuestWatchFrame to WatchFrame in 3.3
 pfQuestCompat.QuestWatchFrame = QuestWatchFrame or WatchFrame
 

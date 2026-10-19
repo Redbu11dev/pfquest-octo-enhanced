@@ -1931,9 +1931,15 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
 
   local isSpecial = (quests[id]["event"] or quests[id]["repeatable"]) and true or false
 
-  -- hide lowlevel quests (repeatable/event quests ignore this display filter)
-  if not isSpecial and quests[id]["lvl"] and quests[id]["lvl"] < plevel - 4 and pfQuest_config["showlowlevel"] == "0" then
-    return
+  -- hide lowlevel quests (repeatable/event quests ignore this display filter).
+  -- "Low level" means the quest log paints the quest level GRAY for the player
+  -- (no XP). Use the client's own difficulty-color function as the authority
+  -- (pfQuestCompat.IsQuestGray): fixed gaps and GetQuestGreenRange() both
+  -- disagreed with the colors actually rendered in-game on Turtle.
+  if not isSpecial and quests[id]["lvl"] and pfQuest_config["showlowlevel"] == "0" then
+    if pfQuestCompat.IsQuestGray(quests[id]["lvl"]) then
+      return
+    end
   end
 
   if isSpecial then
@@ -2089,11 +2095,14 @@ function pfDatabase:SearchQuests(meta, maps)
         meta["layer"] = 2
       end
 
-      -- tint low level quests grey
-      if not isSpecialQuest and quests[id]["lvl"] and quests[id]["lvl"] + 10 < plevel then
-        meta["texture"] = pfQuestConfig.path .. "\\img\\available"
-        meta["vertex"] = VERTEX_WHITE
-        meta["layer"] = 2
+      -- tint low level quests grey (same IsQuestGray check as the showlowlevel
+      -- filter, so tinting and visibility can never disagree)
+      if not isSpecialQuest and quests[id]["lvl"] then
+        if pfQuestCompat.IsQuestGray(quests[id]["lvl"]) then
+          meta["texture"] = pfQuestConfig.path .. "\\img\\available"
+          meta["vertex"] = VERTEX_WHITE
+          meta["layer"] = 2
+        end
       end
 
       -- tint repeatable quests as blue (includes dailies; the live server DB
