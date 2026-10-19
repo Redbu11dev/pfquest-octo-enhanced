@@ -1007,6 +1007,24 @@ function pfDatabase:SearchAreaTriggerID(id, meta, maps, prio)
   return maps
 end
 
+-- UnitRankSuffix
+-- Maps the DB's per-unit "rnk" field (creature_template.Rank: 0=normal,
+-- 1=elite, 2=rare, 3=higher elite/world boss, 4=rare-elite) to a tooltip
+-- suffix such as " (Rare Elite)". Returns "" for normal mobs so the caller
+-- can simply append it to the spawntype. English-only: other locales fall
+-- back to the key itself via pfQuest_Loc's metatable.
+local unitrank = {
+  ["1"] = "Elite",
+  ["2"] = "Rare",
+  ["3"] = "Elite",
+  ["4"] = "Rare Elite",
+}
+
+function pfDatabase:UnitRankSuffix(rnk)
+  local rank = rnk and unitrank[rnk]
+  return rank and (" (" .. pfQuest_Loc[rank] .. ")") or ""
+end
+
 -- SearchMobID
 -- Scans for all mobs with a specified ID
 -- Adds map nodes for each and returns its map table
@@ -1025,7 +1043,7 @@ function pfDatabase:SearchMobID(id, meta, maps, prio)
   meta["spawnid"] = id
   meta["title"] = meta["quest"] or meta["item"] or meta["spawn"]
   meta["level"] = units[id]["lvl"] or UNKNOWN
-  meta["spawntype"] = pfQuest_Loc["Unit"]
+  meta["spawntype"] = pfQuest_Loc["Unit"] .. pfDatabase:UnitRankSuffix(units[id]["rnk"])
   -- description only depends on the above invariant fields + QTYPE/quest/item
   -- compute once here; AddNode will skip its own BuildQuestDescription call
   meta["description"] = pfDatabase:BuildQuestDescription(meta)
@@ -1474,7 +1492,7 @@ function pfDatabase:SearchItemStartSources(itemID)
           spawn = pfDB.units.loc[unit], spawnid = unit,
           level = units[unit]["lvl"] or UNKNOWN,
           respawn = respawn > 0 and SecondsToTime(respawn) or nil,
-          spawntype = pfQuest_Loc["Unit"],
+          spawntype = pfQuest_Loc["Unit"] .. pfDatabase:UnitRankSuffix(units[unit]["rnk"]),
           droprate = chance, sellcount = sellcount, item = itemName,
         })
         table.insert(byZone[zone].coords, { x, y })
