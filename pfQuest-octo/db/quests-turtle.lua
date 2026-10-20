@@ -269,6 +269,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 723 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 235 },
     },
@@ -493,6 +494,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 36 },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 235 },
     },
@@ -1128,6 +1130,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 1015, 2665 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 272 },
     },
@@ -1156,6 +1159,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 1080, 1081, 2296 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 343 },
     },
@@ -1171,6 +1175,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 5 },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 272 },
     },
@@ -1599,6 +1604,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 1467 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 381 },
     },
@@ -1853,6 +1859,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 1468 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 381 },
     },
@@ -4873,6 +4880,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 2924, 2925 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 1154 },
     },
@@ -5270,6 +5278,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3172, 3173, 3174 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 1963 },
     },
@@ -6326,6 +6335,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3496 },
     },
     ["race"] = 434,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 2216 },
     },
@@ -7061,6 +7071,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3712, 3713 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 2430 },
     },
@@ -7186,6 +7197,7 @@ pfDB["quests"]["data-turtle"] = {
       ["U"] = { 2406, 2407 },
     },
     ["race"] = 589,
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 2382 },
     },
@@ -8951,6 +8963,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 3404 },
     },
+    ["skill"] = 185,
     ["start"] = {
       ["U"] = { 2817 },
     },
@@ -9098,6 +9111,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 4389 },
     },
+    ["skill"] = 202,
     ["start"] = {
       ["U"] = { 2921 },
     },
@@ -9113,6 +9127,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 929, 3823 },
     },
     ["pre"] = { 714 },
+    ["skill"] = 171,
     ["start"] = {
       ["U"] = { 2920 },
     },
@@ -17922,6 +17937,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 2309, 2310, 4239 },
     },
     ["race"] = 589,
+    ["skillValue"] = 90,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 6034 },
@@ -18551,6 +18567,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 20,
     ["min"] = 20,
     ["race"] = 589,
+    ["skill"] = 164,
     ["start"] = {
       ["U"] = { 5479 },
     },
@@ -20456,6 +20473,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 37,
     ["pre"] = { 2199 },
     ["race"] = 589,
+    ["skill"] = 171,
     ["start"] = {
       ["U"] = { 6826 },
     },
@@ -21790,6 +21808,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 2868, 5635, 7957 },
     },
     ["race"] = 434,
+    ["skillValue"] = 140,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7790 },
@@ -21806,6 +21825,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2751 },
     ["race"] = 434,
+    ["skillValue"] = 140,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7790 },
@@ -21822,6 +21842,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2752 },
     ["race"] = 434,
+    ["skillValue"] = 160,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7790 },
@@ -21838,6 +21859,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2753 },
     ["race"] = 434,
+    ["skillValue"] = 160,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7790 },
@@ -21851,6 +21873,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 32,
     ["pre"] = { 2754 },
     ["race"] = 434,
+    ["skillValue"] = 160,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7790 },
@@ -21866,6 +21889,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7922, 7963 },
     },
     ["race"] = 434,
+    ["skillValue"] = 210,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7792 },
@@ -21879,6 +21903,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 40,
     ["pre"] = { 2756 },
     ["race"] = 434,
+    ["skillValue"] = 210,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7793 },
@@ -21894,6 +21919,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 6040 },
     },
     ["race"] = 589,
+    ["skillValue"] = 210,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7798 },
@@ -21907,6 +21933,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 40,
     ["pre"] = { 2758 },
     ["race"] = 589,
+    ["skillValue"] = 210,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 7798 },
@@ -21918,6 +21945,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 40,
     ["min"] = 40,
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7794 },
     },
@@ -21933,6 +21962,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3575, 3860 },
     },
     ["pre"] = { 2760 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7802 },
     },
@@ -21947,6 +21978,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3860, 6037 },
     },
     ["pre"] = { 2760 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7802 },
     },
@@ -21961,6 +21994,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3860, 3864 },
     },
     ["pre"] = { 2760 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7802 },
     },
@@ -21972,6 +22007,8 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 40,
     ["pre"] = { 2761 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7802 },
     },
@@ -21983,6 +22020,8 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 40,
     ["pre"] = { 2761, 2762, 2763 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7802 },
     },
@@ -22059,6 +22098,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7928, 7931 },
     },
     ["pre"] = { 2760 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7804 },
     },
@@ -22073,6 +22114,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7926, 7933 },
     },
     ["pre"] = { 2760 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7804 },
     },
@@ -22087,6 +22130,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7927, 7930 },
     },
     ["pre"] = { 2760 },
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7804 },
     },
@@ -22131,6 +22176,8 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 50,
     ["min"] = 45,
     ["race"] = 434,
+    ["skill"] = 164,
+    ["skillValue"] = 210,
     ["start"] = {
       ["U"] = { 7572 },
     },
@@ -22263,6 +22310,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 4304 },
     },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22279,6 +22327,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2847 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22295,6 +22344,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2847 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22311,6 +22361,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2847 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22327,6 +22378,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2847 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22343,6 +22395,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2847 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22356,6 +22409,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 30,
     ["pre"] = { 2848, 2849, 2850, 2851, 2852 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7852 },
@@ -22371,6 +22425,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 4304 },
     },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -22387,6 +22442,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2854 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -22403,6 +22459,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2854 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -22419,6 +22476,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2854 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -22435,6 +22493,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2854 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -22451,6 +22510,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 2854 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -22464,6 +22524,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 30,
     ["pre"] = { 2855, 2856, 2857, 2858, 2859 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7854 },
@@ -24836,6 +24897,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 10467 },
       ["U"] = { 8444, 8447 },
     },
+    ["skill"] = 197,
+    ["skillValue"] = 215,
     ["start"] = {
       ["U"] = { 8439 },
     },
@@ -24848,6 +24911,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 50,
     ["min"] = 40,
+    ["skill"] = 197,
+    ["skillValue"] = 215,
     ["start"] = {
       ["U"] = { 8439 },
     },
@@ -25412,6 +25477,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 4586 },
@@ -25736,6 +25802,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 5174 },
@@ -25749,6 +25816,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 5518 },
@@ -25775,6 +25843,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 5174 },
@@ -25786,6 +25855,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 47,
     ["min"] = 30,
+    ["skill"] = 202,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 3494 },
     },
@@ -25799,6 +25870,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 3494 },
@@ -25812,6 +25884,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 4586 },
@@ -25839,6 +25912,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 3494 },
@@ -25853,6 +25927,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 11270 },
     },
+    ["skill"] = 202,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 8126 },
     },
@@ -25868,6 +25944,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 4384, 4394, 10507 },
     },
+    ["skill"] = 202,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 8126 },
     },
@@ -25884,6 +25962,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 11283 },
     },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 7944 },
@@ -25901,6 +25980,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 3640 },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 7944 },
@@ -25917,6 +25997,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 11282 },
     },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 7406 },
@@ -25934,6 +26015,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 3642 },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 7406 },
@@ -25947,6 +26029,8 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 30,
     ["pre"] = { 3639 },
     ["repeatable"] = 1,
+    ["skill"] = 202,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 8126 },
     },
@@ -25960,6 +26044,7 @@ pfDB["quests"]["data-turtle"] = {
     ["pre"] = { 3641 },
     ["race"] = 589,
     ["repeatable"] = 1,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 7944 },
@@ -25973,6 +26058,8 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 30,
     ["pre"] = { 3639 },
     ["repeatable"] = 1,
+    ["skill"] = 202,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 8738 },
     },
@@ -25985,6 +26072,8 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 30,
     ["pre"] = { 3643 },
     ["repeatable"] = 1,
+    ["skill"] = 202,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 7406 },
     },
@@ -27027,6 +27116,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 3577, 6037, 7910 },
     },
+    ["skill"] = 186,
+    ["skillValue"] = 230,
   },
   [4084] = {
     ["end"] = {
@@ -27655,6 +27746,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 47,
     ["min"] = 30,
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 202,
     ["start"] = {
       ["U"] = { 5518 },
@@ -31175,6 +31267,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 7078, 7910, 12655, 12812 },
     },
+    ["skill"] = 164,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 10637 },
     },
@@ -31197,6 +31291,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 60,
     ["min"] = 55,
+    ["skill"] = 164,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 10918 },
     },
@@ -31211,6 +31307,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 12806, 12847 },
     },
     ["pre"] = { 5126 },
+    ["skill"] = 164,
+    ["skillValue"] = 240,
     ["start"] = {
       ["U"] = { 10918 },
     },
@@ -31240,6 +31338,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 8165, 8203, 8204 },
     },
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7866 },
@@ -31267,6 +31366,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 8211, 8214 },
     },
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7870 },
@@ -31283,6 +31383,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7075, 7077, 7079, 7081 },
     },
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7868 },
@@ -31299,6 +31400,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 8165, 8203, 8204 },
     },
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7867 },
@@ -31315,6 +31417,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7075, 7077, 7079, 7081 },
     },
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7869 },
@@ -31345,6 +31448,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 8211, 8214 },
     },
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 165,
     ["start"] = {
       ["U"] = { 7871 },
@@ -32270,6 +32374,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7935, 7936, 7937 },
     },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 5164 },
@@ -32286,6 +32391,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3853, 3855, 7941, 7945 },
     },
     ["race"] = 589,
+    ["skillValue"] = 200,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 11146 },
@@ -32302,6 +32408,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7935, 7936, 7937 },
     },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 11177 },
@@ -32318,6 +32425,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3853, 3855, 7941, 7945 },
     },
     ["race"] = 434,
+    ["skillValue"] = 200,
     ["skill"] = 164,
     ["start"] = {
       ["U"] = { 11178 },
@@ -32332,6 +32440,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 13351 },
     },
+    ["skill"] = 164,
+    ["skillValue"] = 250,
     ["start"] = {
       ["U"] = { 11191 },
     },
@@ -32345,6 +32455,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 13352 },
     },
+    ["skill"] = 164,
+    ["skillValue"] = 250,
     ["start"] = {
       ["U"] = { 11192 },
     },
@@ -32358,6 +32470,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 13350 },
     },
+    ["skill"] = 164,
+    ["skillValue"] = 250,
     ["start"] = {
       ["U"] = { 11193 },
     },
@@ -32950,6 +33064,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 8170, 14048, 14341, 18240 },
     },
+    ["skill"] = 165,
+    ["skillValue"] = 275,
     ["start"] = {
       ["U"] = { 14338 },
     },
@@ -32965,6 +33081,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["pre"] = { 5518 },
     ["repeatable"] = 1,
+    ["skill"] = 197,
+    ["skillValue"] = 275,
     ["start"] = {
       ["U"] = { 14338 },
     },
@@ -34884,6 +35002,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 14342 },
     },
+    ["skill"] = 197,
+    ["skillValue"] = 280,
     ["start"] = {
       ["U"] = { 11557 },
     },
@@ -36836,6 +36956,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 16967, 16968, 16969, 16970 },
     },
+    ["skill"] = 356,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 12919 },
     },
@@ -36847,6 +36969,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 35,
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 356,
     ["start"] = {
       ["U"] = { 3332 },
@@ -36859,6 +36982,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 35,
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 356,
     ["start"] = {
       ["U"] = { 5161 },
@@ -36873,6 +36997,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 7974, 8932, 12207 },
     },
+    ["skill"] = 185,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 8125 },
     },
@@ -36885,6 +37011,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 35,
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 185,
     ["start"] = {
       ["U"] = { 3399 },
@@ -36897,6 +37024,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 35,
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 185,
     ["start"] = {
       ["U"] = { 5159 },
@@ -36926,6 +37054,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 35,
     ["pre"] = { 6623 },
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 129,
     ["start"] = {
       ["U"] = { 12920 },
@@ -36938,6 +37067,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 35,
     ["race"] = 434,
+    ["skillValue"] = 225,
     ["skill"] = 129,
     ["start"] = {
       ["U"] = { 3373 },
@@ -36951,6 +37081,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 35,
     ["pre"] = { 6625 },
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 129,
     ["start"] = {
       ["U"] = { 12939 },
@@ -36963,6 +37094,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 45,
     ["min"] = 35,
     ["race"] = 589,
+    ["skillValue"] = 225,
     ["skill"] = 129,
     ["start"] = {
       ["U"] = { 5150 },
@@ -39529,6 +39661,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 17203 },
     },
     ["repeatable"] = 1,
+    ["skill"] = 164,
+    ["skillValue"] = 285,
     ["start"] = {
       ["I"] = { 18628 },
     },
@@ -39934,6 +40068,7 @@ pfDB["quests"]["data-turtle"] = {
     ["min"] = 60,
     ["pre"] = { 7642 },
     ["race"] = 589,
+    ["skill"] = 164,
     ["start"] = {
       ["U"] = { 1416 },
     },
@@ -39944,6 +40079,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 60,
     ["min"] = 50,
+    ["skill"] = 164,
+    ["skillValue"] = 265,
     ["start"] = {
       ["I"] = { 18769 },
     },
@@ -39954,6 +40091,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 60,
     ["min"] = 50,
+    ["skill"] = 164,
     ["start"] = {
       ["I"] = { 18770 },
     },
@@ -39965,6 +40103,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 60,
     ["min"] = 50,
     ["repeatable"] = 1,
+    ["skill"] = 164,
     ["start"] = {
       ["I"] = { 18771 },
     },
@@ -39975,6 +40114,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 60,
     ["min"] = 50,
+    ["skill"] = 164,
+    ["skillValue"] = 265,
     ["start"] = {
       ["U"] = { 14567 },
     },
@@ -43767,6 +43908,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 19807 },
     },
     ["repeatable"] = 1,
+    ["skill"] = 356,
     ["start"] = {
       ["U"] = { 15077 },
     },
@@ -43782,6 +43924,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 19807 },
     },
     ["repeatable"] = 1,
+    ["skill"] = 356,
     ["start"] = {
       ["U"] = { 15078 },
     },
@@ -43811,6 +43954,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 19805 },
     },
     ["repeatable"] = 1,
+    ["skill"] = 356,
     ["start"] = {
       ["U"] = { 15079 },
     },
@@ -43856,6 +44000,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 19806 },
     },
     ["repeatable"] = 1,
+    ["skill"] = 356,
     ["start"] = {
       ["U"] = { 15079 },
     },
@@ -43871,6 +44016,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 19803 },
     },
     ["repeatable"] = 1,
+    ["skill"] = 356,
     ["start"] = {
       ["U"] = { 15079 },
     },
@@ -43881,6 +44027,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 60,
     ["min"] = 58,
+    ["skill"] = 356,
     ["start"] = {
       ["I"] = { 19973 },
     },
@@ -44806,6 +44953,8 @@ pfDB["quests"]["data-turtle"] = {
   [8307] = {
     ["lvl"] = 57,
     ["min"] = 54,
+    ["skill"] = 185,
+    ["skillValue"] = 285,
     ["start"] = {
       ["U"] = { 15174 },
     },
@@ -44874,6 +45023,8 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 57,
     ["min"] = 54,
     ["pre"] = { 8307 },
+    ["skill"] = 185,
+    ["skillValue"] = 285,
   },
   [8314] = {
     ["end"] = {
@@ -44921,6 +45072,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 20452 },
     },
+    ["skill"] = 185,
+    ["skillValue"] = 285,
     ["start"] = {
       ["U"] = { 15174 },
     },
@@ -47963,6 +48116,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 8150, 9061 },
     },
     ["pre"] = { 8585 },
+    ["skill"] = 185,
+    ["skillValue"] = 300,
     ["start"] = {
       ["U"] = { 8125 },
     },
@@ -73805,6 +73960,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 40,
     ["min"] = 34,
+    ["skillValue"] = 225,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61912 },
@@ -73817,6 +73973,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 40,
     ["min"] = 34,
+    ["skillValue"] = 225,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61924 },
@@ -73829,6 +73986,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 40,
     ["min"] = 34,
+    ["skillValue"] = 200,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61912 },
@@ -73841,6 +73999,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 40,
     ["min"] = 34,
+    ["skillValue"] = 200,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61924 },
@@ -73855,6 +74014,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 41355 },
     },
+    ["skill"] = 755,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 73102 },
     },
@@ -73870,6 +74031,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 56002, 56004, 56006 },
     },
     ["pre"] = { 41279 },
+    ["skill"] = 755,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 73102 },
     },
@@ -73884,6 +74047,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41356 },
     },
     ["pre"] = { 41280 },
+    ["skill"] = 755,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 73102 },
     },
@@ -73898,6 +74063,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 56082 },
     },
     ["pre"] = { 41281 },
+    ["skill"] = 755,
+    ["skillValue"] = 200,
     ["start"] = {
       ["U"] = { 73102 },
     },
@@ -73912,6 +74079,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41331, 55153 },
     },
     ["pre"] = { 41275 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 6826 },
     },
@@ -73926,6 +74095,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3864, 7909, 55250 },
     },
     ["pre"] = { 41275 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 6826 },
     },
@@ -73940,6 +74111,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41357 },
     },
     ["pre"] = { 41275 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 6826 },
     },
@@ -73951,6 +74124,8 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 44,
     ["min"] = 34,
     ["pre"] = { 41283 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 6826 },
     },
@@ -73965,6 +74140,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41331, 55153 },
     },
     ["pre"] = { 41276 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 6868 },
     },
@@ -73979,6 +74156,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 3864, 7909, 55250 },
     },
     ["pre"] = { 41276 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 6868 },
     },
@@ -74017,6 +74196,8 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 41360 },
     },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 73101 },
     },
@@ -74031,6 +74212,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 56050, 56051, 56052 },
     },
     ["pre"] = { 41291 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 73101 },
     },
@@ -74045,6 +74228,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41340, 56047 },
     },
     ["pre"] = { 41291 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 73101 },
     },
@@ -74059,6 +74244,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 55143, 56048 },
     },
     ["pre"] = { 41291 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 73101 },
     },
@@ -74073,6 +74260,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41343, 56049 },
     },
     ["pre"] = { 41291 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 73101 },
     },
@@ -74169,6 +74358,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 38,
     ["min"] = 32,
+    ["skillValue"] = 150,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61927 },
@@ -74184,6 +74374,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41365 },
     },
     ["pre"] = { 41303 },
+    ["skillValue"] = 150,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 3453 },
@@ -74199,6 +74390,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41340, 41366 },
     },
     ["pre"] = { 41304 },
+    ["skill"] = 755,
+    ["skillValue"] = 150,
     ["start"] = {
       ["U"] = { 61927 },
     },
@@ -74238,6 +74431,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 8925, 11135, 41368 },
     },
     ["pre"] = { 41307 },
+    ["skill"] = 755,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 61913 },
     },
@@ -74339,6 +74534,7 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 50,
     ["min"] = 50,
+    ["skillValue"] = 275,
     ["skill"] = 755,
     ["start"] = {
       ["I"] = { 56099 },
@@ -74354,6 +74550,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41378 },
     },
     ["pre"] = { 41316 },
+    ["skillValue"] = 275,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61913 },
@@ -74369,6 +74566,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 7078, 17010, 17011 },
     },
     ["pre"] = { 41317 },
+    ["skillValue"] = 275,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61913 },
@@ -74384,6 +74582,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 11382, 41379 },
     },
     ["pre"] = { 41317 },
+    ["skillValue"] = 275,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 61913 },
@@ -74575,6 +74774,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = {},
     },
+    ["skillValue"] = 250,
     ["skill"] = 755,
     ["start"] = {
       ["I"] = { 56109 },
@@ -74589,6 +74789,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = {},
     },
+    ["skillValue"] = 275,
     ["skill"] = 755,
     ["start"] = {
       ["I"] = { 56108 },
@@ -74603,6 +74804,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = {},
     },
+    ["skillValue"] = 250,
     ["skill"] = 755,
     ["start"] = {
       ["I"] = { 56110 },
@@ -74618,6 +74820,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 41386 },
     },
     ["pre"] = { 41335 },
+    ["skillValue"] = 250,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 73101 },
@@ -74632,6 +74835,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = {},
     },
+    ["skillValue"] = 275,
     ["skill"] = 755,
     ["start"] = {
       ["I"] = { 56111 },
@@ -74644,6 +74848,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 60,
     ["min"] = 60,
+    ["skill"] = 755,
+    ["skillValue"] = 300,
     ["start"] = {
       ["U"] = { 12042 },
     },
@@ -74658,6 +74864,8 @@ pfDB["quests"]["data-turtle"] = {
       ["U"] = { 60054 },
     },
     ["pre"] = { 41338 },
+    ["skill"] = 755,
+    ["skillValue"] = 275,
     ["start"] = {
       ["U"] = { 61512 },
     },
@@ -77598,6 +77806,7 @@ pfDB["quests"]["data-turtle"] = {
     ["lvl"] = 44,
     ["min"] = 34,
     ["pre"] = { 41292 },
+    ["skillValue"] = 225,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 73101 },
@@ -77613,6 +77822,7 @@ pfDB["quests"]["data-turtle"] = {
       ["U"] = { 73102 },
     },
     ["pre"] = { 41282 },
+    ["skillValue"] = 200,
     ["skill"] = 755,
     ["start"] = {
       ["U"] = { 73101 },
@@ -83879,6 +84089,8 @@ pfDB["quests"]["data-turtle"] = {
     },
     ["lvl"] = 45,
     ["min"] = 35,
+    ["skill"] = 142,
+    ["skillValue"] = 225,
     ["start"] = {
       ["U"] = { 50070 },
     },
@@ -86236,6 +86448,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 51706, 51707, 51708, 51716 },
     },
     ["race"] = 589,
+    ["skill"] = 142,
+    ["skillValue"] = 75,
     ["start"] = {
       ["U"] = { 51530 },
     },
@@ -86250,6 +86464,8 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 51706, 51707, 51708, 51716 },
     },
     ["race"] = 434,
+    ["skill"] = 142,
+    ["skillValue"] = 75,
     ["start"] = {
       ["U"] = { 51532 },
     },
