@@ -546,12 +546,14 @@ function pfDatabase:BuildStaticRejectSet()
     if not pfDB.quests.loc[id] or not pfDB.quests.loc[id].T then
       reject[id] = true
 
-    -- wrong race (only when prace is known)
-    elseif prace and quests[id]["race"] and not (bit.band(quests[id]["race"], prace) == prace) then
+    -- wrong race (only when prace is known). A mask of 0 means "no restriction"
+    -- (octowow.st Race Mask: 0); in Lua 0 is truthy, so an unguarded
+    -- `["race"] and band(0, prace) == prace` would hide the quest for everyone.
+    elseif prace and quests[id]["race"] and quests[id]["race"] > 0 and not (bit.band(quests[id]["race"], prace) == prace) then
       reject[id] = true
 
-    -- wrong class (only when pclass is known)
-    elseif pclass and quests[id]["class"] and not (bit.band(quests[id]["class"], pclass) == pclass) then
+    -- wrong class (only when pclass is known). Same zero-mask guard as race.
+    elseif pclass and quests[id]["class"] and quests[id]["class"] > 0 and not (bit.band(quests[id]["class"], pclass) == pclass) then
       reject[id] = true
     end
   end
@@ -1914,13 +1916,14 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
   end
 
   -- hide non-available quests for your race (redundant when staticRejectSet is warm,
-  -- retained as fallback for the brief window before locale detection completes)
-  if quests[id]["race"] and not (bit.band(quests[id]["race"], prace) == prace) then
+  -- retained as fallback for the brief window before locale detection completes).
+  -- Mask 0 = no restriction; 0 is truthy in Lua so it must be excluded explicitly.
+  if quests[id]["race"] and quests[id]["race"] > 0 and not (bit.band(quests[id]["race"], prace) == prace) then
     return
   end
 
-  -- hide non-available quests for your class
-  if quests[id]["class"] and not (bit.band(quests[id]["class"], pclass) == pclass) then
+  -- hide non-available quests for your class (same zero-mask guard as race)
+  if quests[id]["class"] and quests[id]["class"] > 0 and not (bit.band(quests[id]["class"], pclass) == pclass) then
     return
   end
 
