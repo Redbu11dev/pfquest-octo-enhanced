@@ -278,6 +278,10 @@ pfDB["meta-turtle"] = {
     [93100] = "A",
     [93101] = "A",
     [93102] = "H",
+    -- Moonwhisper Coast flight masters (tortoise taxi nodes 120/122/123)
+    [62908] = "A", -- Merellanea, Narvalis Point (Darnassus)
+    [63048] = "A", -- Z'ahk, Shimmerstar Lake (Draenei Exiles)
+    [63051] = "H", -- Sol Greycloud, Moonhoof Village (Thunder Bluff)
   },
   ["innkeeper"] = {
     [295] = "A",
