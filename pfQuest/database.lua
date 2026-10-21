@@ -1932,6 +1932,25 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
     return
   end
 
+  -- hide quests whose reputation requirement isn't met.
+  -- Format: quests[id]["rep"] = { factionId, minStanding, maxStanding } where
+  -- standings are 1=Hated, 2=Hostile, 3=Unfriendly, 4=Neutral, 5=Friendly,
+  -- 6=Honored, 7=Revered, 8=Exalted. min/max are inclusive bounds; nil means
+  -- "no bound". An undiscovered faction reads as standing=0 (below Hated), so
+  -- a min-only gate hides the quest, while a max-only gate still shows it.
+  if quests[id]["rep"] then
+    local factionId = quests[id]["rep"][1]
+    local minStanding = quests[id]["rep"][2]
+    local maxStanding = quests[id]["rep"][3]
+    local standing = pfDatabase.repcache[factionId] or 0
+    if minStanding and standing < minStanding then
+      return
+    end
+    if maxStanding and standing > maxStanding then
+      return
+    end
+  end
+
   local isSpecial = (quests[id]["event"] or quests[id]["repeatable"]) and true or false
 
   -- hide lowlevel quests (repeatable/event quests ignore this display filter).
@@ -2004,6 +2023,45 @@ function pfDatabase:GetPlayerSkillCached(skill)
   local rank = self.skillcache[professions[skill]]
   return rank or false
 end
+
+-- Reputation cache: maps factionId → current standing (1=Hated … 8=Exalted).
+-- WoW 1.12 GetFactionInfo does not return a factionID, so we walk the full
+-- faction list once and match by display name against a small whitelist of
+-- factions the quest db actually gates on (see pfDatabase.repFactions).
+-- Rebuilt on UPDATE_FACTION and PLAYER_ENTERING_WORLD.
+pfDatabase.repcache = {}
+pfDatabase.repFactions = {
+  ["Ratchet"] = 510,
+  -- Add further factions here as quests gain ["rep"] gates.
+}
+function pfDatabase:BuildReputationCache()
+  for k in pairs(self.repcache) do
+    self.repcache[k] = nil
+  end
+  -- 1.12 faction indexes run from 1 to GetNumFactions(); headers and
+  -- undiscovered factions return nil standing and are skipped.
+  for i = 1, GetNumFactions() do
+    local name, _, standing = GetFactionInfo(i)
+    if name and standing then
+      local fid = self.repFactions[name]
+      if fid then
+        self.repcache[fid] = standing
+      end
+    end
+  end
+end
+
+-- Rebuild repcache whenever standings change so QuestFilter sees fresh data,
+-- and flag questgivers for re-scan so rep-gated quests appear/disappear live.
+pfDatabase.reptracker = CreateFrame("Frame", "pfDatabaseRepTracker", UIParent)
+pfDatabase.reptracker:RegisterEvent("UPDATE_FACTION")
+pfDatabase.reptracker:RegisterEvent("PLAYER_ENTERING_WORLD")
+pfDatabase.reptracker:SetScript("OnEvent", function()
+  pfDatabase:BuildReputationCache()
+  if pfQuest and event == "UPDATE_FACTION" then
+    pfQuest.updateQuestGivers = true
+  end
+end)
 
 -- SearchQuests incremental node cache.
 -- Tracks which quest IDs passed QuestFilter on the last run. On subsequent

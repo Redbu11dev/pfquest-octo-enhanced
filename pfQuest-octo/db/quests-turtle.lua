@@ -56474,6 +56474,7 @@ pfDB["quests"]["data-turtle"] = {
     ["obj"] = {
       ["I"] = { 2589, 3371 },
     },
+    ["rep"] = { 510, nil, 3 },
     ["repeatable"] = 1,
     ["start"] = {
       ["U"] = { 16418 },
@@ -66663,6 +66664,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 11135 },
     },
     ["race"] = 589,
+    ["repeatable"] = 1,
     ["start"] = {
       ["U"] = { 61065 },
     },
@@ -66677,6 +66679,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 11177 },
     },
     ["race"] = 589,
+    ["repeatable"] = 1,
     ["start"] = {
       ["U"] = { 61065 },
     },
@@ -66691,6 +66694,7 @@ pfDB["quests"]["data-turtle"] = {
       ["I"] = { 14344 },
     },
     ["race"] = 589,
+    ["repeatable"] = 1,
     ["start"] = {
       ["U"] = { 61065 },
     },
