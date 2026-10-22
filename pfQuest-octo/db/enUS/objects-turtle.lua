@@ -12383,4 +12383,7 @@ pfDB["objects"]["enUS-turtle"] = {
   [180751] = "Floating Wreckage",
   [180752] = "Firefin Snapper School",
   [180753] = "Patch of Elemental Water",
+  [1000223] = "Wanted: Vile Criminal!",
+  [2020411] = "Wilderness Survival",
+  [3000692] = "Forge (Invisible)",
 }

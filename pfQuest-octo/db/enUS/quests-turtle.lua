@@ -20457,6 +20457,12 @@ pfDB["quests"]["enUS-turtle"] = {
     ["O"] = "Light the three extravagant fireworks three times in front of the Great Spirit of the Turtle. You can find them on the strongest creatures within dungeons.",
     ["T"] = "Celebrations of a Bountiful Year",
   },
+  [39980] = {
+    ["T"] = "Slay the Dishonorable",
+  },
+  [39981] = {
+    ["T"] = "Slay the Honorable",
+  },
   [39982] = {
     ["D"] = "Can you believe this? They\'ve taken all our assets, kicked us out of our building, and arrested our representitives. K\'ron Tusk is being held in a cell down at the Cleft of Shadow. An innocent orc imprisoned!They\'ve accussed us of being spies, simply because of Mr Tusk\'s unorthodox ancestry, and for having some investors from the other side of the pond among our ranks.Will you help me get our people out of here? The warchief might not care about the economic potential his city is losing, but his grunts still have bills to pay. I\'m sure you could arrange Mr Tusk\'s release!",
     ["O"] = "Bribe the grunts guarding K\'ron Tusk in the Cleft of Shadows.",
@@ -21786,6 +21792,9 @@ pfDB["quests"]["enUS-turtle"] = {
     ["D"] = "It would appear the time has come, you have done extremely well in everything I have asked, but now I must ask you to do what is required for the good of my people. Long have we suffered, not at the hands of our enemies, but at the hands of our leadership.$B$BIf there is to be a future for the Maul\'ogg then it must be a future of reasoning, we cannot secure ourselves a place within the Horde if we are constantly engaged in self destructive warfare.$B$BBring the Elixir of Insom\'ni to Lord Cruk\'zogg, inform him that it is a potion of great power that I created for him. When all is done, return to me.",
     ["O"] = "Give the Elixir of Insom\'ni to Lord Cruk\'zogg to sway his mind, and then return to Haz\'gorg the Great Seer in Maul\'ogg Refuge.",
     ["T"] = "The Maul\'ogg Crisis IX",
+  },
+  [40273] = {
+    ["T"] = "In Search of the Owner",
   },
   [40274] = {
     ["D"] = "The Southfury River wasn\'t always so bad, not when we first settled here. The floods and rough waters made for a test of will against the natural forces of our new home, but something has changed recently that caused a massive increase in crocolisks!$B$BAll I want to do is fish all day, but now I have to fight off beasts and spend more time with a weapon in hand than enjoying my fishing spot.$B$BBefore you ask, I\'ve done enough fighting for one lifetime from the siege of Durnholde to the battle of Mt. Hyjal. I just want to relax and contribute this way. Go out and secure my fishing spot and I\'ll give you one of my handcrafted fishing rods.",
@@ -24916,6 +24925,12 @@ pfDB["quests"]["enUS-turtle"] = {
     ["D"] = "The letter appears before you: unsealed, but very much untouched. Inside, the letter has been scribbled in a harsh and crude manner, the words entirely foreign.$B$BSomething feels very wrong about this. A familiar, dreadful voice appears in your head; you are drawn to the Master\'s Cellar near Karazhan.",
     ["O"] = "Seek out this mysterious energy at the Master\'s Cellar in the Deadwind Pass.",
     ["T"] = "A Mysterious Missive",
+  },
+  [40915] = {
+    ["T"] = "A Mysterious Errand",
+  },
+  [40916] = {
+    ["T"] = "The 52nd Package",
   },
   [40917] = {
     ["D"] = "Inside this mailbox I am safekeeping a crystal of immense magnitude and unparalleled importance, §N. This crystal once housed powers drawn from the Well of Eternity itself. And though its power has long since been depleted, there is ever the chance of it being restored, wouldn\'t you agree? I require its power and you will help me restore it, if you wish for your hunger to be satiated, that is. Should you decide to lend your hand in returning it to its former glory, be assured - your efforts will be compensated more than justly.$B$BFirstly, you must delve deep into Blackrock Mountain and grab the eye of Overlord Wyrmthalak, who stalks the lower halls of Blackrock Spire.",
