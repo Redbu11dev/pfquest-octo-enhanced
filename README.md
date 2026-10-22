@@ -8,7 +8,7 @@ DO NOT ATTEMPT TO UPDATE THE ADDON THROUGH THE LAUNCHER, IT WILL NEVER WORK
 (!) You need to delete previous pfquest folders too
 not just overwrite old folders with new ones, but delete previous pfquest and pfquest-octo folders before putting in new version from github (and delete pfquest-turtle folder entirely if you have that one) (!)
 
-launcher needs the addon to be directly the root of repository
+launcher needs the addon to be directly the root of repository,
 my repository root contains 2 addons,
 updating through launcher will not work
 ---
