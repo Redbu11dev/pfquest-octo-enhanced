@@ -2529,6 +2529,7 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Vyrin\'s Revenge",
   },
   [532] = {
+    ["D"] = "The town of Hillsbrad is in disarray and we believe it will soon fall.  We must, however, persist in our ruthlessness until the human scum are wiped from the foothills for eternity.$b$bDespite their overwhelming losses, the humans rally around their leadership and keep fighting.  We must eliminate their leader, Magistrate Burnside, as well as the town council.  Destroy their revered political document as well, the Hillsbrad Proclamation.  And while you\'re at it, steal the town registry.",
     ["O"] = "Kill Magistrate Burnside and 5 Hillsbrad Councilmen.  Destroy the Hillsbrad Proclamation.  Steal the Hillsbrad Town Registry.  Report back to Darthalia in Tarren Mill afterwards.",
     ["T"] = "Battle of Hillsbrad",
   },
@@ -2625,6 +2626,7 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Helcular\'s Revenge",
   },
   [553] = {
+    ["D"] = "Here, take the Rod of Helcular. You will need it.$b$bHelcular fashioned 3 ceremonial pyres as part of his most powerful spell.  The Flame of Azel and the Flame of Veraz lie within the Foothill Caverns. The Flame of Uzel lies in a cave above the caverns, further north in the mountains.$b$bThe Rod of Helcular must be charged from each of the three flames. Once the ritual is complete, drive the rod into Helcular\'s grave in Southshore, the heavily guarded human town to the south.  Vengeance shall be ours!",
     ["O"] = "Charge the Rod of Helcular with the powers of the Flame of Azel, Flame of Veraz and the Flame of Uzel.$B$BDrive the charged rod into Helcular\'s grave in Southshore.",
     ["T"] = "Helcular\'s Revenge",
   },
@@ -3730,6 +3732,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "This Is Going to Be Hard",
   },
   [779] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Seal of the Earth",
   },
   [780] = {
@@ -3804,6 +3808,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Burning Blade Medallion",
   },
   [795] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Seal of the Earth",
   },
   [796] = "_",
@@ -4036,6 +4042,7 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Fungal Spores",
   },
   [849] = {
+    ["D"] = "Following Khazgorm\'s plans it should be no problem to fashion an explosive charge$b$bAh, there we go.$b$bNow, $n, I am going to entrust you with a special task. Take this explosive stick and use it to blow up the flying machine at Bael Modan.$b$bNot only is the flying machine a key part of the site\'s infrastructure it also serves as a weapon of war. More importantly it is an icon of power and an insult to the memory of my tribe.$b$bMake me proud by completing this heroic task and you shall be rewarded.",
     ["O"] = "Destroy the flying machine at Bael Modan and return to Gann Stonespire.",
     ["T"] = "Revenge of Gann",
   },
@@ -4563,9 +4570,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Trouble at the Docks",
   },
   [960] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Onu is meditating",
   },
   [961] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Onu is meditating",
   },
   [962] = {
@@ -4723,6 +4734,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Escape Through Stealth",
   },
   [996] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [997] = {
@@ -4731,6 +4744,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Denalan\'s Earth",
   },
   [998] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [999] = "_",
@@ -5857,6 +5872,7 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Missing Diplomat",
   },
   [1267] = {
+    ["D"] = "Recently a diplomat was sent to Theramore to meet with Jaina Proudmoore. That diplomat never arrived.$B$BI believe the Defias are involved in this plot, but I\'m not sure how. The diplomat\'s disappearance still eludes public attention, but it can\'t remain that way for long.$B$BAgents of the king are already scouring the city for clues, but I have my own contacts I would like involved.$B$BIn the Valley of Heroes is an old friend of mine named Jorgen. Find him, give him this note, and follow his instructions.",
     ["O"] = "Speak to Jaina Proudmore in Dustwallow Swamp.",
     ["T"] = "The Missing Diplomat",
   },
@@ -6615,6 +6631,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Binding",
   },
   [1514] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [1515] = {
@@ -6791,6 +6809,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Beat Bartleby",
   },
   [1641] = {
+    ["D"] = "In all things, a paladin must reflect the Light which supplements our strength. To strive to be divine for one of our kind does not mean we strive for godhood--we strive to be good in all actions.$B$BAlthough called upon to smite evil in these harsh times, you must always remember that it\'s aiding others that will truly set you apart from the citizens of Azeroth. Compassion, patience, bravery--these things mean as much to a paladin as strength in battle.$B$BKnow this well, and never forget it.",
+    ["O"] = "Speak to Duthorian Rall in Stormwind.",
     ["T"] = "The Tome of Divinity",
   },
   [1642] = {
@@ -6809,6 +6829,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Tome of Divinity",
   },
   [1645] = {
+    ["D"] = "In all things, a paladin must reflect the Light which supplements our strength. To strive to be divine for one of our kind does not mean we strive for godhood--we strive to be good in all actions.$B$BAlthough called upon to smite evil in these harsh times, you must always remember that it\'s aiding others that will truly set you apart from the citizens of Azeroth. Compassion, patience, bravery--these things mean as much to a paladin as strength in battle.$B$BKnow this well, and never forget it.",
+    ["O"] = "Speak to Duthorian Rall in Stormwind.",
     ["T"] = "The Tome of Divinity",
   },
   [1646] = {
@@ -7150,9 +7172,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Tome of Divinity",
   },
   [1789] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Symbol of Life",
   },
   [1790] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Symbol of Life",
   },
   [1791] = {
@@ -7164,9 +7190,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Whirlwind Weapon",
   },
   [1793] = {
+    ["D"] = "Valor, and all the virtues that go along with it, are like rare minerals: you must cherish them when you find them because of their value, but you must also take time to harvest them... refine them. When mixed together properly, a strong alloy is formed, sometimes unbreakable by even the most powerful blows.$B$BThis strength, your faith, your bravery, must be tested. You must learn to never lose faith and realize that with the power of the Light, you can overcome things that most others cannot.",
+    ["O"] = "Speak to Duthorian Rall in Stormwind.",
     ["T"] = "The Tome of Valor",
   },
   [1794] = {
+    ["D"] = "Valor, and all the virtues that go along with it, are like rare minerals: you must cherish them when you find them because of their value, but you must also take time to harvest them... refine them. When mixed together properly, a strong alloy is formed, sometimes unbreakable by even the most powerful blows.$B$BThis strength, your faith, your bravery, must be tested. You must learn to never lose faith and realize that with the power of the Light, you can overcome things that most others cannot.",
+    ["O"] = "Speak to Duthorian Rall in Stormwind.",
     ["T"] = "The Tome of Valor",
   },
   [1795] = {
@@ -7330,6 +7360,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Mirror Lake",
   },
   [1878] = {
+    ["D"] = "Greetings $N - the name\'s Luglunket, and we\'ve got an important job for you if you\'re up for it!  Huzzah!$B$BNothing would please me more as a seasoned spigot operator to take any Wastewander water pouches you might find out in the desert.  That\'s our water anyway - the nomads have just stolen it is all!  The Gadgetzan Water Company will offer you an official care package for every five you turn in.  Most importantly though, you\'re helping Gadgetzan help itself!",
+    ["O"] = "Bring 5 Wastewander Water Pouches to Spigot Operator Luglunket in Gadgetzan.",
     ["T"] = "Water Pouch Bounty",
   },
   [1879] = {
@@ -7793,6 +7825,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Mathias and the Defias",
   },
   [2361] = {
+    ["D"] = "You are going to need to find some \"oomph\" for the necklace, and Uldaman is probably the best place for it, actually.  I guess there are a lot of constructs running around in there, yeah?  Well, take out the biggest, baddest construct in that place and grab its power source!  I am pretty sure I can fuse that source into the necklace.$B$BWithout that power source, fixing the necklace will be impossible.  Come back to me here to Ironforge when you have it, and we\'ll get it all fixed up for you!",
+    ["O"] = "Obtain a power source from the most powerful construct you can find in Uldaman, and deliver it to Talvash del Kissel in Ironforge.",
     ["T"] = "Restoring the Necklace",
   },
   [2378] = {
@@ -7929,6 +7963,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Kum\'isha\'s Endeavors",
   },
   [2523] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [2541] = {
@@ -8440,6 +8476,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Skulk Rock Clean-up",
   },
   [2878] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [2879] = {
@@ -8453,6 +8491,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Troll Necklace Bounty",
   },
   [2881] = {
+    ["D"] = "Get this straight, $R - we are NOT part of the Alliance!  The Wildhammers are independent, relying on deeds and actions to prove one\'s worth, rather than the blather of those who use jibber-jabber to bolster their do-nothing attitudes!$B$BIf you\'re looking for friends here, then prove your worth to us first!  The foul trolls that choke the hillsides of the Hinterlands sometimes carry tribal necklaces.  Bring five of them to me, and we\'ll mark it down as a step in the right direction for you.",
+    ["O"] = "Bring 5 Troll Tribal Necklaces to Fraggar Thundermantle in Aerie Peak.",
     ["T"] = "Troll Necklace Bounty",
   },
   [2882] = {
@@ -8626,9 +8666,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Sparklematic 5200!",
   },
   [2952] = {
+    ["D"] = "This contraption stands out amongst the gnomes holding out against the madness outside the room.  A small plaque on the device reads \"The Sparklematic 5200\", followed by some text:$B$B\"Grime and residue ruining your sparklies?  The Sparklematic 5200 puts the shine back in shine-tastic!  Insert the item you wish to clean and deposit three silver coins in the coin slot.  Give the Sparklematic 5200 a moment for operation, and voila!  Your valuables will emerge clean and shiny!\"",
+    ["O"] = "Insert a Grime-Encrusted Item into the Sparklematic 5200, and be sure to have three silver coins to start the machine.",
     ["T"] = "The Sparklematic 5200!",
   },
   [2953] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "More Sparklematic Action",
   },
   [2954] = {
@@ -9174,6 +9218,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Thistleshrub Valley",
   },
   [3363] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [3364] = {
@@ -9390,6 +9436,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Pocked Black Box",
   },
   [3483] = {
+    ["D"] = "Ah, so Tymor sent you, huh? Yeah, I owe him a favor or two. What\'s that? Why, that little devil. Yeah, I can help him out with that. So you\'ll need a flare gun and a location... easy enough.$B$BThere\'s a small island off the southern peninsula of Azshara that we\'ve made a landing pad on. You take this flare gun, and use it there. I\'ll see your signal and come by to pick up this... whatever it is he wants.",
+    ["O"] = "Speak to Xiggs Fuselighter and get a Standard Issue Flare Gun from him in Ironforge.",
     ["T"] = "Signal for Pickup",
   },
   [3501] = {
@@ -9577,6 +9625,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Seeping Corruption",
   },
   [3570] = {
+    ["D"] = "See that tauren behind me--the one who looks like she\'s going to be ill at any moment? She was in Azshara recently. She claims she was wounded by some naga while making her way through the Ruins of Eldarath.$B$BAfter fighting off a few of them, she took a break on the beach and drank from one of the tide pools. Now she\'s feeling nauseous... among other things.$B$BI\'d like to find out what she drank. Take this box, in it are some empty vials I labeled. Fill each at different pools and come back.",
+    ["O"] = "Fill all 4 Empty Vials at the tide pools along the coast of the Ruins of Eldarath in Azshara before returning to Chemist Cuely.",
     ["T"] = "Seeping Corruption",
   },
   [3578] = {
@@ -9711,15 +9761,23 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Show Your Work",
   },
   [3644] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Membership Card Renewal",
   },
   [3645] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Membership Card Renewal",
   },
   [3646] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Membership Card Renewal",
   },
   [3647] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Membership Card Renewal",
   },
   [3661] = {
@@ -10081,6 +10139,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "A Taste of Flame",
   },
   [4041] = {
+    ["D"] = "Now, what\'s this? Linken... FORGOT?$B$BOh, I see... Lost his memory...$B$BWell, here is his sword. It\'s not complete, though. I know of the one that can finish it, but... speaking with him may prove difficult.$B$BListen, I know of someone that will be able to help you. It\'s too much to explain right now, but you must somehow acquire a Videre Elixir. The only one I know that can help you with that is Gregan Brewspewer. He\'s hard to track down, but last I knew he was camping in the wilds of Feralas.",
+    ["O"] = "Seek out Gregan Brewspewer in northern Feralas. From him, learn how you may acquire the Videre Elixir, then return to Donova Snowden in Winterspring.",
     ["T"] = "The Videre Elixir",
   },
   [4061] = {
@@ -10127,9 +10187,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Cleansing Felwood",
   },
   [4103] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Hunting",
   },
   [4104] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Mining",
   },
   [4105] = {
@@ -10138,45 +10202,73 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Salve via Gathering",
   },
   [4106] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Skinning",
   },
   [4107] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Disenchanting",
   },
   [4108] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Hunting",
   },
   [4109] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Mining",
   },
   [4110] = {
+    ["D"] = "There be something other than demons on my mind, mon. My tribe, my own people. Lost to the madness of bad, very bad voodoo. One day the Loa be seeking our Speaker in his slumber. The Loa asked for strong mojo to be made, the Mojo of Dreams.$B$BA mojo that strong needed blessed water, blessed by the Dragons. So I be finding my way to the big green portal. There I found the demons and dirtied my hands with their blood as the Speaker ran away! When I be returning home, my own people sneered at me in hostility. Sent me away. No part of the Shadeflayers, they said.$B$BBad, bad voodoo took over their mind mon. But to fix bad voodoo, you be needing to pay blood and good mojo. Both price of blood and mojo can be paid in Zul\'Hatha. Where you will find Gan\'hota the Speaker with his Mojo of Dreams. Not far you be finding Warlord Hanzento, whose blood you need to spill. He be the reason for this foolishness and this be the right way to set things right!",
+    ["O"] = "",
     ["T"] = "Salve via Gathering",
   },
   [4111] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Skinning",
   },
   [4112] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Disenchanting",
   },
   [4113] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4114] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4115] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4116] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4117] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Whipper Root",
   },
   [4118] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4119] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Night Dragon",
   },
   [4120] = {
@@ -10341,9 +10433,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Love Potion",
   },
   [4221] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4222] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4223] = {
@@ -10542,6 +10638,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Kharan\'s Tale",
   },
   [4343] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4361] = {
@@ -10578,6 +10676,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Crystal Spire",
   },
   [4401] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4402] = {
@@ -10586,6 +10686,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Galgar\'s Cactus Apple Surprise",
   },
   [4403] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4421] = {
@@ -10604,21 +10706,33 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Purified!",
   },
   [4443] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Whipper Root",
   },
   [4444] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Whipper Root",
   },
   [4445] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Whipper Root",
   },
   [4446] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Whipper Root",
   },
   [4447] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Night Dragon",
   },
   [4448] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Night Dragon",
   },
   [4449] = {
@@ -10637,36 +10751,58 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Key to Freedom",
   },
   [4461] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Whipper Root",
   },
   [4462] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Night Dragon",
   },
   [4463] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Libram of Rumination",
   },
   [4464] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4465] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Songflower",
   },
   [4466] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4467] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corrupted Windblossom",
   },
   [4481] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Libram of Constitution",
   },
   [4482] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Libram of Tenacity",
   },
   [4483] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Libram of Resilience",
   },
   [4484] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Libram of Voracity",
   },
   [4485] = {
@@ -10823,15 +10959,23 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Sparklematic 5200!",
   },
   [4603] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "More Sparklematic Action",
   },
   [4604] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "More Sparklematic Action",
   },
   [4605] = {
+    ["D"] = "This contraption stands out amongst the gnomes holding out against the madness outside the room.  A small plaque on the device reads \"The Sparklematic 5200\", followed by some text:$B$B\"Grime and residue ruining your sparklies?  The Sparklematic 5200 puts the shine back in shine-tastic!  Insert the item you wish to clean and deposit three silver coins in the coin slot.  Give the Sparklematic 5200 a moment for operation, and voila!  Your valuables will emerge clean and shiny!\"",
+    ["O"] = "Insert a Grime-Encrusted Item into the Sparklematic 5200, and be sure to have three silver coins to start the machine.",
     ["T"] = "The Sparklematic 5200!",
   },
   [4606] = {
+    ["D"] = "This contraption stands out amongst the gnomes holding out against the madness outside the room.  A small plaque on the device reads \"The Sparklematic 5200\", followed by some text:$B$B\"Grime and residue ruining your sparklies?  The Sparklematic 5200 puts the shine back in shine-tastic!  Insert the item you wish to clean and deposit three silver coins in the coin slot.  Give the Sparklematic 5200 a moment for operation, and voila!  Your valuables will emerge clean and shiny!\"",
+    ["O"] = "Insert a Grime-Encrusted Item into the Sparklematic 5200, and be sure to have three silver coins to start the machine.",
     ["T"] = "The Sparklematic 5200!",
   },
   [4621] = {
@@ -11447,9 +11591,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Mrs. Dalson\'s Diary",
   },
   [5059] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Locked Away",
   },
   [5060] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Locked Away",
   },
   [5061] = {
@@ -11928,9 +12076,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Return to the Bulwark",
   },
   [5237] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Mission Accomplished!",
   },
   [5238] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Mission Accomplished!",
   },
   [5241] = {
@@ -12125,27 +12277,43 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Catch of the Day",
   },
   [5401] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Argent Dawn Commission",
   },
   [5402] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Minion\'s Scourgestones",
   },
   [5403] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Invader\'s Scourgestones",
   },
   [5404] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corruptor\'s Scourgestones",
   },
   [5405] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Argent Dawn Commission",
   },
   [5406] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corruptor\'s Scourgestones",
   },
   [5407] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Invader\'s Scourgestones",
   },
   [5408] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Minion\'s Scourgestones",
   },
   [5421] = {
@@ -12207,6 +12375,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "A Warden of the Horde",
   },
   [5503] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Argent Dawn Commission",
   },
   [5504] = {
@@ -12215,6 +12385,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Mantles of the Dawn",
   },
   [5505] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Key to Scholomance",
   },
   [5506] = "_",
@@ -12224,15 +12396,23 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Mantles of the Dawn",
   },
   [5508] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Corruptor\'s Scourgestones",
   },
   [5509] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Invader\'s Scourgestones",
   },
   [5510] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Minion\'s Scourgestones",
   },
   [5511] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Key to Scholomance",
   },
   [5512] = "_",
@@ -12263,6 +12443,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Gordok Ogre Suit",
   },
   [5519] = {
+    ["D"] = "If you\'re going to fight the king of this dump - and I think that\'s what you\'re bound to do - then you\'re going to need to get by Captain Kromcrush.  Now, you can get by him by killing him, sure.  You might actually want to leave him alive.$B$BHow, you ask?  Since I\'ve been here, I think I know how to make an ogre suit that will last just long enough to fool these bozos.  The only problem is stability - ten minutes tops.  Bring me what I need, and I\'ll make you one.  I\'m not going anywhere...",
+    ["O"] = "Bring 4 Bolts of Runecloth, 8 Rugged Leather, 2 Rune Threads, and Ogre Tannin to Knot Thimblejack.  He is currently chained inside the Gordok wing of Dire Maul.",
     ["T"] = "The Gordok Ogre Suit",
   },
   [5520] = "_",
@@ -12283,6 +12465,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Chromatic Mantle of the Dawn",
   },
   [5525] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Free Knot!",
   },
   [5526] = {
@@ -12449,6 +12633,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Returning Home",
   },
   [5634] = {
+    ["D"] = "You\'ve caught the attention of our superiors, $N. They\'ve asked you travel to the Cathedral of Light in Stormwind as soon as possible. Apparently they feel you\'ve proven yourself already and are prepared to further your training. When you get there, find High Priestess Laurena. She will be able to guide you further. Good luck, and may the Light be with you.",
+    ["O"] = "Speak to High Priestess Laurena in Stormwind.",
     ["T"] = "Desperate Prayer",
   },
   [5635] = {
@@ -12537,6 +12723,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "In Favor of Darkness",
   },
   [5652] = {
+    ["D"] = "It be time for you to meet with Ur\'kyo, $N. He be in the Valley of Spirits in the orc city. Go there and speak to him. It is time you learn more of the old ways of our kind. It time you be brought into the circle and made a true priest of our tribe.",
+    ["O"] = "Speak to Ur\'kyo in Orgrimmar.",
     ["T"] = "Hex of Weakness",
   },
   [5654] = {
@@ -12560,6 +12748,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Hex of Weakness",
   },
   [5658] = {
+    ["D"] = "This isn\'t the place for you, $N. You should head to the War Quarter in Undercity as soon as possible. Aelthalyste has called all her priests and priestesses there as soon as they are ready. It\'s time they learn more about their power and how to harness it.$B$BShe will not tolerate tardiness or excuses, so you\'d best be on your way.",
+    ["O"] = "Speak to Aelthalyste in the Undercity.",
     ["T"] = "Touch of Weakness",
   },
   [5659] = {
@@ -12588,6 +12778,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Touch of Weakness",
   },
   [5672] = {
+    ["D"] = "You know you have access to any of our trainers at any time, $N, but there are some things that we cannot pass on to you. One of those things are the teachings of your goddess Elune. She gives special abilities to her faithful, and if I\'m not mistaken, it is time for you to return home to your Temple of the Moon to be tested.$B$BReturn there when you can and speak to Priestess Alathea.",
+    ["O"] = "Speak to Priestess Alathea in Darnassus.",
     ["T"] = "Elune\'s Grace",
   },
   [5673] = {
@@ -12606,6 +12798,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Elune\'s Grace",
   },
   [5676] = {
+    ["D"] = "As much as I\'d like to show you our own special teachings of the Light, it is not our place. Your place is back in Stormwind with your own kind, $N... for now. Believe me, I mean no offense. When you return to High Priestess Laurena in the Cathedral of Light you\'ll understand what I\'m talking about--the time has come for your race to prepare you for the future; to separate yourself from others that follow a similar path.",
+    ["O"] = "Speak to High Priestess Laurena in Stormwind.",
     ["T"] = "Arcane Feedback",
   },
   [5677] = {
@@ -12619,9 +12813,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Arcane Feedback",
   },
   [5679] = {
+    ["D"] = "Ah, a wonderful day for you, $N. I can see by the lessons you\'ve learned that the time has come to send you back to Aelthalyste. There are things only she can teach you, and even then, only if you prove worthy.$B$BI will not spoil the surprise for you, but I remember when I was a young priest learning about true power... divine power. Yes, those were the days.$B$BGo back to Aelthalyste in the Undercity, $N. She will be awaiting you in the War Quarter.",
+    ["O"] = "Speak to Aelthalyste in the Undercity.",
     ["T"] = "Devouring Plague",
   },
   [5680] = {
+    ["D"] = "Something important is up in Orgrimmar, $N.$B$BThe normal messengers that come through here looking for troll priests usually are very casual. This time, they seemed to be in much more a hurry. Don\'t dally too long in Thunder Bluff. I\'d return to the Valley of Spirits as soon as possible.",
+    ["O"] = "Speak to Ur\'kyo in Orgrimmar.",
     ["T"] = "Shadowguard",
   },
   [5713] = {
@@ -12776,33 +12974,53 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Calling in the Reserves",
   },
   [5882] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Hunting",
   },
   [5883] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Mining",
   },
   [5884] = {
+    ["D"] = "There be something other than demons on my mind, mon. My tribe, my own people. Lost to the madness of bad, very bad voodoo. One day the Loa be seeking our Speaker in his slumber. The Loa asked for strong mojo to be made, the Mojo of Dreams.$B$BA mojo that strong needed blessed water, blessed by the Dragons. So I be finding my way to the big green portal. There I found the demons and dirtied my hands with their blood as the Speaker ran away! When I be returning home, my own people sneered at me in hostility. Sent me away. No part of the Shadeflayers, they said.$B$BBad, bad voodoo took over their mind mon. But to fix bad voodoo, you be needing to pay blood and good mojo. Both price of blood and mojo can be paid in Zul\'Hatha. Where you will find Gan\'hota the Speaker with his Mojo of Dreams. Not far you be finding Warlord Hanzento, whose blood you need to spill. He be the reason for this foolishness and this be the right way to set things right!",
+    ["O"] = "",
     ["T"] = "Salve via Gathering",
   },
   [5885] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Skinning",
   },
   [5886] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Disenchanting",
   },
   [5887] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Hunting",
   },
   [5888] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Mining",
   },
   [5889] = {
+    ["D"] = "There be something other than demons on my mind, mon. My tribe, my own people. Lost to the madness of bad, very bad voodoo. One day the Loa be seeking our Speaker in his slumber. The Loa asked for strong mojo to be made, the Mojo of Dreams.$B$BA mojo that strong needed blessed water, blessed by the Dragons. So I be finding my way to the big green portal. There I found the demons and dirtied my hands with their blood as the Speaker ran away! When I be returning home, my own people sneered at me in hostility. Sent me away. No part of the Shadeflayers, they said.$B$BBad, bad voodoo took over their mind mon. But to fix bad voodoo, you be needing to pay blood and good mojo. Both price of blood and mojo can be paid in Zul\'Hatha. Where you will find Gan\'hota the Speaker with his Mojo of Dreams. Not far you be finding Warlord Hanzento, whose blood you need to spill. He be the reason for this foolishness and this be the right way to set things right!",
+    ["O"] = "",
     ["T"] = "Salve via Gathering",
   },
   [5890] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Skinning",
   },
   [5891] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Salve via Disenchanting",
   },
   [5892] = {
@@ -13171,6 +13389,7 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Gathering the Cure",
   },
   [6124] = {
+    ["D"] = "The amount of salve made out of the reagents you brought me is good enough for ten doses, $N.  While I work with the village to try and make some more salve, I\'d like for you to help us get a head start.  All around Darkshore are sickly deer; use the salve on them and cure their malaise.$B$BDendrite Starblaze in Moonglade will want to talk to you when you\'re done, I\'m sure.  Please extend Auberdine\'s thanks to the Cenarion Circle there... and let me say thanks to you directly for the help you\'ve given!",
     ["O"] = "Use the Curative Animal Salve on 10 Sickly Deer that are located throughout Darkshore; doing so should cure them.  Sickly Deer have been reported starting south of the Cliffspring River to the north of Auberdine and extending all the way into southern Darkshore where the edge of Ashenvale begins.",
     ["T"] = "Curing the Sick",
   },
@@ -13195,6 +13414,7 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Gathering the Cure",
   },
   [6129] = {
+    ["D"] = "I was able to make enough salve for ten doses of curing, $N.  While I work with local authorities to try and make some more salve, I\'d like for you to help us get a head start.  All around the northern Barrens are sickly gazelles; use the salve on them and cure their malaise.$B$BDendrite Starblaze in Moonglade will want to talk to you when you\'re done, I\'m sure.  Please extend our thanks to the Cenarion Circle there... and let me say thanks to you directly for the help you\'ve given!",
     ["O"] = "Use the Curative Animal Salve on 10 Sickly Gazelles that are located throughout the northern part of the Barrens; doing so should cure them.  Sickly Gazelles have been reported north of the east-west road that runs through the Crossroads.",
     ["T"] = "Curing the Sick",
   },
@@ -13454,6 +13674,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Ashenvale Hunt",
   },
   [6383] = {
+    ["D"] = "Attention, young adventurers!  The wilds of Ashenvale await you!$B$BThe Horde has established a strong presence in the lands north of the Barrens.  Our two outposts - Splintertree Post and the Zoram Strand Outpost - strive to bring glory to the Horde!  Those who would prove themselves should seek out guidance there.  Of note: Senani Thunderheart in Splintertree Post, directly north of the Barrens, seeks adventurers willing to take part in a great hunt of Ashenvale!",
+    ["O"] = "Speak with Senani Thunderheart at Splintertree Post, Ashenvale.",
     ["T"] = "The Ashenvale Hunt",
   },
   [6384] = {
@@ -14225,33 +14447,49 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Proving Grounds",
   },
   [7163] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Rise and Be Recognized",
   },
   [7164] = {
     ["T"] = "Honored Amongst the Clan",
   },
   [7165] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Earned Reverence",
   },
   [7166] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Legendary Heroes",
   },
   [7167] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Eye of Command",
   },
   [7168] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Rise and Be Recognized",
   },
   [7169] = {
     ["T"] = "Honored Amongst the Guard",
   },
   [7170] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Earned Reverence",
   },
   [7171] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Legendary Heroes",
   },
   [7172] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Eye of Command",
   },
   [7181] = {
@@ -14422,6 +14660,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Wanted: MORE ORCS!",
   },
   [7429] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Free Knot!",
   },
   [7441] = {
@@ -14520,6 +14760,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Camp Mojache",
   },
   [7493] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Journey Has Just Begun",
   },
   [7494] = {
@@ -14538,6 +14780,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Celebrating Good Times",
   },
   [7497] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Journey Has Just Begun",
   },
   [7498] = {
@@ -14854,6 +15098,8 @@ pfDB["quests"]["enUS-turtle"] = {
   [7664] = "_",
   [7665] = "_",
   [7666] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Again Into the Great Ossuary",
   },
   [7667] = {
@@ -15591,12 +15837,18 @@ pfDB["quests"]["enUS-turtle"] = {
   [8025] = "_",
   [8026] = "_",
   [8041] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Strength of Mount Mugamba",
   },
   [8042] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Strength of Mount Mugamba",
   },
   [8043] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Strength of Mount Mugamba",
   },
   [8044] = {
@@ -15605,24 +15857,36 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Rage of Mount Mugamba",
   },
   [8045] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Heathen\'s Brand",
   },
   [8046] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Heathen\'s Brand",
   },
   [8047] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Heathen\'s Brand",
   },
   [8048] = {
     ["T"] = "The Hero\'s Brand",
   },
   [8049] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Eye of Zuldazar",
   },
   [8050] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Eye of Zuldazar",
   },
   [8051] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Eye of Zuldazar",
   },
   [8052] = {
@@ -15774,12 +16038,18 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "More Resource Crates",
   },
   [8101] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Pebble of Kajaro",
   },
   [8102] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Pebble of Kajaro",
   },
   [8103] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Pebble of Kajaro",
   },
   [8104] = {
@@ -15791,24 +16061,36 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Battle for Arathi Basin!",
   },
   [8106] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Kezan\'s Taint",
   },
   [8107] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Kezan\'s Taint",
   },
   [8108] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Kezan\'s Taint",
   },
   [8109] = {
     ["T"] = "Kezan\'s Unstoppable Taint",
   },
   [8110] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Enchanted South Seas Kelp",
   },
   [8111] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Enchanted South Seas Kelp",
   },
   [8112] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Enchanted South Seas Kelp",
   },
   [8113] = {
@@ -15825,12 +16107,18 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Control Five Bases",
   },
   [8116] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Vision of Voodress",
   },
   [8117] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Vision of Voodress",
   },
   [8118] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Vision of Voodress",
   },
   [8119] = {
@@ -15882,12 +16170,18 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Zandalrian Shadow Mastery Talisman",
   },
   [8145] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Maelstrom\'s Tendril",
   },
   [8146] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Maelstrom\'s Tendril",
   },
   [8147] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Maelstrom\'s Tendril",
   },
   [8148] = {
@@ -16105,9 +16399,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Nat\'s Measuring Tape",
   },
   [8228] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Could I get a Fishing Flier?",
   },
   [8229] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Could I get a Fishing Flier?",
   },
   [8231] = {
@@ -16340,6 +16638,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Only One May Rise",
   },
   [8289] = {
+    ["D"] = "You have proven your value to our efforts in Warsong Gulch. Continue to aid the cause and bring me more talismans of merit. Do this, and you will earn even more of our trust.",
+    ["O"] = "You obtained a Silverwing Talisman of Merit for your last task, talk to me again, and you gain your reward.",
     ["T"] = "Talismans of Merit",
   },
   [8290] = {
@@ -16373,6 +16673,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Quell the Silverwing Usurpers",
   },
   [8296] = {
+    ["D"] = "You have proven your value to our efforts in Warsong Gulch. Continue to rage against the Silverwing Sentinels! Bring me more marks of honor!",
+    ["O"] = "You obtained a Warsong Mark of Honor for your last task, talk to me again, and you gain your reward.",
     ["T"] = "Mark of Honor",
   },
   [8297] = {
@@ -16471,6 +16773,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Calling",
   },
   [8316] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8317] = {
@@ -16665,24 +16969,38 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Remember Alterac Valley!",
   },
   [8376] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8377] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8378] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8379] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8380] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8381] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8382] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Armaments of War",
   },
   [8383] = {
@@ -17144,6 +17462,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Field Duty",
   },
   [8508] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Field Duty Papers",
   },
   [8509] = {
@@ -17440,6 +17760,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Scrying Goggles? No Problem!",
   },
   [8579] = {
+    ["D"] = "I see that you\'re no ordinary mortal, $n. Your chances against the Old God, however infinitely small, are greater than ours at this point. After all, while he expects dragons at his doorstep, he is not prepared for someone like you.$b$bJust as Anachronos and Staghelm defeated the Qiraji a thousand years ago through the alliance of mortal and dragon races, we too shall form a pact. Gain the trust of the Bronze Dragonflight and you\'ll gain our trust. Only then we shall make a true champion out of you.",
+    ["O"] = "",
     ["T"] = "Mortal Champions",
   },
   [8580] = {
@@ -18096,6 +18418,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Field Duty",
   },
   [8732] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Field Duty Papers",
   },
   [8733] = {
@@ -18161,15 +18485,23 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Metzen the Reindeer",
   },
   [8747] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Protector",
   },
   [8748] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Protector",
   },
   [8749] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Protector",
   },
   [8750] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Protector",
   },
   [8751] = {
@@ -18178,15 +18510,23 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Protector of Kalimdor",
   },
   [8752] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Conqueror",
   },
   [8753] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Conqueror",
   },
   [8754] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Conqueror",
   },
   [8755] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Conqueror",
   },
   [8756] = {
@@ -18195,15 +18535,23 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Qiraji Conqueror",
   },
   [8757] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Invoker",
   },
   [8758] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Invoker",
   },
   [8759] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Invoker",
   },
   [8760] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "The Path of the Invoker",
   },
   [8761] = {
@@ -18231,6 +18579,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Changing of Paths - Conqueror No More",
   },
   [8767] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "A Gently Shaken Gift",
   },
   [8768] = {
@@ -18330,6 +18680,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Armor Kits for the Field",
   },
   [8788] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "A Gently Shaken Gift",
   },
   [8789] = {
@@ -18439,51 +18791,83 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Bandages for the Field",
   },
   [8811] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8812] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8813] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8814] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8815] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8816] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8817] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8818] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8819] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8820] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8821] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8822] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8823] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8824] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8825] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8826] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8827] = {
@@ -18502,51 +18886,83 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Ultimate Deception",
   },
   [8830] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8831] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8832] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8833] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8834] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8835] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8836] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8837] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8838] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8839] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8840] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8841] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8842] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8843] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8844] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "One Commendation Signet",
   },
   [8845] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Ten Commendation Signets",
   },
   [8846] = {
@@ -18560,6 +18976,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Ten Signets for War Supplies",
   },
   [8848] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Fifteen Signets for War Supplies",
   },
   [8849] = {
@@ -18583,6 +19001,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Ten Signets for War Supplies",
   },
   [8853] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Fifteen Signets for War Supplies",
   },
   [8854] = {
@@ -18704,6 +19124,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Valadar Starsong",
   },
   [8893] = {
+    ["D"] = "",
+    ["O"] = " ",
     ["T"] = "The Super Egg-O-Matic",
   },
   [8897] = {
@@ -19103,6 +19525,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Zinge\'s Assessment",
   },
   [8981] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Gift Giving",
   },
   [8982] = {
@@ -19161,6 +19585,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Right Piece of Lord Valthalak\'s Amulet",
   },
   [8993] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Gift Giving",
   },
   [8994] = {
@@ -19619,6 +20045,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Dreamwalker Wristguards",
   },
   [9094] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Argent Dawn Gloves",
   },
   [9095] = {
@@ -20227,9 +20655,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Faint Necrotic Crystal",
   },
   [9317] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Consecrated Sharpening Stones",
   },
   [9318] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Blessed Wizard Oil",
   },
   [9319] = {
@@ -20238,9 +20670,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "A Light in Dark Places",
   },
   [9320] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Major Mana Potion",
   },
   [9321] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Major Healing Potion",
   },
   [9322] = {
@@ -20284,30 +20720,46 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Stealing Darnassus\'s Flame",
   },
   [9333] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Argent Dawn Gloves",
   },
   [9334] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Blessed Wizard Oil",
   },
   [9335] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Consecrated Sharpening Stones",
   },
   [9336] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Major Healing Potion",
   },
   [9337] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Major Mana Potion",
   },
   [9338] = {
     ["T"] = "Allegiance to Cenarion Circle",
   },
   [9339] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "A Thief\'s Reward",
   },
   [9341] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Tabard of the Argent Dawn",
   },
   [9343] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "Tabard of the Argent Dawn",
   },
   [9353] = "_",
@@ -20322,6 +20774,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Fragmented Magic",
   },
   [9365] = {
+    ["D"] = "",
+    ["O"] = "",
     ["T"] = "A Thief\'s Reward",
   },
   [9367] = {
@@ -20458,9 +20912,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "Celebrations of a Bountiful Year",
   },
   [39980] = {
+    ["D"] = "What kind of deranged mind attacks civilians? Countless innocents have died in this conflict already, but there are those that make it their goal to hurt the helpless. And not just the men, but the women and the children too. Such savagery cannot go unanswered. We must act to prevent it. Find the player with the most dishonorable kills during the past day and put an end to their slaughter.",
+    ["O"] = "Kill the player with the most dishonorable kills during the past day.",
     ["T"] = "Slay the Dishonorable",
   },
   [39981] = {
+    ["D"] = "What is honorable about mass slaughter? Nothing, it is madness, and we have a duty to prevent it. To stop the war between the Alliance and Horde from consuming us all, we must eliminate those that participate in it most enthusiastically. Find the player with the most honorable kills during the past day and put and end to their bloodlust. Only then can we have peace.",
+    ["O"] = "Kill the player with the most honorable kills during the past day.",
     ["T"] = "Slay the Honorable",
   },
   [39982] = {
@@ -21794,6 +22252,8 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "The Maul\'ogg Crisis IX",
   },
   [40273] = {
+    ["D"] = "<A gust of wind opens the enclosed journal>.$B$BSeeking stars down the ocean deep,\nLost grins down by the port\nTears drowned in tobacco smoke\nFalse hopes in cheers.\nI\'m cold, tired and I wish to sleep\nDeep and easy to walk through, the empty\nWhere should I begin so I can continue?\nI try to accept who I am\nWho I am and what I wish to be\nIn my hopeless need of love, I bear one single regret.$B$B<As you go through the pages the poetry seems to get darker and darker>.$B$Bof slumber\nDarkness depth\nI was seeking apathy,\nDrowning in misery\nBeginning and end\nStuck in the middle\nNo purpose\nNo goal\nDark skies\nShy moon\nCold night\nWarm bed.$B$B<Turning to the last page you don\'t know what to make of it>.$B$BWHY\nwhy why why\nWhy me, what did I do wrong?$B$B<The page is scribbled with the word why, on top of all the repetition it\'s written once again all over the page. At the end of the journal a name and a message is relayed>.",
+    ["O"] = "Find the owner of the journal in Stormwind.",
     ["T"] = "In Search of the Owner",
   },
   [40274] = {
@@ -24927,9 +25387,13 @@ pfDB["quests"]["enUS-turtle"] = {
     ["T"] = "A Mysterious Missive",
   },
   [40915] = {
+    ["D"] = "We meet again $N. I must say, I am impressed with your progress so far. You have proven far more… resilient... than most.$B$BYou know deep down why I have called you here. You still cheat death with every passing moment. You cling to this mortal coil, despite all adds. Yet, you still hunger for more. I can sate that hunger, assuming you manage to fulfil some... obligations. Only the most fierce souls are worthy of my second blessing, after all.$B$BIf I have divined your spirit accurately, then you will want to go to Gadgetzan and speak to Marin Noggenfogger. Tell him I need the... 52nd package.",
+    ["O"] = "Seek out Marin Noggenfogger in Gadgetzan.",
     ["T"] = "A Mysterious Errand",
   },
   [40916] = {
+    ["D"] = "Who told you about that? Hmm? No answer?$B$BFine. The 52nd Package was lost, anyway. Missing straight outta the vault itself, like it just spirited itself away.$B$BI paid a guy to track it down, and he ended up at that centaur tomb in Desolace, Maradon or something? Your guess is as good as mine as to how it got there.$B$B I guess if you want it, you better go get it.",
+    ["O"] = "Get the 52nd Package and bring it to the Mysterious Mailbox.",
     ["T"] = "The 52nd Package",
   },
   [40917] = {
@@ -30581,6 +31045,7 @@ pfDB["quests"]["enUS-turtle"] = {
   },
   [42057] = {
     ["D"] = "You are here. Ready to start?",
+    ["O"] = "Speak to Artahla Starstrider in Thunder Bluff.",
     ["T"] = "Light of An\'she",
   },
   [42058] = {
@@ -30590,6 +31055,7 @@ pfDB["quests"]["enUS-turtle"] = {
   },
   [42059] = {
     ["D"] = "You are here. Ready to start?",
+    ["O"] = "Speak to Artahla Starstrider in Thunder Bluff.",
     ["T"] = "Spiritwalk",
   },
   [42060] = {
