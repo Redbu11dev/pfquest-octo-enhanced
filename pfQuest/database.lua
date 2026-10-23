@@ -1284,6 +1284,26 @@ function pfDatabase:SearchObjectSkill(id)
   return skill, caption
 end
 
+-- HasProfessionName
+-- Returns true if the player's skill list contains the given localized
+-- profession name (e.g. pfQuest_Loc["Herbalism"]). Used to hide herb/mine
+-- objective nodes the player can't gather at all. Rank is irrelevant here:
+-- having the profession at ANY level counts (a 1/150 herbalist still wants
+-- Liferoot nodes). General professions (Fishing/Cooking/Survival/First Aid)
+-- never reach this check because herbs/mines only map to Herbalism/Mining.
+function pfDatabase:HasProfessionName(localizedName)
+  if not localizedName then
+    return true
+  end
+  for i = 0, GetNumSkillLines() do
+    local skillName = GetSkillLineInfo(i)
+    if skillName == localizedName then
+      return true
+    end
+  end
+  return false
+end
+
 -- Scans for all objects with a specified ID
 -- Adds map nodes for each and returns its map table
 function pfDatabase:SearchObjectID(id, meta, maps, prio)
@@ -1292,6 +1312,14 @@ function pfDatabase:SearchObjectID(id, meta, maps, prio)
   end
 
   local skill, caption = pfDatabase:SearchObjectSkill(id)
+
+  -- hide herb/mine nodes that need a profession the player doesn't have at
+  -- all (e.g. Liferoot "150 [Herbalism]" for a non-herbalist on quest 1712).
+  -- Under-leveled professions still show — a 1/150 herbalist wants the nodes.
+  if skill and caption and not pfDatabase:HasProfessionName(caption) then
+    return maps
+  end
+
   local maps = maps or {}
   local prio = prio or 1
   meta = meta or {}
