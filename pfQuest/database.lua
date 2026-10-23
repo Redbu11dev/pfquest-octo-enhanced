@@ -1884,6 +1884,13 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
     return
   end
 
+  -- data-hidden quests (["hide"] = 1): known to the db but not currently
+  -- available in-game (e.g. disabled battleground token turnins). The record is
+  -- kept so they reappear if re-enabled, but they never render anywhere.
+  if quests[id]["hide"] then
+    return
+  end
+
   -- hide active quest
   if pfQuest.questlog[id] then
     return
@@ -1911,6 +1918,24 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
 
     -- hide if none of the pre-quests has been completed
     if not one_complete then
+      return
+    end
+  end
+
+  -- hide quests that need another quest ACTIVE-or-completed (["preactive"]).
+  -- Used for givers/objects that unlock while a related quest is in progress
+  -- OR already done (tortoise stores this as a negative prevquest, e.g. 1714's
+  -- cauldron needs 1712 held or finished). OR-semantics like ["pre"], but an
+  -- in-progress (questlog) prerequisite also satisfies it.
+  if quests[id]["preactive"] then
+    local one_available = nil
+    for _, prequest in pairs(quests[id]["preactive"]) do
+      if (pfQuest_history[prequest] or pfQuest.questlog[prequest])
+         and not (pfQuest_config.hiddenquests and pfQuest_config.hiddenquests[prequest]) then
+        one_available = true
+      end
+    end
+    if not one_available then
       return
     end
   end
