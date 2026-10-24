@@ -788,54 +788,45 @@ function pfQuest:AddWorldMapIntegration()
 
   function pfQuest.mapButton:UpdateMenu()
     local function CreateEntries()
+      -- Shared select handler: set trackingmethod, keep the tracker "Current
+      -- Zone" toggle (btnzone) in sync, then reset. this:GetID() is the entry id.
+      local function SelectTrackingMethod()
+        UIDropDownMenu_SetSelectedID(pfQuest.mapButton, this:GetID(), 0)
+        pfQuest_config["trackingmethod"] = this:GetID()
+        if pfQuest.tracker and pfQuest.tracker.UpdateZoneButton then
+          pfQuest.tracker.UpdateZoneButton()
+        end
+        pfQuest:ResetAll()
+      end
+
       local info = {}
       info.text = pfQuest_Loc["All Quests"]
       info.checked = false
-      info.func = function()
-        UIDropDownMenu_SetSelectedID(pfQuest.mapButton, this:GetID(), 0)
-        pfQuest_config["trackingmethod"] = this:GetID()
-        pfQuest:ResetAll()
-      end
+      info.func = SelectTrackingMethod
       UIDropDownMenu_AddButton(info)
 
       local info = {}
       info.text = pfQuest_Loc["Tracked Quests"]
       info.checked = false
-      info.func = function()
-        UIDropDownMenu_SetSelectedID(pfQuest.mapButton, this:GetID(), 0)
-        pfQuest_config["trackingmethod"] = this:GetID()
-        pfQuest:ResetAll()
-      end
+      info.func = SelectTrackingMethod
       UIDropDownMenu_AddButton(info)
 
       local info = {}
       info.text = pfQuest_Loc["Manual Selection"]
       info.checked = false
-      info.func = function()
-        UIDropDownMenu_SetSelectedID(pfQuest.mapButton, this:GetID(), 0)
-        pfQuest_config["trackingmethod"] = this:GetID()
-        pfQuest:ResetAll()
-      end
+      info.func = SelectTrackingMethod
       UIDropDownMenu_AddButton(info)
 
       local info = {}
       info.text = pfQuest_Loc["Hide Quests"]
       info.checked = false
-      info.func = function()
-        UIDropDownMenu_SetSelectedID(pfQuest.mapButton, this:GetID(), 0)
-        pfQuest_config["trackingmethod"] = this:GetID()
-        pfQuest:ResetAll()
-      end
+      info.func = SelectTrackingMethod
       UIDropDownMenu_AddButton(info)
 
       local info = {}
       info.text = pfQuest_Loc["Current Zone"]
       info.checked = false
-      info.func = function()
-        UIDropDownMenu_SetSelectedID(pfQuest.mapButton, this:GetID(), 0)
-        pfQuest_config["trackingmethod"] = this:GetID()
-        pfQuest:ResetAll()
-      end
+      info.func = SelectTrackingMethod
       UIDropDownMenu_AddButton(info)
     end
 

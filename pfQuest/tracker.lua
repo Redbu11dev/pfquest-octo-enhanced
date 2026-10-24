@@ -152,6 +152,9 @@ tracker:SetScript("OnEvent", function()
   end
 
   UpdateSortButton()
+  if tracker.UpdateZoneButton then
+    tracker.UpdateZoneButton()
+  end
 end)
 
 tracker:SetScript("OnMouseDown", function()
@@ -309,6 +312,48 @@ do -- button panel
     tracker.mode = "GIVER_TRACKING"
     UpdateSortButton()
     pfMap:UpdateNodes()
+  end)
+
+  -- "Current Zone" toggle: flips trackingmethod between 5 (Current Zone) and 1
+  -- (All Quests). Independent overlay — does not change the tracker's left
+  -- radio mode (quests/database/giver). Synced with the world-map dropdown,
+  -- which reads the same pfQuest_config["trackingmethod"]. Default on (5).
+  tracker.btnzone = CreateFrame("Button", nil, tracker.panel)
+  tracker.btnzone:SetPoint("TOPRIGHT", -86, -1)
+  tracker.btnzone:SetWidth(panelheight - 2)
+  tracker.btnzone:SetHeight(panelheight - 2)
+  tracker.btnzone.bg = tracker.btnzone:CreateTexture(nil, "BACKGROUND")
+  tracker.btnzone.bg:SetAllPoints()
+  tracker.btnzone.bg:SetTexture(0, 0, 0, 0)
+  tracker.btnzone.label = tracker.btnzone:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  tracker.btnzone.label:SetAllPoints()
+  tracker.btnzone.label:SetFont(pfUI.font_default, 11)
+  tracker.btnzone.label:SetText("Z")
+  tracker.btnzone:SetScript("OnEnter", ShowTooltip)
+  tracker.btnzone:SetScript("OnLeave", HideTooltip)
+
+  tracker.UpdateZoneButton = function()
+    local on = tonumber(pfQuest_config["trackingmethod"]) == 5
+    if on then
+      tracker.btnzone.label:SetTextColor(0.2, 1, 0.8, 1)
+      tracker.btnzone.tooltip = "Show Only Current Zone: |cff55ff55On|r\n|cff33ffcc<Click>|r Show All Quests"
+    else
+      tracker.btnzone.label:SetTextColor(0.6, 0.6, 0.6, 1)
+      tracker.btnzone.tooltip = "Show Only Current Zone: |cffff5555Off|r\n|cff33ffcc<Click>|r Show Current Zone Only"
+    end
+  end
+
+  tracker.btnzone:SetScript("OnClick", function()
+    if tonumber(pfQuest_config["trackingmethod"]) == 5 then
+      pfQuest_config["trackingmethod"] = 1
+    else
+      pfQuest_config["trackingmethod"] = 5
+    end
+    if pfQuest.mapButton then
+      pfQuest.mapButton.current = tonumber(pfQuest_config["trackingmethod"])
+    end
+    tracker.UpdateZoneButton()
+    pfQuest:ResetAll()
   end)
 
   tracker.btnsort = CreateFrame("Button", nil, tracker.panel)
