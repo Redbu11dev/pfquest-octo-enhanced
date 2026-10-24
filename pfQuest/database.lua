@@ -505,7 +505,7 @@ function pfDatabase:BuildNameIndex()
 
   for _, db in pairs({ "units", "objects", "items" }) do
     idx[db] = {}
-    for id, loc in pairs(pfDB[db]["loc"]) do
+    for id, loc in pairs(pfDB[db] and pfDB[db]["loc"] or {}) do
       if loc then
         if not idx[db][loc] then
           idx[db][loc] = {}
@@ -914,7 +914,7 @@ function pfDatabase:GetIDByName(name, db, partial, server)
   end
 
   -- Slow path: full scan for partial matches (browser/slash commands) and quests
-  for id, loc in pairs(pfDB[db]["loc"]) do
+  for id, loc in pairs(pfDB[db] and pfDB[db]["loc"] or {}) do
     if db == "quests" then
       loc = loc["T"]
     end
@@ -942,7 +942,7 @@ function pfDatabase:GetIDByIDPart(idPart, db)
   end
   local ret = {}
 
-  for id, loc in pairs(pfDB[db]["loc"]) do
+  for id, loc in pairs(pfDB[db] and pfDB[db]["loc"] or {}) do
     if db == "quests" then
       loc = loc["T"]
     end
@@ -2399,8 +2399,8 @@ function pfDatabase:GetQuestIDs(qid)
 
   local tcount = 0
   -- check if multiple quests share the same name
-  for id, data in pairs(pfDB["quests"]["loc"]) do
-    if quests[id] and data.T == title then
+  for id, data in pairs(pfDB["quests"]["loc"] or {}) do
+    if quests[id] and type(data) == "table" and data.T == title then
       tcount = tcount + 1
     end
   end
@@ -2409,8 +2409,8 @@ function pfDatabase:GetQuestIDs(qid)
   if tcount == 0 and title then
     local tlen = string.len(title)
     local tscore, tbest, ttitle = nil, math.min(tlen / 2, 5), nil
-    for id, data in pairs(pfDB["quests"]["loc"]) do
-      if quests[id] and data.T then
+    for id, data in pairs(pfDB["quests"]["loc"] or {}) do
+      if quests[id] and type(data) == "table" and data.T then
         tscore = lev(data.T, title, tbest)
         if tscore < tbest then
           tbest = tscore
@@ -2435,10 +2435,10 @@ function pfDatabase:GetQuestIDs(qid)
     end
   end
 
-  for id, data in pairs(pfDB["quests"]["loc"]) do
+  for id, data in pairs(pfDB["quests"]["loc"] or {}) do
     local score = 0
 
-    if quests[id] and data.T and data.T == title then
+    if quests[id] and type(data) == "table" and data.T and data.T == title then
       -- low score for same name
       score = 1
 

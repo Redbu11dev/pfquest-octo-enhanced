@@ -999,8 +999,8 @@ if not GetQuestLink then -- Allow to send questlinks from questlog
       id = tonumber(id)
 
       if not id or id == 0 then
-        for scanID, data in pairs(pfDB["quests"]["loc"]) do
-          if data.T == questTitle then
+        for scanID, data in pairs(pfDB["quests"]["loc"] or {}) do
+          if type(data) == "table" and data.T == questTitle then
             id = scanID
             break
           end

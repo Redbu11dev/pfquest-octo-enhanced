@@ -540,7 +540,7 @@ function pfMap:GetMapNameByID(id)
 end
 
 function pfMap:GetMapIDByName(search)
-  for id, name in pairs(pfDB["zones"]["loc"]) do
+  for id, name in pairs(pfDB["zones"]["loc"] or {}) do
     if name == search then
       return id
     end
