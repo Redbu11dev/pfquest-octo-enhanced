@@ -133,7 +133,7 @@ end
 
 tracker = CreateFrame("Frame", "pfQuestMapTracker", UIParent)
 tracker:Hide()
-tracker:SetPoint("LEFT", UIParent, "LEFT", 0, 0)
+tracker:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, -200)
 tracker:SetWidth(200)
 tracker:SetMovable(true)
 tracker:EnableMouse(true)
@@ -165,12 +165,19 @@ end)
 
 tracker:SetScript("OnMouseUp", function()
   this:StopMovingOrSizing()
-  local anchor, x, y = pfUI.api.ConvertFrameAnchor(this, pfUI.api.GetBestAnchor(this))
+  -- Anchor by TOPLEFT so the tracker's top edge stays fixed when its height
+  -- changes (quest count grow/shrink). GetBestAnchor could return BOTTOMLEFT,
+  -- which pins the bottom and lets the top drift on resize. Use the same
+  -- coordinate convention as pfUI.api.ConvertFrameAnchor (same-name anchor,
+  -- y = top - screenHeight/scale) so the saved value round-trips correctly.
+  local scale = this:GetScale() or 1
+  local x = this:GetLeft() or 0
+  local y = (this:GetTop() or 0) - GetScreenHeight() / scale
   this:ClearAllPoints()
-  this:SetPoint(anchor, x, y)
+  this:SetPoint("TOPLEFT", UIParent, "TOPLEFT", x, y)
 
   -- save position
-  pfQuest_config.trackerpos = { anchor, x, y }
+  pfQuest_config.trackerpos = { "TOPLEFT", x, y }
 end)
 
 tracker:SetScript("OnUpdate", function()
@@ -216,8 +223,25 @@ tracker:SetScript("OnShow", function()
 
   -- load tracker position if exists
   if pfQuest_config.trackerpos then
+    local anchor, x, y = unpack(pfQuest_config.trackerpos)
     this:ClearAllPoints()
-    this:SetPoint(unpack(pfQuest_config.trackerpos))
+    this:SetPoint(anchor, x, y)
+
+    -- Migrate any non-TOPLEFT anchor to TOPLEFT so the top edge stays fixed on
+    -- resize. After SetPoint the frame renders at the right spot; read its real
+    -- top/left and re-anchor by TOPLEFT (same-name convention), then persist.
+    if anchor ~= "TOPLEFT" then
+      local scale = this:GetScale() or 1
+      local left = this:GetLeft()
+      local top = this:GetTop()
+      if top and left then
+        local nx = left
+        local ny = top - GetScreenHeight() / scale
+        this:ClearAllPoints()
+        this:SetPoint("TOPLEFT", UIParent, "TOPLEFT", nx, ny)
+        pfQuest_config.trackerpos = { "TOPLEFT", nx, ny }
+      end
+    end
   end
 end)
 
