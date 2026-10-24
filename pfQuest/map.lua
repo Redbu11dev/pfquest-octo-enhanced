@@ -854,6 +854,12 @@ function pfMap:NodeClick()
         if type(pfDB["quests"]["data"][this.questid]) == "table" then
           pfQuest_config.hiddenquests = pfQuest_config.hiddenquests or {}
           pfQuest_config.hiddenquests[this.questid] = true
+          UIErrorsFrame:AddMessage(
+            string.format("The Quest |cffffcc00[%s]|r (id:%s) is now hidden (\"/db hidden\" to list, \"/db hidden remove %s\" to undo).", this.title, this.questid, this.questid),
+            1,
+            1,
+            1
+          )
         end
       end
     end

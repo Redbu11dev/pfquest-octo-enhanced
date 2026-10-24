@@ -411,27 +411,13 @@ function tracker.ButtonClick()
       end
     end
   elseif IsShiftKeyDown() then
-    -- hide quest if node is quest and not in questlog. Persist to the saved
-    -- per-character hiddenquests set instead of pfQuest_history: a fake
-    -- "completed" entry would make chain follow-ups appear (pre-quest check)
-    -- and keep the quest hidden even after "/db hidden clean" until a
-    -- "/db query" rebuilds history from the server.
-    if this.node.questid and not this.node.qlogid then
-      pfQuest_config.hiddenquests = pfQuest_config.hiddenquests or {}
-      pfQuest_config.hiddenquests[this.node.questid] = true
-      pfQuest.updateQuestGivers = true
-      UIErrorsFrame:AddMessage(
-        string.format("The Quest |cffffcc00[%s]|r (id:%s) is now hidden (\"/db hidden\" to show it again).", this.title, this.node.questid),
-        1,
-        1,
-        1
-      )
+    -- Shift-click in the tracker no longer hides the quest. If the chat edit
+    -- box is open, insert a quest link; otherwise do nothing. Hiding is now
+    -- driven by the quest log watch state (see quest.lua), and accidental
+    -- tracker shift-clicks no longer dump quests into the hidden list.
+    if this.node.questid and ChatFrameEditBox:IsVisible() then
+      pfQuestCompat.InsertQuestLink(this.node.questid, this.title)
     end
-
-    pfMap:DeleteNode(this.node.addon, this.title)
-    pfMap:UpdateNodes()
-
-    pfQuest.updateQuestGivers = true
   elseif IsControlKeyDown() and not WorldMapFrame:IsShown() then
     -- show world map
     if ToggleWorldMap then

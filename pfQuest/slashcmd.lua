@@ -53,7 +53,7 @@ SlashCmdList["PFDB"] = function(input, editbox)
       "|cff33ffcc/db|cffffffff query |cffcccccc - " .. pfQuest_Loc["Query the server for completed quests"]
     )
     DEFAULT_CHAT_FRAME:AddMessage(
-      "|cff33ffcc/db|cffffffff hidden [clean] |cffcccccc - " .. pfQuest_Loc["List or clear shift-click-hidden quests"]
+      "|cff33ffcc/db|cffffffff hidden [clean|remove <id>] |cffcccccc - " .. pfQuest_Loc["List, clear, or remove individual shift-click-hidden quests"]
     )
     return
   end
@@ -377,7 +377,7 @@ SlashCmdList["PFDB"] = function(input, editbox)
     return
   end
 
-  -- argument: hidden [clean]
+  -- argument: hidden [clean|remove <id>]
   if arg1 == "hidden" then
     local hidden = pfQuest_config and pfQuest_config.hiddenquests
     if commandlist[2] == "clean" then
@@ -388,6 +388,20 @@ SlashCmdList["PFDB"] = function(input, editbox)
       end
       pfQuest.updateQuestGivers = true
       DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. pfQuest_Loc["Cleared all manually hidden quests."])
+      return
+    end
+
+    -- remove a single quest from the hidden list, keep the rest
+    if commandlist[2] == "remove" then
+      local rid = tonumber(commandlist[3])
+      if rid and hidden and hidden[rid] then
+        hidden[rid] = nil
+        pfQuest.updateQuestGivers = true
+        local title = pfDB["quests"]["loc"][rid] and pfDB["quests"]["loc"][rid].T or UNKNOWN
+        DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: |cffffffff[" .. rid .. "] " .. title .. "|r " .. pfQuest_Loc["is no longer hidden."])
+      else
+        DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. pfQuest_Loc["Usage: \"/db hidden remove <id>\" — the id is shown by \"/db hidden\"."])
+      end
       return
     end
 
@@ -402,7 +416,7 @@ SlashCmdList["PFDB"] = function(input, editbox)
     if count == 0 then
       DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. pfQuest_Loc["No manually hidden quests."])
     else
-      DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. count .. " " .. pfQuest_Loc["hidden. Type \"|cff33ffcc/db hidden clean|r\" to show them again."])
+      DEFAULT_CHAT_FRAME:AddMessage("|cff33ffccpf|cffffffffQuest|r: " .. count .. " " .. pfQuest_Loc["hidden. Type \"|cff33ffcc/db hidden clean|r\" to show them all again, or \"|cff33ffcc/db hidden remove <id>|r\" to show one."])
     end
     return
   end

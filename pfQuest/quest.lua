@@ -964,10 +964,42 @@ if not GetQuestLink then -- Allow to send questlinks from questlog
     local questids = pfDatabase:GetQuestIDs(questIndex)
     local questid = questids and tonumber(questids[1]) or 0
 
-    if IsShiftKeyDown() and not this.isHeader and ChatFrameEditBox:IsVisible() then
-      pfQuestCompat.InsertQuestLink(questid, questName)
-      QuestLog_SetSelection(questIndex)
-      QuestLog_Update()
+    if IsShiftKeyDown() and not this.isHeader then
+      -- With chat open: insert the quest link only, never touch tracked state.
+      if ChatFrameEditBox:IsVisible() then
+        pfQuestCompat.InsertQuestLink(questid, questName)
+        QuestLog_SetSelection(questIndex)
+        QuestLog_Update()
+        return
+      end
+
+      -- Chat closed: drive the tracker's shown/hidden state from the watch list.
+      -- Toggle quest-log tracking, then reconcile the tracker:
+      --  * watched + in tracker      -> leave it (a watched quest stays tracked)
+      --  * watched + not in tracker  -> add node (shows in tracker)
+      --  * unwatched + in tracker    -> remove node (hides from tracker)
+      --  * unwatched + not in tracker-> nothing
+      if questid and questid > 0 then
+        if IsQuestWatched(questIndex) then
+          RemoveQuestWatch(questIndex)
+        else
+          AddQuestWatch(questIndex)
+        end
+
+        local inTracker = pfMap.titleIndex["PFQUEST"] and pfMap.titleIndex["PFQUEST"][questName] and true or false
+        local watched = IsQuestWatched(questIndex)
+        if watched and not inTracker then
+          local meta = { ["addon"] = "PFQUEST", ["qlogid"] = questIndex }
+          pfDatabase:SearchQuestID(questid, meta)
+          pfMap:UpdateNodes()
+        elseif not watched and inTracker then
+          pfMap:DeleteNode("PFQUEST", questName)
+          pfMap:UpdateNodes()
+        end
+
+        QuestLog_SetSelection(questIndex)
+        QuestLog_Update()
+      end
       return
     end
 
