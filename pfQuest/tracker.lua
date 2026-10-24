@@ -133,11 +133,13 @@ end
 
 tracker = CreateFrame("Frame", "pfQuestMapTracker", UIParent)
 tracker:Hide()
-tracker:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, -200)
+tracker:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -10, -200)
 tracker:SetWidth(200)
 tracker:SetMovable(true)
 tracker:EnableMouse(true)
-tracker:SetClampedToScreen(true)
+-- No SetClampedToScreen: clamping would push the frame up when the bottom
+-- overflows, moving the top edge. Top-bound anchoring means the bottom is
+-- allowed to extend past the screen edge without the top ever moving.
 tracker:RegisterEvent("PLAYER_ENTERING_WORLD")
 tracker:SetScript("OnEvent", function()
   -- update font sizes according to config
@@ -170,14 +172,18 @@ tracker:SetScript("OnMouseUp", function()
   -- which pins the bottom and lets the top drift on resize. Use the same
   -- coordinate convention as pfUI.api.ConvertFrameAnchor (same-name anchor,
   -- y = top - screenHeight/scale) so the saved value round-trips correctly.
+  -- Anchor by TOPRIGHT so both the top edge and the right edge stay fixed when
+  -- the tracker resizes (quest count -> height, long titles -> width). The
+  -- tracker is kept at the right of the screen, so growing leftward keeps the
+  -- right edge flush instead of pushing off-screen to the right.
   local scale = this:GetScale() or 1
-  local x = this:GetLeft() or 0
+  local x = (this:GetRight() or 0) - GetScreenWidth() / scale
   local y = (this:GetTop() or 0) - GetScreenHeight() / scale
   this:ClearAllPoints()
-  this:SetPoint("TOPLEFT", UIParent, "TOPLEFT", x, y)
+  this:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", x, y)
 
   -- save position
-  pfQuest_config.trackerpos = { "TOPLEFT", x, y }
+  pfQuest_config.trackerpos = { "TOPRIGHT", x, y }
 end)
 
 tracker:SetScript("OnUpdate", function()
@@ -227,19 +233,19 @@ tracker:SetScript("OnShow", function()
     this:ClearAllPoints()
     this:SetPoint(anchor, x, y)
 
-    -- Migrate any non-TOPLEFT anchor to TOPLEFT so the top edge stays fixed on
-    -- resize. After SetPoint the frame renders at the right spot; read its real
-    -- top/left and re-anchor by TOPLEFT (same-name convention), then persist.
-    if anchor ~= "TOPLEFT" then
+    -- Migrate any non-TOPRIGHT anchor to TOPRIGHT so the top-right corner stays
+    -- fixed on resize. After SetPoint the frame renders at the right spot; read
+    -- its real top/right and re-anchor by TOPRIGHT (same-name convention).
+    if anchor ~= "TOPRIGHT" then
       local scale = this:GetScale() or 1
-      local left = this:GetLeft()
+      local right = this:GetRight()
       local top = this:GetTop()
-      if top and left then
-        local nx = left
+      if top and right then
+        local nx = right - GetScreenWidth() / scale
         local ny = top - GetScreenHeight() / scale
         this:ClearAllPoints()
-        this:SetPoint("TOPLEFT", UIParent, "TOPLEFT", nx, ny)
-        pfQuest_config.trackerpos = { "TOPLEFT", nx, ny }
+        this:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", nx, ny)
+        pfQuest_config.trackerpos = { "TOPRIGHT", nx, ny }
       end
     end
   end
@@ -647,18 +653,19 @@ function tracker.ButtonEvent(self)
         if not self.objectives[i] then
           self.objectives[i] = self:CreateFontString(nil, "HIGH", "GameFontNormal")
           self.objectives[i]:SetFont(pfUI.font_default, fontsize)
-          self.objectives[i]:SetJustifyH("LEFT")
-          self.objectives[i]:SetPoint("TOPLEFT", 20, -fontsize * i - 6)
+          -- Right-justify + anchor right so objective lines hug the fixed right
+          -- edge instead of shifting when the frame widens leftward.
+          self.objectives[i]:SetJustifyH("RIGHT")
           self.objectives[i]:SetPoint("TOPRIGHT", -10, -fontsize * i - 6)
         end
 
         if objNum and objNeeded then
           local r, g, b = pfMap.tooltip:GetColor(objNum, objNeeded)
           self.objectives[i]:SetTextColor(r + 0.2, g + 0.2, b + 0.2)
-          self.objectives[i]:SetText(string.format("|cffffffff- %s:|r %s/%s", obj, objNum, objNeeded))
+          self.objectives[i]:SetText(string.format("|cffffffff%s:|r %s/%s", obj, objNum, objNeeded))
         else
           self.objectives[i]:SetTextColor(0.8, 0.8, 0.8)
-          self.objectives[i]:SetText("|cffffffff- " .. text)
+          self.objectives[i]:SetText("|cffffffff" .. text)
         end
 
         self.objectives[i]:Show()
@@ -913,12 +920,17 @@ function tracker.ButtonAdd(title, node)
 
     tracker.buttons[id].text = tracker.buttons[id]:CreateFontString("pfQuestIDButton", "HIGH", "GameFontNormal")
     tracker.buttons[id].text:SetFont(pfUI.font_default, fontsize)
-    tracker.buttons[id].text:SetJustifyH("LEFT")
-    tracker.buttons[id].text:SetPoint("TOPLEFT", 16, -4)
-    tracker.buttons[id].text:SetPoint("TOPRIGHT", -10, -4)
+    -- Right-justify + anchor to the right edge: the frame grows leftward
+    -- (TOPRIGHT-anchored), so pinning text to the right keeps quest titles from
+    -- shifting horizontally when the width expands for longer titles.
+    tracker.buttons[id].text:SetJustifyH("RIGHT")
+    -- Leave room on the right for the icon (12px + gaps).
+    tracker.buttons[id].text:SetPoint("TOPRIGHT", -26, -4)
 
     tracker.buttons[id].icon = tracker.buttons[id]:CreateTexture(nil, "BORDER")
-    tracker.buttons[id].icon:SetPoint("TOPLEFT", 2, -4)
+    -- Anchor to the right-justified title text's right edge so the icon sits to
+    -- the RIGHT of the quest name and moves with it as the frame widens.
+    tracker.buttons[id].icon:SetPoint("LEFT", tracker.buttons[id].text, "RIGHT", 4, 0)
     tracker.buttons[id].icon:SetWidth(12)
     tracker.buttons[id].icon:SetHeight(12)
 
