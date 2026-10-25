@@ -53,7 +53,13 @@ SlashCmdList["PFDB"] = function(input, editbox)
       "|cff33ffcc/db|cffffffff query |cffcccccc - " .. pfQuest_Loc["Query the server for completed quests"]
     )
     DEFAULT_CHAT_FRAME:AddMessage(
-      "|cff33ffcc/db|cffffffff hidden [clean|remove <id>] |cffcccccc - " .. pfQuest_Loc["List, clear, or remove individual shift-click-hidden quests"]
+      "|cff33ffcc/db|cffffffff hidden |cffcccccc - " .. pfQuest_Loc["List shift-click-hidden quests"]
+    )
+    DEFAULT_CHAT_FRAME:AddMessage(
+      "|cff33ffcc/db|cffffffff hidden clean |cffcccccc - " .. pfQuest_Loc["Show all hidden quests again"]
+    )
+    DEFAULT_CHAT_FRAME:AddMessage(
+      "|cff33ffcc/db|cffffffff hidden remove <id> |cffcccccc - " .. pfQuest_Loc["Show a single hidden quest again"]
     )
     return
   end
