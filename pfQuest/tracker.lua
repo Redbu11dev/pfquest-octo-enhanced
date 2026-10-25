@@ -338,12 +338,6 @@ do -- button panel
     pfMap:UpdateNodes()
   end)
 
-  tracker.btngiver = CreateButton("giver", "TOPLEFT", pfQuest_Loc["Show Quest Givers"], function()
-    tracker.mode = "GIVER_TRACKING"
-    UpdateSortButton()
-    pfMap:UpdateNodes()
-  end)
-
   -- "Current Zone" toggle: flips trackingmethod between 5 (Current Zone) and 1
   -- (All Quests). Independent overlay — does not change the tracker's left
   -- radio mode (quests/database/giver). Synced with the world-map dropdown,

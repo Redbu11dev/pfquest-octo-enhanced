@@ -1347,7 +1347,19 @@ function pfMap:UpdateNodes()
   -- updated from questlog even when the current zone is not in the database
   -- (e.g. unknown zone, continent view). Without this the tracker frame
   -- stays at 0px height if UpdateNodes only ever fires with map=nil.
-  pfQuest.tracker.Reset()
+  --
+  -- In "Current Zone" mode (5) the tracker reflects the player's PHYSICAL zone
+  -- (via RefreshZoneTracker), not the zone being browsed on the world map.
+  -- Skip the tracker reset/populate here when browsing a different zone so the
+  -- tracker is unaffected by map browsing; RefreshZoneTracker re-syncs it on
+  -- real zone changes and on map close.
+  local trackerOwnsZone = pfQuest_config["trackingmethod"] == 5
+    and WorldMapFrame:IsShown()
+    and map ~= pfMap.playerZone
+
+  if not trackerOwnsZone then
+    pfQuest.tracker.Reset()
+  end
   pfQuest.route:Reset()
 
   if not map then
@@ -1418,9 +1430,12 @@ function pfMap:UpdateNodes()
         elseif pfQuest_config["showspawn"] == "0" and addon == "PFQUEST" and not pfMap.pins[i].texture then
           pfMap.pins[i]:Hide()
         else
-          -- populate quest list on map
-          for title, node in pairs(pfMap.pins[i].node) do
-            pfQuest.tracker.ButtonAdd(title, node)
+          -- populate quest list on map. Skip when browsing another zone in
+          -- Current Zone mode — RefreshZoneTracker owns the tracker then.
+          if not trackerOwnsZone then
+            for title, node in pairs(pfMap.pins[i].node) do
+              pfQuest.tracker.ButtonAdd(title, node)
+            end
           end
 
           local px = x / 100 * mapW
