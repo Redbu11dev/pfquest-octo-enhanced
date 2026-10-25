@@ -2025,8 +2025,11 @@ function pfDatabase:QuestFilter(id, plevel, pclass, prace)
       return
     end
   else
-    -- hide highlevel quests (or show those that are 3 levels above)
-    if quests[id]["min"] and quests[id]["min"] > plevel + (pfQuest_config["showhighlevel"] == "1" and 3 or 0) then
+    -- hide highlevel quests. Slack: showalllevel -> 60 (effectively all),
+    -- showhighlevel -> 3, otherwise 0 (only quests at/below player level).
+    local highlevelSlack = pfQuest_config["showalllevel"] == "1" and 60
+      or (pfQuest_config["showhighlevel"] == "1" and 3 or 0)
+    if quests[id]["min"] and quests[id]["min"] > plevel + highlevelSlack then
       return
     end
   end
