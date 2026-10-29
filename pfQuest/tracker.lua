@@ -671,11 +671,26 @@ function tracker.ButtonEvent(self)
     local showlevel = pfQuest_config["trackerlevel"] == "1" and "[" .. (level or "??") .. (tag and "+" or "") .. "] "
       or ""
 
+    -- Turtle/OctoWoW return the quest tag ("Elite", "PvP", "Dungeon", "Group",
+    -- "Raid") as a string in the third GetQuestLogTitle value, and the quest log
+    -- shows it as " (Tag)". Stock 1.12 hands back a number there, so only strings
+    -- are rendered and other clients keep their old output. Stale qlogids are
+    -- skipped: their tag belongs to whichever quest owns the slot right now.
+    local tagtext = ""
+    if not stale and type(tag) == "string" and tag ~= "" then
+      if strsub(tag, 1, 1) == "(" then
+        tagtext = " " .. tag
+      else
+        tagtext = " (" .. tag .. ")"
+      end
+    end
+
     self.tracked = watched
     self.level = tonumber(level)
     self.perc = percent
     self.text:SetText(
-      string.format("%s%s |cffaaaaaa(%s%s%%|cffaaaaaa)|r", showlevel, title or "", colorperc or "", ceil(percent))
+      string.format("%s%s%s |cffaaaaaa(%s%s%%|cffaaaaaa)|r", showlevel, title or "", tagtext, colorperc or "",
+        ceil(percent))
     )
     self.text:SetTextColor(color.r, color.g, color.b)
     self.tooltip =
